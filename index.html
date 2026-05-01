@@ -6,7 +6,7 @@
     <title>to22s Bio-Systems | Global Smart Biorefinery</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Homemade+Apple&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -28,19 +28,17 @@
                     },
                     animation: {
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'scanline': 'scanline 8s linear infinite',
-                    },
-                    keyframes: {
-                        scanline: {
-                            '0%': { transform: 'translateY(-100%)' },
-                            '100%': { transform: 'translateY(1000%)' }
-                        }
                     }
                 }
             }
         }
     </script>
     <style>
+        .homemade-apple-regular {
+            font-family: "Homemade Apple", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
         body { font-family: 'Inter', sans-serif; }
         .gradient-text {
             background: linear-gradient(135deg, #38bdf8 0%, #e2e8f0 100%);
@@ -96,12 +94,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-20 items-center">
             <div class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo(0,0)">
-                <div class="relative w-12 h-12 flex items-center justify-center">
-                    <div class="absolute inset-0 border-2 border-brand-blue/30 rounded rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
-                    <span class="text-xl font-black text-white z-10">22</span>
-                </div>
+                <!-- Branding: Circle with 22 -->
+                <svg class="h-10 w-auto drop-shadow-lg transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="48" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+                    <text x="50" y="66" font-family="Inter, sans-serif" font-weight="800" font-size="38" fill="#e2e8f0" text-anchor="middle">22</text>
+                </svg>
+                <!-- Branding: to22s cursive - Kept in Header -->
                 <div class="flex flex-col">
-                    <span class="text-lg font-black tracking-tighter text-white uppercase leading-none">to<span class="text-brand-blue">22</span>s</span>
+                    <span class="text-2xl font-normal tracking-tight text-white lowercase homemade-apple-regular leading-none">to22s</span>
                     <span class="text-[8px] font-bold text-slate-500 uppercase tracking-[0.3em]">Bio-Systems</span>
                 </div>
             </div>
@@ -354,7 +354,7 @@
         <p class="text-slate-400 text-lg md:text-xl mb-12 font-light leading-relaxed">
             We are commissioning the St. Petersburg Global Monitoring Center alongside the North Carolina plant. Invest in the orchestration of the next industrial era.
         </p>
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="mailto:prime@to22s.com" class="group px-16 py-6 bg-brand-blue text-white font-bold uppercase tracking-[0.2em] text-[11px] rounded-sm flex items-center gap-4 hover:bg-brand-darkblue transition-all">
                 Request Node Access
                 <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
@@ -371,11 +371,12 @@
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center gap-12">
             <div class="flex items-center gap-4">
-                <div class="w-10 h-10 border border-brand-blue/30 flex items-center justify-center">
-                    <span class="text-sm font-black text-white">22</span>
-                </div>
+                <svg class="h-10 w-auto" viewBox="0 0 100 100" fill="none">
+                    <circle cx="50" cy="50" r="48" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
+                    <text x="50" y="66" font-family="Inter, sans-serif" font-weight="800" font-size="38" fill="#e2e8f0" text-anchor="middle">22</text>
+                </svg>
                 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                    to22s Bio-Systems &copy; 2026<br>
+                    Bio-Systems &copy; 2026<br>
                     Global Monitoring Center: St. Petersburg
                 </div>
             </div>
