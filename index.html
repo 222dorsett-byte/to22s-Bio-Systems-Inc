@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>to22s Bio-Systems | Vertical Sovereignty</title>
+    <meta name="theme-color" content="#020617" />
+    <title>to22s Bio-Systems | The Global Sentinel</title>
+    <meta name="description" content="to22s Bio-Systems: A global systems pharmacology utility bridging AlphaFold structural biology and 69 MPa industrial reality." />
+
+    <!-- Inline favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23020617' stroke='%2338bdf8' stroke-width='4'/><text x='50' y='65' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='32' fill='white' text-anchor='middle'>222</text></svg>" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&family=Homemade+Apple&display=swap" rel="stylesheet" />
@@ -15,19 +21,22 @@
             fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
             colors: {
               brand: {
-                blue: '#0ea5e9',
-                obsidian: '#020617', 
-                tiara: '#2e1065',   // Deep Tiara Purple
-                surgical: '#f8fafc', // Surgical White/Silver
-                slate: '#94a3b8'
+                blue:     '#38bdf8',
+                obsidian: '#020617',
+                purple:   '#1e1b4b',
+                silver:   '#cbd5e1',
+                slate:    '#94a3b8',
+                gold:     '#fbbf24', // Added missing gold color
               },
             },
             keyframes: {
-              ticker: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } }
+              ticker:   { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+              scanline: { '0%': { top: '-100%' }, '100%': { top: '100%' } },
             },
             animation: {
-              ticker: 'ticker 30s linear infinite',
-            }
+              ticker:   'ticker 40s linear infinite',
+              scanline: 'scanline 8s linear infinite',
+            },
           },
         },
       };
@@ -37,23 +46,28 @@
       .homemade-apple-regular { font-family: 'Homemade Apple', cursive; }
       .math-text { font-family: 'JetBrains Mono', monospace; }
       .gradient-text {
-        background: linear-gradient(135deg, #ffffff 0%, #0ea5e9 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
       .glass-card {
-        background: rgba(2, 6, 23, 0.7);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(14, 165, 233, 0.1);
+        background: rgba(2, 6, 23, 0.85);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(203, 213, 225, 0.1);
       }
       .blueprint-grid {
-        background-image: linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
-        background-size: 40px 40px;
+        background-image:
+          linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+      }
+      .surgical-border {
+        border-left: 1px solid rgba(203, 213, 225, 0.2);
+        padding-left: 2rem;
       }
       .scroll-progress {
         height: 2px;
-        background: #0ea5e9;
+        background: #38bdf8;
         position: fixed;
         top: 0;
         left: 0;
@@ -66,240 +80,219 @@
 
 <body class="bg-brand-obsidian text-brand-slate antialiased">
 
-  <div id="progress" class="scroll-progress"></div>
+  <!-- Scroll Progress Bar -->
+  <div id="progress" class="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Global Command Ticker -->
-  <div class="fixed top-0 w-full z-[60] bg-brand-blue py-1 overflow-hidden border-b border-white/10">
-    <div class="whitespace-nowrap flex gap-10 animate-ticker text-[9px] font-black text-white uppercase tracking-[0.2em]">
-      <span>● LITHOSPHERIC_SCAN: DEWITT_SILT_LOAM_VERIFIED</span>
-      <span>● NODE_01: MICROWAVE_STABILIZATION_ACTIVE (130°C)</span>
-      <span>● PUCK_INTEGRITY: 7-DEGREE_NESTING_CONFIRMED</span>
-      <span>● LOGISTICS: N2_PURGE_PODS_IN_TRANSIT</span>
-      <span>● EXTRACTION: 69_MPA_STEADY_STATE</span>
-      <span>● PHARMA: C3-SULFAMATE_RETENTION_PEAK</span>
-      <span>● LITHOSPHERIC_SCAN: DEWITT_SILT_LOAM_VERIFIED</span>
+  <!-- Global Ledger Ticker -->
+  <div class="fixed top-0 w-full z-[60] bg-brand-blue py-1 overflow-hidden">
+    <div class="whitespace-nowrap flex gap-12 animate-ticker text-[9px] font-black text-brand-obsidian uppercase tracking-[0.25em]">
+      <span>● GLOBAL_FEEDSTOCK_INDEX: 520M_MT_REACH</span>
+      <span>● NODE_APAC: ACTIVE</span>
+      <span>● NODE_EMEA: ENCRYPTED</span>
+      <span>● NODE_AMER: REFINERY_LOCKED</span>
+      <span>● BCL2_SELECTIVITY: 397.42_UNIVERSAL_CONSTANT</span>
+      <span>● PRESSURE_FLOOR: 68.95_MPA</span>
+      <span>● COMPLIANCE: ICH_Q3C_GLOBAL_STANDARD</span>
+      <span>● LEAD_ASSET: SENTINEL_V1_BETA_C30</span>
     </div>
   </div>
 
   <!-- Navigation -->
   <nav class="fixed w-full top-6 z-50 px-4">
     <div class="max-w-7xl mx-auto h-20 glass-card rounded-sm flex justify-between items-center px-8 border-white/5">
-      <div class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo(0,0)">
-        <svg class="h-10 w-auto transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="48" fill="#020617" stroke="#0ea5e9" stroke-width="2"/>
-          <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="#fff" text-anchor="middle">222</text>
+      <a href="#" class="flex items-center gap-4">
+        <svg class="h-10 w-auto" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="48" fill="#020617" stroke="#38bdf8" stroke-width="2" />
+          <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="white" text-anchor="middle">222</text>
         </svg>
         <div class="flex flex-col">
           <span class="text-2xl text-white homemade-apple-regular leading-none">to22s</span>
-          <span class="text-[8px] font-bold text-brand-blue uppercase tracking-[0.3em]">Bio-Systems</span>
+          <span class="text-[8px] font-bold text-brand-blue uppercase tracking-[0.3em]">Global Systems</span>
         </div>
-      </div>
+      </a>
       <div class="hidden md:flex space-x-12 text-[10px] font-black uppercase tracking-[0.3em]">
-        <a href="#sovereignty" class="hover:text-brand-blue transition-colors text-white">Sovereignty</a>
-        <a href="#mining" class="hover:text-brand-blue transition-colors text-white">API Mining</a>
-        <a href="#pharma" class="hover:text-brand-blue transition-colors text-white">Sentinel V1</a>
+        <a href="#matrix" class="hover:text-brand-blue transition-colors text-white">The Global Matrix</a>
+        <a href="#oryza" class="hover:text-brand-blue transition-colors text-white">Oryza Sovereignty</a>
+        <a href="#pka" class="hover:text-brand-blue transition-colors text-white">Hasselbalch Logic</a>
       </div>
-      <button class="px-6 py-2 bg-brand-blue text-white text-[9px] font-black uppercase tracking-widest rounded-sm shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:scale-105 transition-all">
-        Institutional Access
+      <button onclick="document.getElementById('cta').scrollIntoView()" class="px-6 py-2 bg-brand-blue text-brand-obsidian text-[9px] font-black uppercase tracking-widest rounded-sm hover:bg-white transition-colors duration-300">
+        Strategic Partnership
       </button>
     </div>
   </nav>
 
-  <!-- Hero: Scaling the Outlier -->
+  <!-- Hero: The OpenAI of Drug Delivery -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden blueprint-grid pt-10">
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-obsidian via-transparent to-brand-obsidian pointer-events-none"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-blue/5 blur-[180px] rounded-full"></div>
-    
     <div class="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
-      <div class="inline-flex items-center justify-center gap-3 mb-10 px-6 py-2 rounded-full border border-brand-blue/30 bg-brand-blue/5">
-        <span class="math-text text-[10px] uppercase text-brand-blue font-bold tracking-[0.4em]">Proprietary Biorefinery Network // NAMUR 2658</span>
+      <div class="inline-flex items-center justify-center gap-3 mb-10 px-6 py-2 rounded border border-brand-blue/30 bg-brand-blue/5">
+        <span class="math-text text-[10px] uppercase text-brand-blue font-bold tracking-[0.4em]">Universal Oncology Operating System // ICH-STANDARD</span>
       </div>
-      <h1 class="text-6xl md:text-[11rem] font-[900] tracking-tighter text-white mb-6 leading-[0.8] uppercase">
-        Scaling<br />
-        <span class="gradient-text">The Outlier.</span>
+      <h1 class="text-6xl md:text-[9rem] font-[900] tracking-tighter text-white mb-6 leading-[0.85] uppercase">
+        Global<br />
+        <span class="gradient-text">Sovereignty.</span>
       </h1>
-      <p class="mt-12 max-w-4xl mx-auto text-xl md:text-2xl text-brand-slate font-light leading-relaxed">
-        A vertically sovereign systems pharmacology firm. Bridging computational discovery and 69 MPa industrial reality.
+      <p class="mt-12 max-w-4xl mx-auto text-xl md:text-2xl text-brand-silver font-light leading-relaxed">
+        to22s Bio-Systems is the <strong>OpenAI of Drug Delivery</strong>. We bridge the global information rift between AlphaFold structural biology and 10,000 PSI industrial reality to treat the world's most aggressive cancers.
       </p>
-      <div class="mt-20 flex flex-col sm:flex-row gap-8 justify-center items-center">
-          <a href="#sovereignty" class="group flex items-center gap-4 text-white text-xs font-black uppercase tracking-[0.4em]">
-              Explore Node 1
-              <i data-lucide="arrow-right" class="w-5 h-5 text-brand-blue group-hover:translate-x-2 transition-transform"></i>
-          </a>
-          <div class="h-10 w-[1px] bg-white/10 hidden sm:block"></div>
-          <span class="text-[10px] font-mono text-emerald-500 uppercase tracking-widest animate-pulse">● Global Sync: Active</span>
-      </div>
     </div>
   </section>
 
-  <!-- Section: Node 1 (The IP Gate) -->
-  <section id="sovereignty" class="py-40 bg-black relative overflow-hidden border-y border-white/5">
+  <!-- Global Vulnerability Matrix -->
+  <section id="matrix" class="py-32 bg-black border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex flex-col lg:flex-row gap-24 items-center">
-        <div class="lg:w-1/2">
-          <span class="text-brand-blue font-black text-[11px] uppercase tracking-[0.5em] mb-6 block">Supply Chain Fortress</span>
-          <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">Node 1:<br>Proprietary <br><span class="text-brand-blue">IP Gate.</span></h2>
-          <p class="text-lg text-brand-slate leading-relaxed mb-12 italic">
-            "We discovered the outlier; we own the printer."
-          </p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="border-l-2 border-brand-blue/30 pl-6">
-              <h4 class="text-white font-bold text-xs uppercase mb-2">Lithospheric Anchor</h4>
-              <p class="text-xs text-brand-slate leading-relaxed">Feedstocks secured via lithospheric fingerprinting of geologically-standardized acreage.</p>
-            </div>
-            <div class="border-l-2 border-brand-blue/30 pl-6">
-              <h4 class="text-white font-bold text-xs uppercase mb-2">Seed Sovereignty</h4>
-              <p class="text-xs text-brand-slate leading-relaxed">Exclusive single-lane processing eliminates commodity cross-contamination.</p>
-            </div>
-          </div>
-        </div>
-        <div class="lg:w-1/2 glass-card p-12 rounded-sm relative overflow-hidden">
-          <h3 class="text-white font-black text-sm uppercase tracking-widest mb-8 flex items-center gap-3">
-              <i data-lucide="zap" class="w-4 h-4 text-brand-blue"></i> 
-              Thermal Stabilization
-          </h3>
-          <div class="space-y-6">
-            <div class="flex justify-between items-end border-b border-white/10 pb-4">
-              <span class="text-[10px] uppercase font-bold text-slate-500">Method</span>
-              <span class="text-white font-mono text-sm">915 MHz Microwave Tunnel</span>
-            </div>
-            <div class="flex justify-between items-end border-b border-white/10 pb-4">
-              <span class="text-[10px] uppercase font-bold text-slate-500">Constraint</span>
-              <span class="text-white font-mono text-sm">Zero-Shear Stabilization</span>
-            </div>
-            <div class="flex justify-between items-end border-b border-white/10 pb-4">
-              <span class="text-[10px] uppercase font-bold text-slate-500">Metabolite Shield</span>
-              <span class="text-emerald-500 font-mono text-sm">9,19-Cyclopropane Preserved</span>
-            </div>
-          </div>
-        </div>
+      <div class="text-center mb-24 flex flex-col items-center">
+        <span class="text-brand-blue font-black text-[11px] uppercase tracking-[0.5em] mb-6 block">Single-Cell Audit: 63,121 Profiles</span>
+        <h2 class="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-10 leading-none">The Global <br/><span class="text-brand-silver">Matrix.</span></h2>
+        <p class="text-brand-slate max-w-2xl mx-auto font-light leading-relaxed text-lg">We identified 16 high-precision therapeutic windows where the BCL2 survival shield is hard-wired to the ABCA1 lipid pump—an outlier signature consistent across all human populations.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Section: API Mining (Volumetric ROI) -->
-  <section id="mining" class="py-40 bg-brand-obsidian relative">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-4xl md:text-8xl font-black text-white uppercase tracking-tighter mb-6">API Mining.</h2>
-      <p class="text-brand-blue font-bold uppercase text-xs tracking-[0.6em] mb-24">Maximizing Volumetric Density</p>
       
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="glass-card p-12 text-left">
-          <div class="w-12 h-12 bg-brand-blue/10 rounded flex items-center justify-center mb-8 text-brand-blue">
-            <i data-lucide="box"></i>
-          </div>
-          <h4 class="text-white font-black uppercase text-xl mb-4">The Cartridge</h4>
-          <p class="text-sm leading-relaxed mb-10">High-density 33cm pucks increase vessel capacity from 0.3 to <strong>0.6 kg/dm³</strong>.</p>
-          <div class="text-4xl font-black text-white math-text">+100%<br><span class="text-[10px] text-brand-blue uppercase tracking-widest">Throughput</span></div>
+      <!-- Applied flex h-full to make cards equal height and align content -->
+      <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+        <div class="glass-card p-10 border-l-4 border-brand-blue flex flex-col h-full rounded-sm hover:-translate-y-2 transition-transform duration-300">
+          <div class="text-[4rem] font-black text-white math-text mb-2 leading-none">397<span class="text-brand-blue text-4xl">x</span></div>
+          <div class="text-[10px] font-black uppercase tracking-widest text-brand-blue mb-6">Metastatic Selectivity</div>
+          <p class="text-sm font-light flex-grow text-brand-slate leading-relaxed">Targeting SqCC niches in the lymphatic system with near-zero off-target collateral.</p>
         </div>
-        <div class="glass-card p-12 text-left border-brand-blue/40 shadow-[0_0_40px_rgba(14,165,233,0.1)]">
-          <div class="w-12 h-12 bg-brand-blue/10 rounded flex items-center justify-center mb-8 text-brand-blue">
-            <i data-lucide="zap"></i>
-          </div>
-          <h4 class="text-white font-black uppercase text-xl mb-4">Hot-Swap</h4>
-          <p class="text-sm leading-relaxed mb-10">Automated "Bottom-Drop" ejection reduces vessel downtime from 180 mins to <strong>15 mins</strong>.</p>
-          <div class="text-4xl font-black text-white math-text">88%<br><span class="text-[10px] text-brand-blue uppercase tracking-widest">Efficiency Gain</span></div>
+        <div class="glass-card p-10 border-l-4 border-brand-purple flex flex-col h-full rounded-sm hover:-translate-y-2 transition-transform duration-300">
+          <div class="text-[4rem] font-black text-white math-text mb-2 leading-none">1200<span class="text-brand-purple text-4xl">x</span></div>
+          <div class="text-[10px] font-black uppercase tracking-widest text-brand-purple mb-6">Breast Cancer Safety</div>
+          <p class="text-sm font-light flex-grow text-brand-slate leading-relaxed">Surgical discrimination between the STS-catalytic cleft and the proliferative ER-&alpha; gas pedal.</p>
         </div>
-        <div class="glass-card p-12 text-left">
-          <div class="w-12 h-12 bg-brand-blue/10 rounded flex items-center justify-center mb-8 text-brand-blue">
-            <i data-lucide="trending-up"></i>
-          </div>
-          <h4 class="text-white font-black uppercase text-xl mb-4">The Payback</h4>
-          <p class="text-sm leading-relaxed mb-10">Densification drops our CapEx payback period from 14 months to <strong>140 days</strong>.</p>
-          <div class="text-4xl font-black text-white math-text">$23.5M<br><span class="text-[10px] text-brand-blue uppercase tracking-widest">Year 3 Revenue</span></div>
+        <div class="glass-card p-10 border-l-4 border-brand-gold flex flex-col h-full rounded-sm hover:-translate-y-2 transition-transform duration-300">
+          <div class="text-[4rem] font-black text-white math-text mb-2 leading-none">276<span class="text-brand-gold text-4xl">x</span></div>
+          <div class="text-[10px] font-black uppercase tracking-widest text-brand-gold mb-6">Neuro-Senolysis</div>
+          <p class="text-sm font-light flex-grow text-brand-slate leading-relaxed">Pruning BCL2-addicted microglia to resolve neuro-inflammation in Dementia and Long-COVID.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Lead Asset (C3-Sulfamate) -->
-  <section id="pharma" class="py-40 bg-black relative border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-24 items-center">
-        <div class="relative group">
-            <div class="absolute -inset-4 bg-brand-blue/10 blur-3xl group-hover:bg-brand-blue/20 transition-all duration-700"></div>
-            <div class="relative aspect-video bg-brand-obsidian border border-white/5 rounded-sm flex items-center justify-center overflow-hidden">
-                <div class="text-center">
-                    <i data-lucide="microscope" class="w-16 h-16 text-brand-blue mx-auto mb-6 opacity-40"></i>
-                    <span class="math-text text-sm text-brand-slate uppercase font-bold tracking-widest">Structural Audit: C3-Sulfamate</span>
-                </div>
-                <!-- Placeholder for the PyMOL render we discussed -->
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-obsidian to-transparent"></div>
-            </div>
-        </div>
-        <div>
-          <span class="text-brand-blue font-black text-[11px] uppercase tracking-[0.5em] mb-6 block">Asset: Sentinel-V1-Beta</span>
-          <h2 class="text-5xl font-black text-white uppercase tracking-tighter mb-8 leading-none">Retention <br>Engineering.</h2>
-          <p class="text-lg text-brand-slate leading-relaxed mb-10">
-            Utilizing <strong>C3-Sulfamoylation</strong> to enable erythrocyte-mediated "hitchhiking." We leverage the body's 95% enterohepatic recycling loop for 24-hour plasma residence.
+  <!-- Section: Oryza Sovereignty (The Global Feedstock) -->
+  <section id="oryza" class="py-32 md:py-48 bg-brand-obsidian relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <!-- Changed from items-center to items-stretch so the glass card matches text height -->
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch">
+        <div class="lg:w-1/2 flex flex-col justify-center">
+          <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">Feedstock<br /><span class="text-brand-blue">Sovereignty.</span></h2>
+          <p class="text-xl text-brand-slate leading-relaxed mb-12 font-light">
+            We move beyond regional botanicals to the <strong>Universal Oryza Matrix</strong>. Rice bran is the world's most abundant agricultural byproduct (520M MT/year). We turn global waste into the 3,12-diol "molecular crowbar."
           </p>
-          <div class="space-y-6">
-            <div class="flex gap-4">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-blue shrink-0"></i>
-                <p class="text-sm"><strong>CAII Anchor:</strong> Prodrug snaps to Red Blood Cells, bypassing liver first-pass metabolism.</p>
+          <div class="space-y-8">
+            <div class="surgical-border">
+                <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">10,000 PSI Fractionation</h4>
+                <p class="text-sm text-brand-slate leading-relaxed">Our Thyssenkrupp-engineered 69 MPa circuits are the only systems capable of unlocking the heavy triterpene ferulates nature hides.</p>
             </div>
-            <div class="flex gap-4">
-                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-blue shrink-0"></i>
-                <p class="text-sm"><strong>STS Scissors:</strong> Tumor-expressed enzymes clip the sulfamate to release the API on-site.</p>
+            <div class="surgical-border">
+                <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-2">Zero-Waste Biorefinery</h4>
+                <p class="text-sm text-brand-slate leading-relaxed">Integrated upcycling: API for oncology, sodium ferulate for cardiovascular rescue, and biomass for neuro-regenerative vermicompost.</p>
             </div>
           </div>
+        </div>
+        <!-- Wrapped right side in w-full to ensure layout stability, made inner card h-full -->
+        <div class="lg:w-1/2 w-full">
+            <div class="glass-card p-12 text-center h-full flex flex-col justify-center items-center rounded-sm">
+                <i data-lucide="globe" class="w-24 h-24 text-brand-blue mx-auto mb-10"></i>
+                <h3 class="text-white font-black text-2xl uppercase tracking-widest mb-8">Global Deployment</h3>
+                <div class="space-y-6 text-xs text-brand-slate uppercase tracking-[0.2em] leading-loose">
+                    <p class="border-b border-white/5 pb-6">APAC Manufacturing Hub <br/><span class="text-white font-bold">(Hengrui / Biocon)</span></p>
+                    <p class="border-b border-white/5 pb-6">EMEA Engineering Standard <br/><span class="text-white font-bold">(Uhde HPT)</span></p>
+                    <p>US Discovery Command <br/><span class="text-brand-blue font-bold">(to22s Bio-Systems)</span></p>
+                </div>
+            </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Section: The Hasselbalch Logic (The Ghost and the Anchor) -->
+  <section id="pka" class="py-32 bg-black relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-24 flex flex-col items-center">
+            <h2 class="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6">The Ghost & The Anchor.</h2>
+            <p class="text-brand-blue font-bold uppercase text-xs tracking-[0.6em] inline-block px-4 py-2 border border-brand-blue/20 rounded-sm">pH-Responsive pKa-Shift Logistics</p>
+        </div>
+        <!-- Ensure grid items stretch to match heights -->
+        <div class="grid md:grid-cols-2 gap-8 text-left items-stretch">
+            <div class="p-12 border border-brand-purple/30 bg-brand-purple/10 flex flex-col h-full rounded-sm hover:bg-brand-purple/20 transition-colors duration-500">
+                <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-6">
+                    <h4 class="text-white font-black uppercase text-2xl">Neutral Ghost</h4>
+                    <span class="text-brand-slate text-sm font-mono tracking-widest">pH 6.8</span>
+                </div>
+                <p class="text-lg text-brand-silver font-light leading-relaxed flex-grow">Using Henderson-Hasselbalch physics, the Sentinel Micelle becomes an un-ionized 'Ghost' at the tumor interface. It ignores the fibrotic stroma and dissolves directly through the phospholipid bilayer without needing a transporter.</p>
+            </div>
+            <div class="p-12 border border-white/10 bg-brand-obsidian flex flex-col h-full rounded-sm hover:border-brand-blue/30 transition-colors duration-500 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 rounded-full blur-3xl"></div>
+                <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-6 relative z-10">
+                    <h4 class="text-white font-black uppercase text-2xl">Ion Trap</h4>
+                    <span class="text-brand-blue text-sm font-mono tracking-widest font-bold">pH 7.2</span>
+                </div>
+                <p class="text-lg text-brand-silver font-light leading-relaxed flex-grow relative z-10">Upon cytosolic entry, the molecule re-ionizes. It transforms from a neutral ghost into a <span class="text-brand-blue font-bold">Charged Anchor</span>, physically locking the 21 nM lead inside the cancer cell to prevent drug efflux and maximize lethality.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- Footer: Global Strategic Access -->
   <footer id="cta" class="py-32 bg-brand-obsidian border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 lg:px-8">
-      <div class="grid lg:grid-cols-4 gap-16 mb-24">
-        <div class="lg:col-span-2">
-            <div class="flex items-center gap-4 mb-8">
-                <svg class="h-10 w-auto" viewBox="0 0 100 100" fill="none">
-                    <circle cx="50" cy="50" r="48" fill="#020617" stroke="#0ea5e9" stroke-width="2"/>
-                    <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="#fff" text-anchor="middle">222</text>
-                </svg>
-                <div class="flex flex-col">
-                    <span class="text-3xl text-white homemade-apple-regular leading-none">to22s</span>
-                    <span class="text-[9px] font-bold text-brand-blue uppercase tracking-[0.4em]">Bio-Systems</span>
-                </div>
-            </div>
-            <p class="text-sm max-w-md mb-8">Systems Pharmacology Utility. Bridging computational certainty and 10,000 PSI industrial reality.</p>
-            <div class="flex gap-4">
-                <a href="mailto:prime@to22s.com" class="px-8 py-4 bg-brand-blue text-white text-[10px] font-black uppercase tracking-widest rounded-sm">Request Data Room</a>
-            </div>
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="flex flex-col items-start">
+          <h2 class="text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter mb-8 italic leading-tight">Engineering Global Health Security.</h2>
+          <p class="text-lg text-brand-slate leading-relaxed font-light mb-12">
+            to22s Bio-Systems is seeking strategic partnerships with multi-national pharmaceutical leaders and global investors (IndieBio, J.P. Morgan, ARK Invest) to scale the Oryza platform.
+          </p>
+          <a href="mailto:prime@to22s.com" class="px-10 py-5 bg-brand-blue text-brand-obsidian font-black uppercase tracking-widest text-xs rounded-sm inline-block shadow-lg shadow-brand-blue/20 hover:-translate-y-1 hover:shadow-brand-blue/40 transition-all duration-300">
+            Request Institutional Data Room
+          </a>
         </div>
         
-        <div class="space-y-4">
-          <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-6">Network Nodes</h5>
-          <ul class="text-[10px] font-mono space-y-3 uppercase">
-            <li class="flex justify-between border-b border-white/5 pb-1"><span>Monitoring</span> <span class="text-brand-blue italic">Tampa Bay</span></li>
-            <li class="flex justify-between border-b border-white/5 pb-1"><span>Node 1 Gate</span> <span class="text-brand-blue italic">Arkansas</span></li>
-            <li class="flex justify-between border-b border-white/5 pb-1"><span>Node 2 Tower</span> <span class="text-brand-blue italic">Holly Springs</span></li>
-          </ul>
+        <!-- Realigned the phase cards using flex columns and top borders -->
+        <div class="grid grid-cols-2 gap-4 lg:gap-6">
+            <div class="glass-card p-6 flex flex-col h-full rounded-sm border-t-2 border-t-brand-blue border-x-white/5 border-b-white/5 hover:bg-white/5 transition-colors">
+                <h5 class="text-white font-black text-[10px] uppercase mb-4 opacity-70">Phase 1</h5>
+                <p class="text-[11px] uppercase tracking-widest text-brand-silver font-bold leading-relaxed mt-auto">Enzymatic Prophylaxis (BPH)</p>
+            </div>
+            <div class="glass-card p-6 flex flex-col h-full rounded-sm border-t-2 border-t-brand-purple border-x-white/5 border-b-white/5 hover:bg-white/5 transition-colors">
+                <h5 class="text-white font-black text-[10px] uppercase mb-4 opacity-70">Phase 2</h5>
+                <p class="text-[11px] uppercase tracking-widest text-brand-silver font-bold leading-relaxed mt-auto">Metastatic Oncology</p>
+            </div>
+            <div class="glass-card p-6 flex flex-col h-full rounded-sm border-t-2 border-t-brand-gold border-x-white/5 border-b-white/5 hover:bg-white/5 transition-colors">
+                <h5 class="text-white font-black text-[10px] uppercase mb-4 opacity-70">Phase 3</h5>
+                <p class="text-[11px] uppercase tracking-widest text-brand-silver font-bold leading-relaxed mt-auto">Neuro-Senolysis</p>
+            </div>
+            <div class="glass-card p-6 flex flex-col h-full rounded-sm border-t-2 border-t-brand-silver border-x-white/5 border-b-white/5 hover:bg-white/5 transition-colors">
+                <h5 class="text-white font-black text-[10px] uppercase mb-4 opacity-70">Phase 4</h5>
+                <p class="text-[11px] uppercase tracking-widest text-brand-silver font-bold leading-relaxed mt-auto">Sovereign Biodefense</p>
+            </div>
         </div>
-
-        <div class="space-y-4">
-            <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-6">Validation</h5>
-            <ul class="text-[10px] font-mono space-y-3 uppercase">
-              <li class="flex justify-between border-b border-white/5 pb-1"><span>Pharma Audit</span> <span class="text-white">Charles River</span></li>
-              <li class="flex justify-between border-b border-white/5 pb-1"><span>Engineering</span> <span class="text-white">Uhde/TK</span></li>
-              <li class="flex justify-between border-b border-white/5 pb-1"><span>Institution</span> <span class="text-white">J.P. Morgan</span></li>
-            </ul>
-          </div>
       </div>
-      <div class="pt-16 border-t border-white/5 text-[10px] text-white/20 uppercase font-mono tracking-widest text-center">
-        &copy; 2026 to22s Bio-Systems, Inc. // 35 U.S.C. 209 Protected // Form AD-761 Active
+      <div class="mt-32 pt-16 border-t border-white/5 flex flex-col items-center justify-center gap-4">
+        <svg class="h-8 w-auto opacity-20" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="48" fill="transparent" stroke="#cbd5e1" stroke-width="2" />
+            <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="#cbd5e1" text-anchor="middle">222</text>
+        </svg>
+        <div class="text-[10px] text-white/30 uppercase font-mono tracking-widest text-center leading-loose">
+            &copy; 2026 to22s Bio-Systems, Inc. <span class="mx-2">//</span> Systems Pharmacology Platform <span class="mx-2">//</span> NAMUR 2658 <span class="mx-2">//</span> HIPAA/CFR 21 <span class="mx-2">//</span> GLOBAL COMPLIANCE
+        </div>
       </div>
     </div>
   </footer>
 
   <script>
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+    
+    // Safely apply scroll progress
     window.addEventListener('scroll', () => {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      document.getElementById('progress').style.width = (winScroll / height) * 100 + "%";
-    });
+      const bar = document.getElementById('progress');
+      if (bar) {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+        bar.style.width = scrolled + "%";
+      }
+    }, { passive: true });
   </script>
 </body>
 </html>
