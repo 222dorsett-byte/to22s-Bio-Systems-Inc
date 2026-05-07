@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -36,7 +35,7 @@
   </script>
 
   <style>
-    .homemade-apple-regular { font-family: 'Homemade Apple', cursive; }
+    .font-script { font-family: 'Homemade Apple', cursive; }
     .math-text { font-family: 'JetBrains Mono', monospace; }
     .gradient-text {
       background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
@@ -70,16 +69,17 @@
 
   <div id="progress" class="scroll-progress"></div>
 
-  <!-- Industrial Ticker -->
+  <!-- Industrial Ticker: Provenance Stream -->
   <div class="fixed top-0 w-full z-[60] bg-brand-blue py-1 overflow-hidden border-b border-white/10">
     <div class="whitespace-nowrap flex gap-10 animate-ticker text-[9px] font-black text-brand-obsidian uppercase tracking-[0.2em]">
       <span>● FEEDSTOCK: USDA-TIARA_LINEAGE_LOCKED</span>
-      <span>● NODE_01: ARKANSAS_PRECISION_MILL_ACTIVE</span>
+      <span>● NODE_01: ARKANSAS_UHP_COLD_STAMP_ACTIVE</span>
+      <span>● LITHOSPHERIC_SCAN: DEWITT_SILT_LOAM_VERIFIED</span>
       <span>● NODE_02: HOLLY_SPRINGS_NC_REFINERY_69MPA</span>
-      <span>● REVENUE_STREAM_01: ALDI_RETAIL_PUNCH_ENGINE</span>
-      <span>● REVENUE_STREAM_02: SENTINEL_PROPHYLAXIS_DSHEA</span>
-      <span>● REVENUE_STREAM_03: PHARMA_SENTINEL_V1_BETA</span>
-      <span>● METABOLITE_CONSISTENCY: 99.4%_VERIFIED</span>
+      <span>● REVENUE_ENGINE: ALDI_RETAIL_90_SEC_POUCH</span>
+      <span>● DSHEA_STATUS: SENTINEL_PROPHYLAXIS_ACTIVE</span>
+      <span>● PHARMA: C3-SULFAMATE_STS_DOUBLE_TAP</span>
+      <span>● BCL2_AFFINITY: 21_NM_ALLOSTERIC_NUDGE</span>
     </div>
   </div>
 
@@ -87,12 +87,12 @@
   <nav class="fixed w-full top-6 z-50 px-4">
     <div class="max-w-7xl mx-auto h-20 glass-card rounded-sm flex justify-between items-center px-8 border-white/5">
       <div class="flex items-center gap-4 group cursor-pointer" onclick="window.scrollTo(0,0)">
-        <svg class="h-10 w-auto" viewBox="0 0 100 100" fill="none">
+        <svg class="h-10 w-auto transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none">
           <circle cx="50" cy="50" r="48" fill="#020617" stroke="#38bdf8" stroke-width="2"/>
           <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="#fff" text-anchor="middle">222</text>
         </svg>
         <div class="flex flex-col">
-          <span class="text-2xl text-white homemade-apple-regular leading-none">to22s</span>
+          <span class="text-2xl text-white font-script leading-none">to22s</span>
           <span class="text-[8px] font-bold text-brand-blue uppercase tracking-[0.3em]">Bio-Systems</span>
         </div>
       </div>
@@ -107,7 +107,7 @@
     </div>
   </nav>
 
-  <!-- Hero: Discovery to Delivery -->
+  <!-- Hero: Scaling the Outlier -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden blueprint-grid pt-10">
     <div class="absolute inset-0 bg-gradient-to-b from-brand-obsidian via-transparent to-brand-obsidian pointer-events-none"></div>
     
@@ -119,8 +119,8 @@
         Vertical<br />
         <span class="gradient-text text-brand-blue">Sovereignty.</span>
       </h1>
-      <p class="mt-12 max-w-4xl mx-auto text-xl md:text-2xl text-brand-slate font-light leading-relaxed">
-        From the Arkansas soil to the Holly Springs circuit. We decouple pharmaceutical discovery from supply-chain risk through a proprietary, 69 MPa biorefinery network.
+      <p class="mt-12 max-w-4xl mx-auto text-xl md:text-2xl text-brand-slate font-light leading-relaxed italic">
+        "Decoupling molecular discovery from supply-chain risk."
       </p>
       <div class="mt-20 flex flex-col sm:flex-row gap-12 justify-center items-center">
           <div class="text-left border-l-2 border-brand-blue/30 pl-6">
@@ -128,8 +128,8 @@
               <div class="text-[9px] uppercase tracking-widest text-slate-500">USDA-Tiara Yield</div>
           </div>
           <div class="text-left border-l-2 border-brand-blue/30 pl-6">
-              <div class="text-white font-black text-2xl">639.7 <span class="text-sm font-mono text-brand-blue">SI</span></div>
-              <div class="text-[9px] uppercase tracking-widest text-slate-500">Liver Metastasis Peak</div>
+              <div class="text-white font-black text-2xl">397.2 <span class="text-sm font-mono text-brand-blue">SI</span></div>
+              <div class="text-[9px] uppercase tracking-widest text-slate-500">Squamous Cell Peak</div>
           </div>
           <div class="text-left border-l-2 border-brand-blue/30 pl-6">
               <div class="text-white font-black text-2xl">140 <span class="text-sm font-mono text-brand-blue">DAYS</span></div>
@@ -139,64 +139,61 @@
     </div>
   </section>
 
-  <!-- Section: Node 1 (The IP Gate) -->
+  <!-- Section: Node 1 (UHP Cold-Stamp) -->
   <section id="sovereignty" class="py-40 bg-black relative border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid lg:grid-cols-2 gap-24 items-center">
         <div>
-          <span class="text-brand-blue font-black text-[11px] uppercase tracking-[0.5em] mb-6 block">Supply Chain Fortress</span>
-          <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">The Proprietary <br><span class="text-brand-blue">Mill Node.</span></h2>
-          <p class="text-lg text-brand-slate leading-relaxed mb-12 italic">
-            "We discovered the outlier; we own the printer."
+          <span class="text-brand-blue font-black text-[11px] uppercase tracking-[0.5em] mb-6 block">Proprietary Node 1 (Arkansas)</span>
+          <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">The IP <br><span class="text-brand-blue">Gate.</span></h2>
+          <p class="text-lg text-brand-slate leading-relaxed mb-12">
+            We don't cook our rice; we stabilize it with physics. Node 1 utilizes a proprietary <strong>Ultra-High Pressure (UHP) Cold-Stamp</strong> process to preserve the delicate 9,19-cyclopropane ring.
           </p>
           <div class="space-y-8">
             <div class="flex gap-6">
-                <div class="w-12 h-12 bg-brand-blue/10 rounded flex items-center justify-center shrink-0"><i data-lucide="shield-check" class="text-brand-blue"></i></div>
+                <div class="w-12 h-12 bg-brand-blue/10 rounded flex items-center justify-center shrink-0"><i data-lucide="snowflake" class="text-brand-blue"></i></div>
                 <div>
-                    <h4 class="text-white font-bold text-xs uppercase mb-2">Seed Sovereignty</h4>
-                    <p class="text-xs text-brand-slate leading-relaxed">Ownership of the milling lane eliminates commodity cross-contamination, ensuring absolute IP preservation for the Tiara lineage.</p>
+                    <h4 class="text-white font-bold text-xs uppercase mb-2">Zero-Shear Stabilization</h4>
+                    <p class="text-xs text-brand-slate leading-relaxed">Eliminating friction-based extrusion prevents "Molecular Shredding," keeping our lead metabolites in their native, active state.</p>
                 </div>
             </div>
             <div class="flex gap-6">
-                <div class="w-12 h-12 bg-brand-blue/10 rounded flex items-center justify-center shrink-0"><i data-lucide="thermometer-snowflake" class="text-brand-blue"></i></div>
+                <div class="w-12 h-12 bg-brand-blue/10 rounded flex items-center justify-center shrink-0"><i data-lucide="database" class="text-brand-blue"></i></div>
                 <div>
-                    <h4 class="text-white font-bold text-xs uppercase mb-2">Lithospheric Profiling</h4>
-                    <p class="text-xs text-brand-slate leading-relaxed">Feedstocks are secured from geologically-specific Grand Prairie acreage to guarantee the mineral density required for 397-fold oncology selectivity.</p>
+                    <h4 class="text-white font-bold text-xs uppercase mb-2">Lithospheric Fingerprinting</h4>
+                    <p class="text-xs text-brand-slate leading-relaxed">Feedstock consistency is anchored in the geologically-standardized soil of the Lonoke-Stuttgart axis.</p>
                 </div>
             </div>
           </div>
         </div>
         <div class="glass-card p-12 rounded-sm border-brand-blue/20">
-            <h3 class="text-white font-black text-sm uppercase tracking-widest mb-10">Industrial Efficiency: API Mining</h3>
+            <h3 class="text-white font-black text-sm uppercase tracking-widest mb-10">Volumetric ROI: API Mining</h3>
             <div class="grid grid-cols-2 gap-8 mb-10">
                 <div>
-                    <div class="text-[10px] text-brand-blue uppercase font-bold mb-2">Feedstock Format</div>
-                    <div class="text-xl text-white font-mono">Sentinel Pucks</div>
+                    <div class="text-[10px] text-brand-blue uppercase font-bold mb-2">Die Pressure</div>
+                    <div class="text-xl text-white font-mono">300 MPa</div>
                 </div>
                 <div>
-                    <div class="text-[10px] text-brand-blue uppercase font-bold mb-2">Densification</div>
-                    <div class="text-xl text-white font-mono">0.6 kg/dm³</div>
+                    <div class="text-[10px] text-brand-blue uppercase font-bold mb-2">Dwell Time</div>
+                    <div class="text-xl text-white font-mono">30-60 Sec</div>
                 </div>
             </div>
             <div class="p-6 bg-brand-blue/5 border border-brand-blue/20 rounded-sm">
-                <div class="text-[10px] text-emerald-500 uppercase font-bold mb-4 flex items-center gap-2">
-                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span> ROI Multiplier
-                </div>
-                <p class="text-sm text-brand-slate">By pre-forming cartridges at Node 1, we double the capacity of our Thyssenkrupp vessels, reducing CapEx payback from 14 months to <strong>140 days.</strong></p>
+                <p class="text-sm text-brand-slate">By pre-forming high-density **Sentinel Cartridges** at Node 1, we effectively double the capacity of our downstream supercritical circuit without increasing the vessel footprint.</p>
             </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Nutraceutical (Track 2) -->
+  <!-- Section: Nutraceutical (DSHEA Bridge) -->
   <section id="nutra" class="py-40 bg-brand-obsidian relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-24">
             <h2 class="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6 leading-none">Sentinel <span class="text-brand-blue italic">Prophylaxis.</span></h2>
-            <p class="text-brand-blue font-bold uppercase text-xs tracking-[0.6em]">DSHEA-Compliant Cash Flow Engine</p>
+            <p class="text-brand-blue font-bold uppercase text-xs tracking-[0.6em]">Cash-Flow Engine: Phytotherapy 2.0</p>
         </div>
-        <div class="grid lg:grid-cols-4 gap-4">
+        <div class="grid lg:grid-cols-4 gap-4 mb-20">
             <div class="glass-card p-8 text-center border-t-2 border-t-brand-blue">
                 <div class="text-4xl font-black text-white mb-2">60%</div>
                 <div class="text-[10px] uppercase font-bold text-brand-blue tracking-widest">Free Sterols</div>
@@ -214,48 +211,56 @@
                 <div class="text-[10px] uppercase font-bold text-brand-blue tracking-widest">Ferulates</div>
             </div>
         </div>
-        <div class="mt-12 max-w-3xl mx-auto text-center">
+        <div class="max-w-3xl mx-auto text-center">
             <p class="text-lg text-brand-slate leading-relaxed">
-                Utilizing <strong>PGSS (Particles from Gas Saturated Solutions)</strong>, we fractionate the Tiara lineage into a high-bioavailability prophylaxis targeted at the $3.5B BPH and enzymatic health market. This "Phytotherapy 2.0" engine funds our oncology pipeline at zero investor dilution.
+                Using DSHEA-compliant constituent release, we convert our "Mined API" precursors into high-bioavailability supplements. The revenue from the **Aldi grain line** and **Sentinel Prophylaxis** funds our pharma pipeline at 100% equity retention.
             </p>
         </div>
     </div>
   </section>
 
-  <!-- Section: The Matrix -->
+  <!-- Section: The Double Tap -->
   <section id="matrix" class="py-40 bg-black relative border-y border-white/5">
     <div class="max-w-7xl mx-auto px-4">
         <div class="grid lg:grid-cols-2 gap-24 items-center">
             <div>
-                <span class="text-brand-blue font-black text-[11px] uppercase tracking-[0.5em] mb-6 block">Interactomics Audit: 63,121 Profiles</span>
-                <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">The Apex <br><span class="text-brand-blue">Vulnerability.</span></h2>
+                <span class="text-brand-blue font-black text-[11px] uppercase tracking-[0.5em] mb-6 block">Lead Asset: Sentinel-V1-Beta</span>
+                <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-10 leading-none">The Covalent <br><span class="text-brand-blue">Double Tap.</span></h2>
                 <p class="text-lg text-brand-slate mb-12 leading-relaxed">
-                    We identified a specific genetic outlier: **Lung Adenocarcinoma Liver Metastases** exhibit a 13.17x upregulation of STS compared to healthy liver tissue.
+                    We've engineered a **3rd Generation STS Inhibitor**. Our C3-Sulfamate prodrug creates a surgical strike through a dual-axial mechanism.
                 </p>
                 <div class="space-y-6">
                     <div class="flex justify-between border-b border-white/5 pb-2">
-                        <span class="text-xs uppercase font-bold">Liver Metastasis SI</span>
-                        <span class="text-white font-mono">639.7x</span>
+                        <span class="text-xs uppercase font-bold">Tap 1: Covalent STS Lock</span>
+                        <span class="text-emerald-500 font-mono">Irreversible</span>
                     </div>
                     <div class="flex justify-between border-b border-white/5 pb-2">
-                        <span class="text-xs uppercase font-bold">Neuro-Senolysis SI</span>
-                        <span class="text-white font-mono">276.3x</span>
+                        <span class="text-xs uppercase font-bold">Tap 2: Allosteric Bcl-2 Nudge</span>
+                        <span class="text-white font-mono">21 nM Affinity</span>
                     </div>
                     <div class="flex justify-between border-b border-white/5 pb-2">
-                        <span class="text-xs uppercase font-bold">Breast Cancer Safety*</span>
-                        <span class="text-brand-blue font-mono">1,200x</span>
+                        <span class="text-xs uppercase font-bold">Retention Platform</span>
+                        <span class="text-brand-blue font-mono">CAII Erythrocyte Anchor</span>
                     </div>
                 </div>
-                <p class="text-[9px] text-slate-600 mt-6 uppercase">*Selectivity ratio for ER-Beta (The Brake) vs ER-Alpha (The Gas Pedal).</p>
             </div>
             <div class="glass-card p-12 rounded-sm border-brand-blue/10 relative overflow-hidden">
-                <i data-lucide="microscope" class="w-64 h-64 absolute -bottom-10 -right-10 opacity-5 text-white"></i>
-                <h4 class="text-brand-blue font-black text-xs uppercase tracking-widest mb-8">Clinical Roadmap</h4>
-                <ul class="space-y-6 text-sm text-brand-slate">
-                    <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full"></span> <strong>Phase 1:</strong> BPH Prophylaxis & Antioxidant Market</li>
-                    <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full"></span> <strong>Phase 2:</strong> Metastatic Lung-to-Liver Therapeutics</li>
-                    <li class="flex items-center gap-4"><span class="w-1.5 h-1.5 bg-brand-blue rounded-full"></span> <strong>Phase 3:</strong> TreM2-Targeted Neuro-Senolysis</li>
-                </ul>
+                <i data-lucide="zap" class="w-64 h-64 absolute -bottom-10 -right-10 opacity-5 text-white"></i>
+                <h4 class="text-brand-blue font-black text-xs uppercase tracking-widest mb-8">The Vulnerability Leaderboard</h4>
+                <div class="space-y-4">
+                    <div class="flex justify-between text-sm">
+                        <span>Squamous Cell Lung Carcinoma</span>
+                        <span class="text-white font-bold">397.2x SI</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span>Dementia (TREM2 Microglia)</span>
+                        <span class="text-white font-bold">276.3x SI</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span>Breast Cancer (STS-Addicted)</span>
+                        <span class="text-white font-bold">72.6x SI</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -272,36 +277,34 @@
                     <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="#fff" text-anchor="middle">222</text>
                 </svg>
                 <div class="flex flex-col">
-                    <span class="text-3xl text-white homemade-apple-regular leading-none">to22s</span>
+                    <span class="text-3xl text-white font-script leading-none">to22s</span>
                     <span class="text-[9px] font-bold text-brand-blue uppercase tracking-[0.4em]">Bio-Systems</span>
                 </div>
             </div>
-            <p class="text-sm max-w-md mb-8">to22s Bio-Systems: The cancer medicine you want to take. Vertically integrated from the soil to the synapse.</p>
-            <div class="flex gap-4">
-                <a href="mailto:prime@to22s.com" class="px-8 py-4 bg-brand-blue text-brand-obsidian font-black uppercase tracking-widest text-[10px] rounded-sm">Request Data Room</a>
-            </div>
+            <p class="text-sm max-w-md mb-8 italic">"to22s Bio-Systems: The cancer medicine you want to take."</p>
+            <a href="mailto:prime@to22s.com" class="px-8 py-4 bg-brand-blue text-brand-obsidian font-black uppercase tracking-widest text-[10px] rounded-sm shadow-[0_0_20px_rgba(14,165,233,0.3)]">Request Data Room</a>
         </div>
         
         <div class="space-y-4">
-          <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-6">Vertical Nodes</h5>
+          <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-6">Industrial Tranches</h5>
           <ul class="text-[10px] font-mono space-y-3 uppercase">
-            <li class="flex justify-between border-b border-white/5 pb-1"><span>Node 1 Gate</span> <span class="text-brand-blue italic">Arkansas</span></li>
-            <li class="flex justify-between border-b border-white/5 pb-1"><span>Node 2 Tower</span> <span class="text-brand-blue italic">Holly Springs</span></li>
-            <li class="flex justify-between border-b border-white/5 pb-1"><span>Logistics</span> <span class="text-brand-blue italic">Sentinel Pod</span></li>
+            <li class="flex justify-between border-b border-white/5 pb-1"><span>Track 1</span> <span class="text-brand-blue">Aldi CPG</span></li>
+            <li class="flex justify-between border-b border-white/5 pb-1"><span>Track 2</span> <span class="text-brand-blue">Sentinel Prophylaxis</span></li>
+            <li class="flex justify-between border-b border-white/5 pb-1"><span>Track 3</span> <span class="text-brand-blue">Sentinel Pharma</span></li>
           </ul>
         </div>
 
         <div class="space-y-4">
-            <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-6">Institutional</h5>
+            <h5 class="text-white font-bold text-[10px] uppercase tracking-widest mb-6">Governance</h5>
             <ul class="text-[10px] font-mono space-y-3 uppercase">
-              <li class="flex justify-between border-b border-white/5 pb-1"><span>Diligence</span> <span class="text-white">J.P. Morgan</span></li>
-              <li class="flex justify-between border-b border-white/5 pb-1"><span>Audit</span> <span class="text-white">Charles River</span></li>
-              <li class="flex justify-between border-b border-white/5 pb-1"><span>Engineering</span> <span class="text-white">Thyssenkrupp</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>Banking</span> <span class="text-white">J.P. Morgan Diligence</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>Audit</span> <span class="text-white">Charles River Labs</span></li>
+              <li class="flex justify-between border-b border-white/5 pb-1"><span>License</span> <span class="text-white">USDA-ARS (Active)</span></li>
             </ul>
           </div>
       </div>
       <div class="pt-16 border-t border-white/5 text-[10px] text-white/20 uppercase font-mono tracking-widest text-center leading-loose">
-        &copy; 2026 to22s Bio-Systems, Inc. // Form AD-761 Active // 35 U.S.C. 209 Protected // US-Domestic Infrastructure
+        &copy; 2026 to22s Bio-Systems, Inc. <span class="mx-2">//</span> 35 U.S.C. 209 Confidential <span class="mx-2">//</span> US-Sovereign Infrastructure
       </div>
     </div>
   </footer>
