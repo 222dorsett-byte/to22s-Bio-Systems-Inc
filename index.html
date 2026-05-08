@@ -250,20 +250,27 @@
 
     /* No anti-aliasing artifacts on transforms */
     * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    /* Specialized glass for the full-bleed header */
+    .glass-header {
+      background: rgba(2, 6, 23, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
   </style>
 </head>
 
 <body class="bg-ink-950 text-bone-300" data-om-id="545adc10:8">
 
   <!-- Scroll progress bar -->
-  <div id="progress" aria-hidden="true"></div>
+  <div id="progress" class="scroll-progress" aria-hidden="true"></div>
 
   <!-- Top live ticker: chain of custody -->
   <div id="ticker"
        role="region"
        aria-label="Live operations ticker"
-       class="fixed top-0 w-full z-[60] bg-brand-blue py-1 overflow-hidden border-b border-white/10">
-    <div class="whitespace-nowrap flex gap-10 animate-ticker text-[9px] font-black text-white uppercase tracking-[0.2em]">
+       class="fixed top-0 w-full h-8 z-[60] bg-brand-blue flex items-center overflow-hidden border-b border-white/10" style="background-color: #38bdf8;">
+    <div class="whitespace-nowrap flex gap-10 animate-ticker text-[9px] font-black text-ink-950 uppercase tracking-[0.2em] pt-0.5">
       <!-- Repeat the same content twice so the loop appears seamless. -->
       <span>● US_FEEDSTOCK :: ARKANSAS ↔ CALIFORNIA</span>
       <span>● NODE_01 :: ARKANSAS_MILL // IP_GATE</span>
@@ -296,24 +303,25 @@
   </div>
 
   <!-- Navigation -->
-  <nav class="fixed w-full top-6 z-50 px-4">
-    <div class="max-w-7xl mx-auto h-20 glass-card rounded-sm flex justify-between items-center px-6 md:px-8 border-white/5">
+  <!-- Docked precisely at top-8 (32px) to match the h-8 ticker, spanning full width to prevent bleed-through -->
+  <nav class="fixed w-full top-8 z-50 glass-header border-b border-white/10" style="border-top: none; border-left: none; border-right: none; border-radius: 0;">
+    <div class="max-w-7xl mx-auto h-20 flex justify-between items-center px-4 md:px-8">
       <a href="#top" class="flex items-center gap-4 group cursor-pointer" aria-label="to22s Bio-Systems home">
-        <svg class="h-10 w-auto transition-transform group-hover:scale-110" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <circle cx="50" cy="50" r="48" fill="#020617" stroke="#0ea5e9" stroke-width="2" />
+        <svg class="h-10 w-auto transition-transform group-hover:scale-110 drop-shadow-[0_0_10px_rgba(125,211,252,0.4)]" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" fill="#05060d" stroke="#7dd3fc" stroke-width="2" />
           <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="#fff" text-anchor="middle">222</text>
         </svg>
         <div class="flex flex-col">
           <span class="text-2xl text-white font-script leading-none">to22s</span>
-          <span class="text-[8px] font-bold text-brand-blue uppercase tracking-[0.3em]">Bio-Systems</span>
+          <span class="text-[8px] font-bold text-haze-500 uppercase tracking-[0.3em] mt-1">Bio-Systems</span>
         </div>
       </a>
 
       <div class="hidden md:flex space-x-12 text-[10px] font-black uppercase tracking-[0.3em]">
-        <a href="#sovereignty" class="hover:text-brand-blue transition-colors">Sovereignty</a>
-        <a href="#matrix"      class="hover:text-brand-blue transition-colors">The Matrix</a>
-        <a href="#pka"         class="hover:text-brand-blue transition-colors">Sentinel V1</a>
-        <a href="#cta"         class="hover:text-brand-blue transition-colors">Diligence</a>
+        <a href="#sovereignty" class="hover:text-haze-500 transition-colors">Sovereignty</a>
+        <a href="#matrix"      class="hover:text-haze-500 transition-colors">The Matrix</a>
+        <a href="#pka"         class="hover:text-haze-500 transition-colors">Sentinel V1</a>
+        <a href="#cta"         class="hover:text-haze-500 transition-colors">Diligence</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -324,7 +332,7 @@
           <i data-lucide="menu" class="w-5 h-5"></i>
         </button>
         <a href="#cta"
-           class="hidden sm:inline-block px-6 py-2 bg-brand-blue text-white text-[9px] font-black uppercase tracking-widest rounded-sm shadow-[0_0_20px_rgba(14,165,233,0.3)] hover:scale-105 transition-all">
+           class="hidden sm:inline-block px-6 py-2.5 bg-haze-500 text-ink-950 text-[9px] font-black uppercase tracking-widest rounded-sm shadow-[0_0_24px_rgba(125,211,252,0.35)] hover:scale-105 transition-all">
           Institutional Access
         </a>
       </div>
@@ -332,20 +340,33 @@
 
     <!-- Mobile nav drawer -->
     <div id="mobileNav"
-         class="md:hidden hidden mt-2 max-w-7xl mx-auto glass-card rounded-sm p-6 border-white/5 text-[11px] font-black uppercase tracking-[0.3em]">
-      <a href="#sovereignty" class="block py-2 hover:text-brand-blue">Sovereignty</a>
-      <a href="#matrix"      class="block py-2 hover:text-brand-blue">The Matrix</a>
-      <a href="#pka"         class="block py-2 hover:text-brand-blue">Sentinel V1</a>
-      <a href="#cta"         class="block py-2 hover:text-brand-blue">Diligence</a>
+         class="md:hidden hidden border-t border-white/10 p-6 text-[11px] font-black uppercase tracking-[0.3em] bg-ink-950/95 backdrop-blur-xl">
+      <a href="#sovereignty" class="block py-3 hover:text-haze-500">Sovereignty</a>
+      <a href="#matrix"      class="block py-3 hover:text-haze-500">The Matrix</a>
+      <a href="#pka"         class="block py-3 hover:text-haze-500">Sentinel V1</a>
+      <a href="#cta"         class="block py-3 hover:text-haze-500">Diligence</a>
     </div>
   </nav>
 
   <span id="top"></span>
 
   <!-- Hero: scaling the outlier -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden blueprint-grid pt-10" data-om-id="545adc10:55">
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-obsidian via-transparent to-brand-obsidian pointer-events-none"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-blue/5 blur-[180px] rounded-full"></div>
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-10" data-om-id="545adc10:55">
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-950 via-transparent to-ink-950 pointer-events-none z-10"></div>
+    <!-- Layered grid -->
+    <div class="absolute inset-0 blueprint-grid blueprint-grid-mask z-0"></div>
+
+    <!-- Concentric focal rings -->
+    <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
+      <div class="ring" style="width: 320px; height: 320px;"></div>
+      <div class="ring" style="width: 560px; height: 560px;"></div>
+      <div class="ring" style="width: 860px; height: 860px;"></div>
+      <div class="ring" style="width: 1240px; height: 1240px; opacity:0.6;"></div>
+      <div class="ring" style="width: 1700px; height: 1700px; opacity:0.4;"></div>
+    </div>
+
+    <!-- Inner spotlight -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(60% 50% at 50% 60%, rgba(125,211,252,0.12), transparent 70%);"></div>
 
     <div class="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center" data-parallax data-om-id="545adc10:65">
       <div class="reveal inline-flex items-center justify-center gap-3 mb-10 px-5 py-2 rounded-sm border border-haze-500/30 bg-haze-500/5 backdrop-blur-md" data-om-id="545adc10:66">
@@ -1024,7 +1045,7 @@
           <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500 mb-6" data-om-id="545adc10:512">05 // INSTITUTIONAL ACCESS · SBA 504 ANCHORED</span>
           <h2 class="text-4xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-8 leading-tight extrude" data-om-id="545adc10:513">The Fortress<br data-om-id="545adc10:514"/><span class="gradient-text-2" data-om-id="545adc10:515">Architecture.</span></h2>
           <p class="text-lg text-bone-500 leading-relaxed font-light mb-12" data-om-id="545adc10:516">
-            US-Sovereign Infrastructure backed by USDA-ARS license, J.P. Morgan diligence, and Charles River audit. Three tracks. One vertical.
+            US-Sovereign Infrastructure backed by USDA-ARS license, J.P. Morgan diligence, and *transitioning audit. Three tracks. One vertical.
           </p>
           <a href="/cdn-cgi/l/email-protection#b2c2c0dbdfd7f2c6dd8080c19cd1dddf" class="group relative px-10 py-5 bg-haze-500 text-ink-950 font-black uppercase tracking-widest text-xs rounded-sm inline-flex items-center gap-3 shadow-[0_20px_40px_-10px_rgba(125,211,252,0.5)] hover:-translate-y-1 transition-all duration-300" data-om-id="545adc10:517">
             Request Data Room
@@ -1038,7 +1059,7 @@
             </div>
             <div class="flex items-center justify-between" data-om-id="545adc10:524">
               <span class="text-bone-500" data-om-id="545adc10:525">Audit</span>
-              <span class="text-white" data-om-id="545adc10:526">Charles River Labs</span>
+              <span class="text-white" data-om-id="545adc10:526">transitioning</span>
             </div>
             <div class="flex items-center justify-between" data-om-id="545adc10:527">
               <span class="text-bone-500" data-om-id="545adc10:528">License</span>
