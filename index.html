@@ -302,7 +302,7 @@
       <span>● NODE_02 :: HOLLY_SPRINGS_NC // 69_MPA_BIOREFINERY</span>
       <span>● COMMAND :: ST_PETERSBURG_GLOBAL</span>
       <span>● PRODUCTION_SCALE :: 10_MT/DAY_PLANT</span>
-      <span>● REVENUE_ENGINE :: ALDI_RETAIL_90_SEC_POUCH</span>
+      <span>● REVENUE_ENGINE :: CPG_RETAIL_90_SEC_POUCH</span>
       <span>● DSHEA_STATUS :: SENTINEL_PROPHYLAXIS_ACTIVE</span>
       <span>● PHARMA :: C3-SULFAMATE_STS_DOUBLE_TAP</span>
       <span>● BCL2_AFFINITY :: 21_NM_ALLOSTERIC_NUDGE</span>
@@ -315,7 +315,7 @@
       <span>● NODE_02 :: HOLLY_SPRINGS_NC // 69_MPA_BIOREFINERY</span>
       <span>● COMMAND :: ST_PETERSBURG_GLOBAL</span>
       <span>● PRODUCTION_SCALE :: 10_MT/DAY_PLANT</span>
-      <span>● REVENUE_ENGINE :: ALDI_RETAIL_90_SEC_POUCH</span>
+      <span>● REVENUE_ENGINE :: CPG_RETAIL_90_SEC_POUCH</span>
       <span>● DSHEA_STATUS :: SENTINEL_PROPHYLAXIS_ACTIVE</span>
       <span>● PHARMA :: C3-SULFAMATE_STS_DOUBLE_TAP</span>
       <span>● BCL2_AFFINITY :: 21_NM_ALLOSTERIC_NUDGE</span>
@@ -342,9 +342,9 @@
         <a href="#sovereignty" class="nav-link hover:text-haze-500 transition-colors">Sovereignty</a>
         <a href="#engine"      class="nav-link hover:text-haze-500 transition-colors">Engine</a>
         <a href="#stack"       class="nav-link hover:text-haze-500 transition-colors">Stack</a>
-        <a href="#pka"         class="nav-link hover:text-haze-500 transition-colors">Sentinel</a>
+        <a href="#pka"          class="nav-link hover:text-haze-500 transition-colors">Sentinel</a>
         <a href="#topology"    class="nav-link hover:text-haze-500 transition-colors">Topology</a>
-        <a href="#cta"         class="nav-link hover:text-haze-500 transition-colors">Diligence</a>
+        <a href="#cta"          class="nav-link hover:text-haze-500 transition-colors">Diligence</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -362,9 +362,9 @@
       <a href="#sovereignty" class="block py-3 hover:text-haze-500">Sovereignty</a>
       <a href="#engine"      class="block py-3 hover:text-haze-500">Engine</a>
       <a href="#stack"       class="block py-3 hover:text-haze-500">Stack</a>
-      <a href="#pka"         class="block py-3 hover:text-haze-500">Sentinel</a>
+      <a href="#pka"          class="block py-3 hover:text-haze-500">Sentinel</a>
       <a href="#topology"    class="block py-3 hover:text-haze-500">Topology</a>
-      <a href="#cta"         class="block py-3 hover:text-haze-500">Diligence</a>
+      <a href="#cta"          class="block py-3 hover:text-haze-500">Diligence</a>
     </div>
   </nav>
 
@@ -1316,7 +1316,7 @@
                 <span class="text-[9px] font-mono text-haze-500">2026</span>
               </div>
               <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500/80 mb-2 lift">// CPG · ACTIVE</div>
-              <div class="text-[11px] uppercase tracking-widest text-bone-300 font-bold leading-relaxed mt-auto lift">Aldi CPG · Revenue Engine</div>
+              <div class="text-[11px] uppercase tracking-widest text-bone-300 font-bold leading-relaxed mt-auto lift">Tier-1 Retail · Revenue Engine</div>
               <div class="mt-3 flex items-center gap-2">
                 <div class="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
                   <div class="h-full bg-gradient-to-r from-haze-500 to-haze-700 rounded-full shadow-[0_0_8px_rgba(125,211,252,0.6)]" style="width:78%"></div>
@@ -1464,12 +1464,23 @@
       }
     });
 
-    // ---- Scroll Progress & Scroll Spy ----
+    // ---- Optimized Scroll Progress & Scroll Spy using RequestAnimationFrame ----
     const progress = document.getElementById('progress');
     const sections = document.querySelectorAll('section, footer');
     const navLinks = document.querySelectorAll('.nav-link');
+    let isScrollTicking = false;
 
     window.addEventListener('scroll', () => {
+      if (!isScrollTicking) {
+        window.requestAnimationFrame(() => {
+          updateScrollMetrics();
+          isScrollTicking = false;
+        });
+        isScrollTicking = true;
+      }
+    }, { passive: true });
+
+    function updateScrollMetrics() {
       // Progress Bar
       const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1492,7 +1503,7 @@
           link.classList.add('active');
         }
       });
-    });
+    }
 
     // ---- Intersection Observers for Reveals and Stack Layers ----
     const observerOptions = {
@@ -1519,8 +1530,6 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-        } else {
-           // entry.target.classList.remove('active'); // Optional: remove if you want it to revert
         }
       });
     }, { threshold: 0.5 });
@@ -1533,7 +1542,6 @@
     const revCounter = document.getElementById('rev-counter');
     let currentRev = 12450000;
     setInterval(() => {
-      // simulate steady, continuous industrial revenue
       currentRev += Math.floor(Math.random() * 200) + 50; 
       if (revCounter) revCounter.innerText = currentRev.toLocaleString('en-US');
     }, 1500);
@@ -1598,7 +1606,6 @@
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         
-        // Split label and metric
         ctx.fillText(this.label, this.x, this.y - 6);
         
         ctx.fillStyle = color;
@@ -1607,7 +1614,7 @@
       }
 
       update() {
-        if (draggedNode === this) return; // Don't apply physics while dragging
+        if (draggedNode === this) return; // Physics paused on drag
 
         // Center gravity
         if (canvasPhysicsGravity) {
@@ -1627,7 +1634,7 @@
         this.vx *= 0.95;
         this.vy *= 0.95;
 
-        // Bounce off walls
+        // Wall boundary checks
         const padding = this.radius;
         if (this.x < padding) { this.x = padding; this.vx *= -1; }
         if (this.x > canvas.width - padding) { this.x = canvas.width - padding; this.vx *= -1; }
@@ -1638,7 +1645,6 @@
 
     function initCanvas() {
       if (!canvas) return;
-      // Handle high DPI displays
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.parentElement.getBoundingClientRect();
       
@@ -1651,7 +1657,7 @@
       const w = rect.width;
       const h = rect.height;
 
-      // Create initial nodes
+      // Initialize system nodes mapping
       nodes = [
         new TopologyNode('node1', 'Node 01', 'Active', '10 MT/Day', w*0.3, h*0.3),
         new TopologyNode('node2', 'Node 02', 'Staged', '69 MPa', w*0.7, h*0.4),
@@ -1659,12 +1665,10 @@
         new TopologyNode('node4', 'St. Pete', 'Hold', 'Command', w*0.8, h*0.8),
       ];
 
-      // Define connections
       connections = [
         [0, 1], [0, 2], [1, 3], [2, 1]
       ];
 
-      // Select first node by default
       selectNode(nodes[0]);
     }
 
@@ -1680,14 +1684,14 @@
         ctx.moveTo(n1.x, n1.y);
         ctx.lineTo(n2.x, n2.y);
         
-        // Gradient stroke
+        // Gradient trace lines
         const grad = ctx.createLinearGradient(n1.x, n1.y, n2.x, n2.y);
         grad.addColorStop(0, COLORS[n1.status] || '#cbd5e1');
         grad.addColorStop(1, COLORS[n2.status] || '#cbd5e1');
         ctx.strokeStyle = grad;
         ctx.stroke();
 
-        // Moving dots on lines
+        // Flow particles
         const time = Date.now() / 1500;
         const progress = (time + i*0.2 + j*0.1) % 1;
         const dotX = n1.x + (n2.x - n1.x) * progress;
@@ -1737,7 +1741,6 @@
       requestAnimationFrame(animateCanvas);
     }
 
-    // Interaction handlers
     function getMousePos(evt) {
       const rect = canvas.getBoundingClientRect();
       const scaleX = canvas.width / rect.width / (window.devicePixelRatio || 1);
@@ -1749,9 +1752,9 @@
     }
 
     if(canvas) {
+      // Mouse listeners
       canvas.addEventListener('mousedown', (e) => {
         const pos = getMousePos(e);
-        // Find clicked node
         for (let i = nodes.length - 1; i >= 0; i--) {
           const n = nodes[i];
           const dx = pos.x - n.x;
@@ -1780,7 +1783,36 @@
         draggedNode = null;
       });
 
-      // Handle window resize
+      // --- Advanced Touch Event Support for Canvas Cards ---
+      canvas.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          const touch = e.touches[0];
+          const mouseEvent = new MouseEvent("mousedown", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          });
+          canvas.dispatchEvent(mouseEvent);
+        }
+      }, { passive: false });
+
+      window.addEventListener('touchmove', (e) => {
+        if (draggedNode && e.touches.length === 1) {
+          const touch = e.touches[0];
+          const mouseEvent = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          });
+          window.dispatchEvent(mouseEvent);
+          e.preventDefault(); // Prevent scrolling while adjusting refinery nodes
+        }
+      }, { passive: false });
+
+      window.addEventListener('touchend', () => {
+        const mouseEvent = new MouseEvent("mouseup", {});
+        window.dispatchEvent(mouseEvent);
+      });
+
+      // Resize observer setup to dynamically scale and update
       window.addEventListener('resize', () => {
         if(!canvas) return;
         const rect = canvas.parentElement.getBoundingClientRect();
@@ -1793,7 +1825,7 @@
       });
     }
 
-    // UI Synchronization
+    // UI Configuration & Sync Functions
     function selectNode(node) {
       selectedNode = node;
       document.getElementById('active-selected-label').innerText = `Selected: ${node.id}`;
@@ -1837,7 +1869,7 @@
       });
     }
 
-    // Initialize Canvas
+    // Initial setup on window load
     window.addEventListener('load', () => {
       initCanvas();
       animateCanvas();
