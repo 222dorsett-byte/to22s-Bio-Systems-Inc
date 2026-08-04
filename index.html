@@ -163,7 +163,7 @@
         <a href="#oncology" class="nav-link hover:text-purple-400 transition-colors">Oncology &amp; NIH</a>
         <a href="#chemistry" class="nav-link hover:text-amber-400 transition-colors">Formulation</a>
         <a href="#network" class="nav-link hover:text-sky-400 transition-colors">Research Partners</a>
-        <a href="#diligence" class="nav-link hover:text-sky-400 transition-colors">Diligence</a>
+        
       </nav>
 
       <div class="flex items-center gap-4">
@@ -717,22 +717,26 @@
         Request Executive Proposal Package.
       </h2>
       <p class="text-slate-300 text-base mt-4 font-light max-w-2xl mx-auto">
-        Access our clean Executive Summaries, Phase I Specific Aims, Phase II computational binding trajectory datasets, and full patent portfolio claim dossiers across all four target domains.
+        Access our clean, non-markdown Executive Summaries, Phase I Specific Aims, Phase II computational binding trajectory datasets, and patent claim dossiers.
       </p>
 
       <div class="glass-panel p-8 rounded-2xl mt-10 max-w-xl mx-auto text-left">
-        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Request received. Executive dossier will be dispatched to your institutional email.');">
+        <form action="https://formsubmit.co/prime@to22s.com" method="POST" class="space-y-4">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New Diligence Request from to22s.com">
+          <input type="hidden" name="_captcha" value="false">
+          
           <div>
             <label for="fullName" class="block text-xs font-mono text-slate-400 uppercase mb-1">Full Name &amp; Title</label>
-            <input id="fullName" type="text" placeholder="Executive / Principal Partner" required class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-400 font-mono" />
+            <input id="fullName" name="Name" type="text" placeholder="Dr. Jane Doe &bull; Partner" required class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-400 font-mono" />
           </div>
           <div>
             <label for="email" class="block text-xs font-mono text-slate-400 uppercase mb-1">Institutional Email</label>
-            <input id="email" type="email" placeholder="j.doe@institution.edu" required class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-400 font-mono" />
+            <input id="email" name="Email" type="email" placeholder="j.doe@institution.edu" required class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-400 font-mono" />
           </div>
           <div>
             <label for="areaOfInterest" class="block text-xs font-mono text-slate-400 uppercase mb-1">Area of Interest</label>
-            <select id="areaOfInterest" class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-400 font-mono">
+            <select id="areaOfInterest" name="Interest" class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-400 font-mono">
               <option>USDA SBIR Topic 8.2 AgChem Licensing / Testing</option>
               <option>NCI SBIR Oncology Licensing / Co-Development</option>
               <option>NSF STTR Biomanufacturing Partnership</option>
