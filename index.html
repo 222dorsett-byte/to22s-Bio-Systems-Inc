@@ -3,1878 +3,817 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#05060d" />
-  <title>to22s Bio-Systems — The Global Sentinel</title>
-  <meta name="description" content="to22s Bio-Systems: A global systems pharmacology utility bridging structural biology and 69 MPa industrial reality." />
+  <meta name="theme-color" content="#030712" />
+  <title>to22s Bio-Systems — Deep-Tech Systems Pharmacology &amp; Biorational AgChem</title>
+  <meta name="description" content="to22s Bio-Systems, Inc.: Biorational phytosterol elicitors for cross-kingdom programmed cell death modulation, agricultural biosecurity, and oncology." />
   
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2305060d' stroke='%237dd3fc' stroke-width='4'/><text x='50' y='65' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='32' fill='white' text-anchor='middle'>222</text></svg>" />
-  
-  <link rel="preload" as="image" href="https://i.imgur.com/MsPKcYu.jpeg" />
-  <link rel="preload" as="image" href="https://i.imgur.com/pYXImxq.jpeg" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23030712' stroke='%2338bdf8' stroke-width='4'/><text x='50' y='65' font-family='Inter,sans-serif' font-weight='900' font-size='30' fill='white' text-anchor='middle'>222</text></svg>" />
   
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Homemade+Apple&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@0.400.0/dist/umd/lucide.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
   
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'], script: ['Homemade Apple', 'cursive'] },
-          colors: {
-            ink:    { 950: '#05060d', 900: '#0a0d1a', 800: '#11162a', 700: '#1a2138' },
-            haze:   { 500: '#7dd3fc', 600: '#38bdf8', 700: '#0ea5e9' },
-            ember:  { 500: '#f0b67f' },
-            violet: { 700: '#3b2f6b', 900: '#1e1b4b' },
-            bone:   { 100: '#f5f3ee', 300: '#cbd5e1', 500: '#94a3b8' },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
           },
-        },
-      },
+          colors: {
+            brand: {
+              950: '#030712',
+              900: '#0b1329',
+              800: '#111e38',
+              700: '#1d2d50',
+              cyan: '#38bdf8',
+              emerald: '#34d399',
+              amber: '#f0b67f',
+              purple: '#a78bfa',
+            }
+          }
+        }
+      }
     };
   </script>
   
   <style>
     :root {
-      --ink-950: #05060d;
-      --ink-900: #0a0d1a;
-      --ink-800: #11162a;
-      --haze: #7dd3fc;
-      --haze-deep: #38bdf8;
-      --ember: #f0b67f;
-      --bone: #cbd5e1;
+      --bg-dark: #030712;
+      --cyan: #38bdf8;
+      --emerald: #34d399;
+      --amber: #f0b67f;
+      --purple: #a78bfa;
     }
-    html, body { background: var(--ink-950); }
     body {
-      color: var(--bone);
+      background-color: var(--bg-dark);
+      color: #e2e8f0;
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
-    .font-script { font-family: 'Homemade Apple', cursive; }
-    .font-mono   { font-family: 'JetBrains Mono', monospace; }
 
-    /* ---- Cursor spotlight (hero) ---- */
-    .cursor-spotlight {
-      position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(125,211,252,0.10), transparent 50%);
-      mix-blend-mode: screen;
-      transition: background 0.1s linear;
+    /* Grid & Gradient overlays */
+    .tech-grid {
+      background-image: 
+        linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
     }
 
-    /* Engineered grid */
-    .blueprint-grid {
-      background-image:
-        linear-gradient(rgba(125,211,252,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(125,211,252,0.05) 1px, transparent 1px),
-        linear-gradient(rgba(125,211,252,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(125,211,252,0.025) 1px, transparent 1px);
-      background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
-      background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
-    .blueprint-grid-mask {
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 90%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 90%);
+    .glass-panel:hover {
+      border-color: rgba(56, 189, 248, 0.25);
     }
 
-    /* ---- Ticker ---- */
-    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .ticker-track { animation: ticker 60s linear infinite; }
-
-    /* ---- Gradient text ---- */
-    .gradient-text {
-      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 40%, #7dd3fc 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-    }
-    .gradient-text-2 {
-      background: linear-gradient(135deg, #f0b67f 0%, #ffffff 50%, #7dd3fc 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-    }
-    .gradient-text-3 {
-      background: linear-gradient(135deg, #a78bfa 0%, #7dd3fc 50%, #ffffff 100%);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
+    .gradient-heading {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* ---- Glass cards ---- */
-    .glass {
+    .gradient-agchem {
+      background: linear-gradient(135deg, #34d399 0%, #ffffff 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-pharma {
+      background: linear-gradient(135deg, #f0b67f 0%, #ffffff 50%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Pulse dots */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .pulse-dot { animation: pulseGlow 2s ease-in-out infinite; }
+
+    .nav-link {
       position: relative;
-      background: linear-gradient(180deg, rgba(20,26,46,0.7) 0%, rgba(10,13,26,0.85) 100%);
-      backdrop-filter: blur(20px) saturate(1.2);
-      -webkit-backdrop-filter: blur(20px) saturate(1.2);
-      border: 1px solid rgba(255,255,255,0.06);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.08),
-        inset 0 -1px 0 rgba(0,0,0,0.5),
-        0 1px 0 rgba(125,211,252,0.04),
-        0 30px 60px -20px rgba(0,0,0,0.7),
-        0 80px 120px -40px rgba(56,189,248,0.10);
+      padding-bottom: 2px;
     }
-    .glass::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(120% 60% at 0% 0%, rgba(125,211,252,0.08), transparent 50%),
-        radial-gradient(80% 40% at 100% 100%, rgba(240,182,127,0.04), transparent 60%);
-      pointer-events: none; border-radius: inherit;
-    }
-    .glass::after {
-      content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(125,211,252,0.5), transparent);
-      pointer-events: none;
-    }
-
-    .refract { position: relative; isolation: isolate; }
-    .refract > .refract-layer { position: absolute; inset: 0; pointer-events: none; border-radius: inherit; }
-    .refract > .refract-layer.r1 { background: radial-gradient(60% 40% at 30% 0%, rgba(125,211,252,0.10), transparent 60%); filter: blur(24px); z-index: -1; }
-    .refract > .refract-layer.r2 { background: radial-gradient(50% 40% at 100% 100%, rgba(240,182,127,0.07), transparent 60%); filter: blur(28px); z-index: -1; }
-
-    /* ---- Tilt cards ---- */
-    .tilt {
-      transform-style: preserve-3d;
-      transform: perspective(1200px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0);
-      transition: transform 0.4s cubic-bezier(.2,.7,.2,1);
-      will-change: transform;
-    }
-    .tilt .lift   { transform: translateZ(40px); }
-    .tilt .lift-2 { transform: translateZ(70px); }
-    .tilt .lift-3 { transform: translateZ(100px); }
-    .tilt .recede { transform: translateZ(-30px); }
-    .tilt .glare {
-      position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-      background: radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.10), transparent 40%);
-      mix-blend-mode: screen;
-      opacity: 0; transition: opacity .4s ease;
-    }
-    .tilt:hover .glare { opacity: 1; }
-
-    /* ---- Image frame ---- */
-    .image-frame {
-      position: relative; border-radius: 4px; overflow: hidden;
-      background: #05060d;
-      box-shadow:
-        inset 0 0 0 1px rgba(125,211,252,0.18),
-        0 30px 80px -20px rgba(0,0,0,0.8),
-        0 0 80px -20px rgba(56,189,248,0.15);
-    }
-    .image-frame::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: linear-gradient(135deg, rgba(125,211,252,0.06), transparent 30%, transparent 70%, rgba(240,182,127,0.04));
-      mix-blend-mode: screen; z-index: 2;
-    }
-    .image-frame::after {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      border: 1px solid rgba(255,255,255,0.05); border-radius: inherit; z-index: 3;
-    }
-    .image-frame img { display: block; width: 100%; height: auto; }
-
-    .image-corner {
-      position: absolute; width: 14px; height: 14px; z-index: 4;
-      pointer-events: none;
-    }
-    .image-corner.tl { top: 8px; left: 8px; border-top: 1px solid #7dd3fc; border-left: 1px solid #7dd3fc; }
-    .image-corner.tr { top: 8px; right: 8px; border-top: 1px solid #7dd3fc; border-right: 1px solid #7dd3fc; }
-    .image-corner.bl { bottom: 8px; left: 8px; border-bottom: 1px solid #7dd3fc; border-left: 1px solid #7dd3fc; }
-    .image-corner.br { bottom: 8px; right: 8px; border-bottom: 1px solid #7dd3fc; border-right: 1px solid #7dd3fc; }
-
-    /* Full-bleed cinematic block */
-    .cinematic {
-      position: relative; width: 100%; height: 100vh; min-height: 720px; max-height: 1100px;
-      overflow: hidden;
-    }
-    .cinematic-img {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; object-position: center;
-      will-change: transform;
-    }
-    .cinematic-veil {
-      position: absolute; inset: 0; pointer-events: none;
-      background:
-        radial-gradient(60% 70% at 50% 50%, rgba(5,6,13,0.2) 0%, rgba(5,6,13,0.75) 60%, rgba(5,6,13,0.95) 100%),
-        linear-gradient(180deg, rgba(5,6,13,0.7), rgba(5,6,13,0.25) 30%, rgba(5,6,13,0.7) 80%, var(--ink-950) 100%);
-    }
-
-    /* Surgical border */
-    .surgical { position: relative; padding-left: 1.75rem; }
-    .surgical::before {
-      content: ''; position: absolute; left: 0; top: 0.25rem; bottom: 0.25rem; width: 1px;
-      background: linear-gradient(180deg, transparent, rgba(125,211,252,0.6) 30%, rgba(125,211,252,0.6) 70%, transparent);
-    }
-
-    /* Extruded type */
-    .extrude {
-      text-shadow:
-        0 1px 0 rgba(125,211,252,0.06),
-        0 2px 0 rgba(125,211,252,0.05),
-        0 3px 0 rgba(125,211,252,0.04),
-        0 4px 0 rgba(125,211,252,0.03),
-        0 6px 18px rgba(0,0,0,0.6),
-        0 14px 40px rgba(56,189,248,0.10);
-    }
-
-    /* Scroll progress */
-    .scroll-progress {
-      height: 2px; background: linear-gradient(90deg, #f0b67f, #7dd3fc, #ffffff);
-      position: fixed; top: 0; left: 0; z-index: 100; width: 0%;
-      box-shadow: 0 0 10px rgba(125,211,252,0.6);
-    }
-
-    .ring {
-      position: absolute; border-radius: 999px; border: 1px solid rgba(125,211,252,0.18);
-      box-shadow: inset 0 0 80px rgba(125,211,252,0.05), 0 0 80px rgba(56,189,248,0.05);
-    }
-
-    /* Reveal on scroll */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1); }
-    .reveal.in { opacity: 1; transform: translateY(0); }
-    .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1); }
-    .reveal-left.in { opacity: 1; transform: translateX(0); }
-    .reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1); }
-    .reveal-right.in { opacity: 1; transform: translateX(0); }
-
-    /* Section indicator */
-    @keyframes pulse-dot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
-    .pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
-    @keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-    .float-y { animation: float-y 6s ease-in-out infinite; }
-
-    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-
-    .glass-header {
-      background: rgba(2, 6, 23, 0.85);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-    }
-
-    /* Scroll-spy nav */
-    .nav-link { position: relative; padding-bottom: 4px; }
     .nav-link::after {
-      content: ''; position: absolute; left: 0; bottom: -2px; height: 1px; width: 0;
-      background: linear-gradient(90deg, #7dd3fc, transparent);
-      transition: width .35s ease;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: #38bdf8;
+      transition: width 0.3s ease;
     }
-    .nav-link.active { color: #7dd3fc; }
-    .nav-link.active::after { width: 100%; }
+    .nav-link:hover::after {
+      width: 100%;
+    }
 
-    /* Revenue counter */
-    .revenue-counter {
-      font-variant-numeric: tabular-nums;
-      font-feature-settings: 'tnum';
+    /* Scroll Reveal Animation */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    /* Value-stack reveal */
-    .stack-layer {
-      opacity: 0.25;
-      transition: opacity 0.6s ease, transform 0.6s ease;
-      transform: translateX(-12px);
-    }
-    .stack-layer.active {
+    .reveal-on-scroll.is-visible {
       opacity: 1;
-      transform: translateX(0);
-    }
-    .stack-layer.active .stack-marker {
-      background: #7dd3fc;
-      box-shadow: 0 0 14px rgba(125,211,252,0.9);
+      transform: translateY(0);
     }
 
-    /* Hero image backdrop */
-    .hero-backdrop {
-      position: absolute; inset: 0;
-      background-image: url('https://i.imgur.com/egt1wuX.jpeg');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.18;
-      filter: hue-rotate(-10deg) saturate(0.7) contrast(1.1);
-      mix-blend-mode: screen;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 0%, transparent 80%);
-      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 0%, transparent 80%);
+    /* Interactive Pipeline Filter Buttons */
+    .filter-btn {
+      transition: all 0.3s ease;
     }
-
+    .filter-btn.active {
+      background-color: rgba(56, 189, 248, 0.2);
+      border-color: #38bdf8;
+      color: #ffffff;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    }
   </style>
 </head>
-<body class="bg-ink-950 text-bone-300">
-  <div id="progress" class="scroll-progress" aria-hidden="true"></div>
-  <div id="ticker" role="region" aria-label="Live operations ticker" class="fixed top-0 w-full h-8 z-[60] flex items-center overflow-hidden border-b border-white/10" style="background-color: #38bdf8;">
-    <div class="ticker-track whitespace-nowrap flex gap-10 text-[9px] font-black text-ink-950 uppercase tracking-[0.2em] pt-0.5">
-      <span>● US_FEEDSTOCK :: ARKANSAS ↔ CALIFORNIA ↔ PUERTO_RICO</span>
-      <span>● USDA_TARS :: COUNTER-SEASONAL_SEED_AMPLIFICATION</span>
-      <span>● NODE_01 :: ARKANSAS_MILL // IP_GATE</span>
-      <span>● NODE_02 :: HOLLY_SPRINGS_NC // 69_MPA_BIOREFINERY</span>
-      <span>● COMMAND :: ST_PETERSBURG_GLOBAL</span>
-      <span>● PRODUCTION_SCALE :: 10_MT/DAY_PLANT</span>
-      <span>● REVENUE_ENGINE :: CPG_RETAIL_90_SEC_POUCH</span>
-      <span>● DSHEA_STATUS :: SENTINEL_PROPHYLAXIS_ACTIVE</span>
-      <span>● PHARMA :: C3-SULFAMATE_STS_DOUBLE_TAP</span>
-      <span>● BCL2_AFFINITY :: 21_NM_ALLOSTERIC_NUDGE</span>
-      <span>● USDA_ARS_DOCKET: TIARA_LINEAGE_4.29_ACTIVE</span>
-      <span>● NODE_01 :: ARKANSAS_UHP_COLD-STAMP_ACTIVE</span>
+<body class="bg-brand-950 text-slate-200 antialiased selection:bg-sky-500 selection:text-black">
 
-      <span>● US_FEEDSTOCK :: ARKANSAS ↔ CALIFORNIA ↔ PUERTO_RICO</span>
-      <span>● USDA_TARS :: COUNTER-SEASONAL_SEED_AMPLIFICATION</span>
-      <span>● NODE_01 :: ARKANSAS_MILL // IP_GATE</span>
-      <span>● NODE_02 :: HOLLY_SPRINGS_NC // 69_MPA_BIOREFINERY</span>
-      <span>● COMMAND :: ST_PETERSBURG_GLOBAL</span>
-      <span>● PRODUCTION_SCALE :: 10_MT/DAY_PLANT</span>
-      <span>● REVENUE_ENGINE :: CPG_RETAIL_90_SEC_POUCH</span>
-      <span>● DSHEA_STATUS :: SENTINEL_PROPHYLAXIS_ACTIVE</span>
-      <span>● PHARMA :: C3-SULFAMATE_STS_DOUBLE_TAP</span>
-      <span>● BCL2_AFFINITY :: 21_NM_ALLOSTERIC_NUDGE</span>
-      <span>● USDA_ARS_DOCKET: TIARA_LINEAGE_4.29_ACTIVE</span>
-      <span>● NODE_01 :: ARKANSAS_UHP_COLD-STAMP_ACTIVE</span>
-    </div>
-  </div>
-
-  <nav class="fixed w-full top-8 z-50 glass-header border-b border-white/10">
-    <div class="max-w-7xl mx-auto h-20 flex justify-between items-center px-4 md:px-8">
-      <a href="#top" class="flex items-center gap-4 group cursor-pointer" aria-label="to22s Bio-Systems home">
-        <svg class="h-10 w-auto transition-transform group-hover:scale-110 drop-shadow-[0_0_10px_rgba(125,211,252,0.4)]" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-          <circle cx="50" cy="50" r="48" fill="#05060d" stroke="#7dd3fc" stroke-width="2" />
-          <text x="50" y="65" font-family="Inter" font-weight="900" font-size="32" fill="#fff" text-anchor="middle">222</text>
-        </svg>
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 w-full z-50 bg-brand-950/80 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-brand-900 border border-sky-400/40 flex items-center justify-center font-mono font-black text-sky-400 text-lg shadow-[0_0_15px_rgba(56,189,248,0.2)] group-hover:scale-105 transition-transform">
+          222
+        </div>
         <div class="flex flex-col">
-          <span class="text-2xl text-white font-script leading-none">to22s</span>
-          <span class="text-[8px] font-bold text-haze-500 uppercase tracking-[0.3em] mt-1">Bio-Systems</span>
+          <span class="text-lg font-black tracking-tight text-white leading-none">to22s <span class="text-sky-400">Bio-Systems</span></span>
+          <span class="text-[9px] font-mono uppercase tracking-[0.25em] text-slate-400 mt-1">Systems Pharmacology Utility</span>
         </div>
       </a>
 
-      <div class="hidden md:flex space-x-10 text-[10px] font-black uppercase tracking-[0.3em]">
-        <a href="#matrix"      class="nav-link hover:text-haze-500 transition-colors">Matrix</a>
-        <a href="#sovereignty" class="nav-link hover:text-haze-500 transition-colors">Sovereignty</a>
-        <a href="#engine"      class="nav-link hover:text-haze-500 transition-colors">Engine</a>
-        <a href="#stack"       class="nav-link hover:text-haze-500 transition-colors">Stack</a>
-        <a href="#pka"          class="nav-link hover:text-haze-500 transition-colors">Sentinel</a>
-        <a href="#topology"    class="nav-link hover:text-haze-500 transition-colors">Topology</a>
-        <a href="#cta"          class="nav-link hover:text-haze-500 transition-colors">Diligence</a>
-      </div>
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-slate-300">
+        <a href="#platform" class="nav-link hover:text-sky-400 transition-colors">Platform</a>
+        <a href="#verticals" class="nav-link hover:text-amber-400 transition-colors">Active Pipeline</a>
+        <a href="#agchem" class="nav-link hover:text-emerald-400 transition-colors">AgChem &amp; USDA</a>
+        <a href="#oncology" class="nav-link hover:text-purple-400 transition-colors">Oncology &amp; NIH</a>
+        <a href="#chemistry" class="nav-link hover:text-amber-400 transition-colors">Formulation</a>
+        <a href="#network" class="nav-link hover:text-sky-400 transition-colors">Research Partners</a>
+        <a href="#diligence" class="nav-link hover:text-sky-400 transition-colors">Diligence</a>
+      </nav>
 
-      <div class="flex items-center gap-3">
-        <button id="navToggle" aria-label="Open navigation" aria-expanded="false"
-                class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-sm border border-white/10 text-white">
-          <i data-lucide="menu" class="w-5 h-5"></i>
-        </button>
-        <a href="#cta" class="hidden sm:inline-block px-6 py-2.5 bg-haze-500 text-ink-950 text-[9px] font-black uppercase tracking-widest rounded-sm shadow-[0_0_24px_rgba(125,211,252,0.35)] hover:scale-105 transition-all">
-          Institutional Access
+      <div class="flex items-center gap-4">
+        <a href="#diligence" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded bg-sky-400 text-brand-950 font-mono font-bold text-xs uppercase tracking-wider hover:bg-sky-300 shadow-[0_0_20px_rgba(56,189,248,0.3)] transition-all">
+          Partner Portal
         </a>
+        <button id="menuBtn" class="md:hidden text-slate-300 hover:text-white p-2">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
       </div>
     </div>
-    <div id="mobileNav" class="md:hidden hidden border-t border-white/10 p-6 text-[11px] font-black uppercase tracking-[0.3em] bg-ink-950/95 backdrop-blur-xl">
-      <a href="#matrix"      class="block py-3 hover:text-haze-500">Matrix</a>
-      <a href="#sovereignty" class="block py-3 hover:text-haze-500">Sovereignty</a>
-      <a href="#engine"      class="block py-3 hover:text-haze-500">Engine</a>
-      <a href="#stack"       class="block py-3 hover:text-haze-500">Stack</a>
-      <a href="#pka"          class="block py-3 hover:text-haze-500">Sentinel</a>
-      <a href="#topology"    class="block py-3 hover:text-haze-500">Topology</a>
-      <a href="#cta"          class="block py-3 hover:text-haze-500">Diligence</a>
+
+    <!-- Mobile Nav -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-brand-950 px-6 py-4 space-y-3 text-xs font-mono uppercase tracking-widest">
+      <a href="#platform" class="block py-2 text-slate-300 hover:text-sky-400">Platform</a>
+      <a href="#verticals" class="block py-2 text-slate-300 hover:text-amber-400">Active Pipeline</a>
+      <a href="#agchem" class="block py-2 text-slate-300 hover:text-emerald-400">AgChem &amp; USDA</a>
+      <a href="#oncology" class="block py-2 text-slate-300 hover:text-purple-400">Oncology &amp; NIH</a>
+      <a href="#chemistry" class="block py-2 text-slate-300 hover:text-amber-400">Formulation</a>
+      <a href="#network" class="block py-2 text-slate-300 hover:text-sky-400">Research Partners</a>
+      <a href="#diligence" class="block py-2 text-sky-400 font-bold">Partner Portal</a>
     </div>
-  </nav>
+  </header>
 
   <span id="top"></span>
 
-  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-10">
-    <div class="hero-backdrop"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-ink-950 via-transparent to-ink-950 pointer-events-none z-10"></div>
-    <div class="absolute inset-0 blueprint-grid blueprint-grid-mask z-0"></div>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen pt-32 pb-20 flex items-center justify-center tech-grid overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/60 to-brand-950 pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-sky-500/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-    <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none" aria-hidden="true">
-      <div class="ring" style="width: 320px; height: 320px;"></div>
-      <div class="ring" style="width: 560px; height: 560px;"></div>
-      <div class="ring" style="width: 860px; height: 860px;"></div>
-      <div class="ring" style="width: 1240px; height: 1240px; opacity:0.6;"></div>
-      <div class="ring" style="width: 1700px; height: 1700px; opacity:0.4;"></div>
-    </div>
-
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(60% 50% at 50% 60%, rgba(125,211,252,0.12), transparent 70%);"></div>
-    <div id="hero-spotlight" class="cursor-spotlight z-0"></div>
-
-    <div class="max-w-7xl mx-auto px-4 text-center relative z-10 flex flex-col items-center" data-parallax>
-      <div class="reveal inline-flex items-center justify-center gap-3 mb-10 px-5 py-2 rounded-sm border border-haze-500/30 bg-haze-500/5 backdrop-blur-md">
-        <span class="relative flex h-1.5 w-1.5">
-          <span class="absolute inline-flex h-full w-full rounded-full bg-haze-500 opacity-75 pulse-dot"></span>
-          <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-haze-500"></span>
-        </span>
-        <span class="font-mono text-[10px] uppercase text-haze-500 font-bold tracking-[0.4em]">Proprietary Biorefinery Network // US-Sovereign Supply</span>
-      </div>
-
-      <h1 class="reveal text-6xl md:text-[9rem] font-[900] tracking-tighter text-white mb-2 leading-[0.85] uppercase extrude" style="transition-delay:.1s;">
-        Vertical<br/>
-        <span class="gradient-text-2">Sovereignty.</span>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center flex flex-col items-center">
+      
+      <!-- Main Headline -->
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-none uppercase max-w-5xl">
+        Bio-Identical<br />
+        <span class="gradient-agchem">Phytosterol Elicitors.</span>
       </h1>
 
-      <div class="reveal mt-6 flex items-center gap-6 text-[10px] font-mono uppercase tracking-[0.4em] text-bone-500" style="transition-delay:.2s;">
-        <span class="flex items-center gap-2"><span class="w-6 h-px bg-haze-500/60"></span>SCALE :: 10 MT/DAY</span>
-        <span class="hidden md:flex items-center gap-2"><span class="w-6 h-px bg-haze-500/60"></span>SQCC PEAK :: 398 SI</span>
-        <span class="flex items-center gap-2"><span class="w-6 h-px bg-haze-500/60"></span>PAYBACK :: 140 DAYS</span>
-      </div>
-
-      <p class="reveal mt-12 max-w-3xl mx-auto text-xl md:text-2xl text-bone-300 font-light leading-relaxed italic" style="transition-delay:.3s;">
-        “Decoupling molecular discovery from supply-chain risk. The cancer medicine you want to take.™”
+      <!-- Subtitle -->
+      <p class="mt-8 max-w-3xl text-lg md:text-xl text-slate-300 font-light leading-relaxed">
+        Engineered natural triterpenoid elicitors derived from domestic rice bran (<span class="italic">Oryza sativa</span> L.) for <strong class="text-white font-semibold">metagenomic BH3 pocket elicitation &amp; cross-kingdom cell death modulation</strong> — targeting conserved apoptotic and Toxin-Antitoxin (TA) machinery without synthetic chemical residues.
       </p>
 
-      <div class="reveal mt-20 grid grid-cols-3 gap-6 md:gap-12 max-w-4xl w-full" style="transition-delay:.4s;">
-        <div class="glass rounded-sm p-6 text-left">
-          <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500 mb-3">// PRODUCTION SCALE</div>
-          <div class="text-3xl md:text-4xl font-black text-white leading-none">10<span class="text-haze-500 text-2xl md:text-3xl ml-1">MT</span></div>
-          <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-2">Plant Capacity / Day</div>
+      <!-- Key Metrics Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16 max-w-5xl w-full">
+        <div class="glass-panel p-6 rounded-xl text-left border-l-2 border-emerald-400">
+          <div class="text-[10px] font-mono uppercase text-emerald-400 font-bold mb-1">// FUNGAL SUICIDE</div>
+          <div class="text-3xl font-black text-white font-mono">&le; -14.0</div>
+          <div class="text-xs text-slate-400 mt-1 font-mono">&Delta;G<sub>bind</sub> kcal/mol (Bcl-2 Hinge)</div>
         </div>
-        <div class="glass rounded-sm p-6 text-left">
-          <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-ember-500 mb-3">// SQUAMOUS CELL PEAK</div>
-          <div class="text-3xl md:text-4xl font-black text-white leading-none">398<span class="text-ember-500 text-2xl md:text-3xl"> SI</span></div>
-          <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-2">Squamous cell carcinoma</div>
+
+        <div class="glass-panel p-6 rounded-xl text-left border-l-2 border-sky-400">
+          <div class="text-[10px] font-mono uppercase text-sky-400 font-bold mb-1">// INSECT ECDYSIS</div>
+          <div class="text-3xl font-black text-white font-mono">&le; -14.85</div>
+          <div class="text-xs text-slate-400 mt-1 font-mono">&Delta;G<sub>bind</sub> kcal/mol (SCP-2/NPC1b)</div>
         </div>
-        <div class="glass rounded-sm p-6 text-left">
-          <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500 mb-3">// CAPEX PAYBACK</div>
-          <div class="text-3xl md:text-4xl font-black text-white leading-none">140<span class="text-haze-500 text-2xl md:text-3xl"> days</span></div>
-          <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-2">via 0.6 kg/dm³ densification</div>
+
+        <div class="glass-panel p-6 rounded-xl text-left border-l-2 border-purple-400">
+          <div class="text-[10px] font-mono uppercase text-purple-400 font-bold mb-1">// ONCOLOGY ALLOSTERY</div>
+          <div class="text-3xl font-black text-white font-mono">21 nM</div>
+          <div class="text-xs text-slate-400 mt-1 font-mono">Human Bcl-2 &alpha;5&ndash;&alpha;8 Hinge K<sub>i</sub></div>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl text-left border-l-2 border-amber-400">
+          <div class="text-[10px] font-mono uppercase text-amber-400 font-bold mb-1">// CROP SAFETY</div>
+          <div class="text-3xl font-black text-white font-mono">100%</div>
+          <div class="text-xs text-slate-400 mt-1 font-mono">Selective &Delta;&Delta;G &ge; +12.0 kcal/mol</div>
         </div>
       </div>
 
-      <div class="reveal mt-20 flex flex-col items-center gap-3 text-[9px] font-mono uppercase tracking-[0.4em] text-bone-500" style="transition-delay:.5s;">
-        <span>Descend the Stack</span>
-        <div class="w-px h-12 bg-gradient-to-b from-haze-500 to-transparent"></div>
+      <!-- Call to Actions -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-12">
+        <a href="#agchem" class="px-8 py-3.5 rounded bg-emerald-400 text-brand-950 font-mono font-black text-xs uppercase tracking-wider hover:bg-emerald-300 transition-all shadow-[0_0_25px_rgba(52,211,153,0.3)]">
+          Explore AgChem Proposal
+        </a>
+        <a href="#oncology" class="px-8 py-3.5 rounded glass-panel border border-slate-700 text-white font-mono font-bold text-xs uppercase tracking-wider hover:border-sky-400 transition-all">
+          View Oncology Platform
+        </a>
       </div>
+
     </div>
   </section>
 
-  <section id="matrix" class="relative py-32 border-y border-white/5">
-    <div class="absolute inset-0 z-0 blueprint-grid opacity-40 blueprint-grid-mask"></div>
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(40% 60% at 70% 30%, rgba(59,47,107,0.4), transparent 60%);"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4">
-      <div class="text-center mb-24 flex flex-col items-center reveal">
-        <span class="text-haze-500 font-black text-[11px] uppercase tracking-[0.5em] mb-6 flex items-center gap-3">
-          <span class="w-8 h-px bg-haze-500"></span>
-          Single-Cell Audit :: 63,121 Profiles
-          <span class="w-8 h-px bg-haze-500"></span>
-        </span>
-        <h2 class="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-10 leading-none extrude">The Global <br/><span class="gradient-text">Matrix.</span></h2>
-        <p class="text-bone-500 max-w-2xl mx-auto font-light leading-relaxed text-lg">
-          We identified 16 high-precision therapeutic windows where the BCL2 survival shield is hard-wired to the ABCA1 lipid pump — an outlier signature consistent across all human populations.
+  <!-- Platform Overview Section -->
+  <section id="platform" class="py-24 border-t border-white/5 bg-brand-900/40 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-sky-400 font-mono text-xs uppercase tracking-[0.3em]">// Systems Pharmacology Platform &amp; IP Strategy</span>
+        <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mt-3">
+          One Core Engine.<br /><span class="gradient-heading">Four Research Hubs.</span>
+        </h2>
+        <p class="text-slate-300 mt-4 text-base font-light">
+          Anchored by a <strong class="text-white font-semibold">comprehensive patent portfolio spanning across these vast fields</strong>—from agricultural biosecurity and human oncology to broad-spectrum antivirals and closed-loop biomanufacturing—to22s Bio-Systems targets evolutionarily conserved structural allosteric hinges and metagenomic BH3 hydrophobic grooves (<span class="font-mono text-sky-300">Leu-X-X-X-Asp-X-Leu</span>).
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-        <div class="tilt-host" style="perspective: 1400px;">
-          <article class="tilt glass refract rounded-sm p-10 flex flex-col h-full overflow-hidden">
-            <span class="refract-layer r1"></span>
-            <span class="refract-layer r2"></span>
-            <span class="absolute left-0 top-0 bottom-0 w-1 lift" style="background: linear-gradient(180deg, #7dd3fc 0%, rgba(125,211,252,0.2) 60%, transparent 100%);"></span>
-            <span class="glare"></span>
-            <div class="flex items-start justify-between recede">
-              <div class="text-[9px] font-mono uppercase tracking-[0.4em] text-haze-500">Indication 01</div>
-              <div class="text-[9px] font-mono text-bone-500">LUNG · SQCC</div>
-            </div>
-            <div class="text-[5rem] md:text-[6rem] font-black text-white font-mono leading-[0.9] mt-6 lift-2 flex items-start gap-1" style="font-feature-settings: 'tnum';">
-              <span>398</span><span class="text-haze-500 text-4xl md:text-5xl mt-2">×</span>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-haze-500 mt-2 mb-6 lift">Squamous Cell Carcinoma SI</div>
-            <p class="text-sm font-light flex-grow text-bone-300 leading-relaxed">Targeting squamous cell lung carcinoma niches in the lymphatic system — the highest selectivity peak across the asset.</p>
-            <div class="mt-8 lift">
-              <div class="flex items-end gap-1 h-10">
-                <div class="flex-1 bg-haze-500/15 rounded-sm" style="height: 28%"></div>
-                <div class="flex-1 bg-haze-500/25 rounded-sm" style="height: 36%"></div>
-                <div class="flex-1 bg-haze-500/35 rounded-sm" style="height: 50%"></div>
-                <div class="flex-1 bg-haze-500/55 rounded-sm" style="height: 68%"></div>
-                <div class="flex-1 bg-haze-500/80 rounded-sm" style="height: 86%"></div>
-                <div class="flex-1 bg-haze-500 rounded-sm shadow-[0_0_18px_rgba(125,211,252,0.6)]" style="height: 100%"></div>
-              </div>
-              <div class="flex justify-between mt-2 text-[8px] font-mono text-bone-500 uppercase tracking-widest">
-                <span>baseline</span><span>sentinel</span>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="tilt-host" style="perspective: 1400px;">
-          <article class="tilt glass refract rounded-sm p-10 flex flex-col h-full overflow-hidden">
-            <span class="refract-layer r1" style="background: radial-gradient(60% 40% at 30% 0%, rgba(167,139,250,0.18), transparent 60%);"></span>
-            <span class="refract-layer r2"></span>
-            <span class="absolute left-0 top-0 bottom-0 w-1 lift" style="background: linear-gradient(180deg, #a78bfa 0%, rgba(167,139,250,0.2) 60%, transparent 100%);"></span>
-            <span class="glare"></span>
-            <div class="flex items-start justify-between recede">
-              <div class="text-[9px] font-mono uppercase tracking-[0.4em]" style="color:#a78bfa;">Indication 02</div>
-              <div class="text-[9px] font-mono text-bone-500">TREM2 · MICROGLIA</div>
-            </div>
-            <div class="text-[5rem] md:text-[6rem] font-black text-white font-mono leading-[0.9] mt-6 lift-2 flex items-start gap-1">
-              <span>276.3</span><span class="text-4xl md:text-5xl mt-2" style="color:#a78bfa;">×</span>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest mt-2 mb-6 lift" style="color:#a78bfa;">Dementia (TREM2) SI</div>
-            <p class="text-sm font-light flex-grow text-bone-300 leading-relaxed">Pruning BCL2-addicted TREM2 microglia to resolve neuro-inflammation in Dementia and Long-COVID.</p>
-            <div class="mt-8 lift flex items-center gap-4">
-              <svg viewBox="0 0 80 80" class="h-16 w-16">
-                <circle cx="40" cy="40" r="36" fill="none" stroke="rgba(167,139,250,0.15)" stroke-width="1"/>
-                <circle cx="40" cy="40" r="26" fill="none" stroke="rgba(167,139,250,0.35)" stroke-width="1"/>
-                <circle cx="40" cy="40" r="14" fill="none" stroke="#a78bfa" stroke-width="1.2"/>
-                <circle cx="40" cy="40" r="4" fill="#a78bfa"/>
-                <circle cx="68" cy="22" r="2" fill="#a78bfa" opacity="0.6"/>
-                <circle cx="14" cy="58" r="2" fill="#a78bfa" opacity="0.4"/>
-              </svg>
-              <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 leading-relaxed">
-                senescent prune<br/>cytokine resolve
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="tilt-host" style="perspective: 1400px;">
-          <article class="tilt glass refract rounded-sm p-10 flex flex-col h-full overflow-hidden">
-            <span class="refract-layer r1" style="background: radial-gradient(60% 40% at 30% 0%, rgba(240,182,127,0.16), transparent 60%);"></span>
-            <span class="refract-layer r2"></span>
-            <span class="absolute left-0 top-0 bottom-0 w-1 lift" style="background: linear-gradient(180deg, #f0b67f 0%, rgba(240,182,127,0.2) 60%, transparent 100%);"></span>
-            <span class="glare"></span>
-            <div class="flex items-start justify-between recede">
-              <div class="text-[9px] font-mono uppercase tracking-[0.4em] text-ember-500">Indication 03</div>
-              <div class="text-[9px] font-mono text-bone-500">STS-ADDICTED</div>
-            </div>
-            <div class="text-[5rem] md:text-[6rem] font-black text-white font-mono leading-[0.9] mt-6 lift-2 flex items-start gap-1">
-              <span>72.6</span><span class="text-ember-500 text-4xl md:text-5xl mt-2">×</span>
-            </div>
-            <div class="text-[10px] font-black uppercase tracking-widest text-ember-500 mt-2 mb-6 lift">Breast Cancer SI</div>
-            <p class="text-sm font-light flex-grow text-bone-300 leading-relaxed">Surgical discrimination at the STS-catalytic cleft — STS-addicted tumors with near-zero ER-α collateral.</p>
-            <div class="mt-8 lift relative h-16 flex items-center">
-              <div class="relative w-16 h-16">
-                <span class="absolute inset-0 rounded-full border border-ember-500/40"></span>
-                <span class="absolute inset-2 rounded-full border border-ember-500/60"></span>
-                <span class="absolute inset-4 rounded-full bg-ember-500/30 backdrop-blur-sm"></span>
-                <span class="absolute inset-[26px] rounded-full bg-ember-500 shadow-[0_0_14px_rgba(240,182,127,0.8)]"></span>
-              </div>
-              <div class="ml-4 text-[10px] font-mono uppercase tracking-widest text-bone-500 leading-relaxed">
-                STS cleft ↔ ER-α<br/>orthogonal binding
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-
-      <div class="mt-20 grid md:grid-cols-4 gap-px bg-white/5 border border-white/5 rounded-sm overflow-hidden text-[10px] font-mono uppercase tracking-[0.25em]">
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">tap 1</span><div class="text-white text-base font-black mt-1">Covalent STS Lock</div></div>
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">tap 2</span><div class="text-white text-base font-black mt-1">Bcl-2 Allosteric</div></div>
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">retention</span><div class="text-white text-base font-black mt-1">CAII Erythrocyte</div></div>
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">affinity</span><div class="text-haze-500 text-base font-black mt-1">21 nM</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="sovereignty" class="relative py-32 md:py-40 overflow-hidden">
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(50% 50% at 30% 50%, rgba(56,189,248,0.10), transparent 70%);"></div>
-    <div class="absolute inset-0 z-0 blueprint-grid opacity-30 blueprint-grid-mask"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 lg:px-8">
-      <div class="text-center mb-20 reveal">
-        <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500 mb-6 inline-flex items-center gap-3">
-          <span class="w-6 h-px bg-haze-500"></span> 02 // The Tri-Node Architecture <span class="w-6 h-px bg-haze-500"></span>
-        </span>
-        <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none extrude mt-6">100% Identity<br/><span class="gradient-text">Preserved.</span></h2>
-        <p class="text-bone-500 max-w-2xl mx-auto font-light leading-relaxed text-lg mt-8">
-          A closed-loop topology between Arkansas, Holly Springs, and the Quant Tote — every gram audited, every kilometer telemetered.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-12 gap-10 items-center mb-24">
-        <div class="lg:col-span-7 reveal-left">
-          <div class="image-frame">
-            <span class="image-corner tl"></span>
-            <span class="image-corner tr"></span>
-            <span class="image-corner bl"></span>
-            <span class="image-corner br"></span>
-            <img src="https://i.imgur.com/MsPKcYu.jpeg" alt="Vertical Sovereignty: The Tri-Node Architecture — Arkansas Rice Mill, Quant Tote, Holly Springs Facility" loading="lazy" />
+      <!-- 4 Hubs Grid -->
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Hub D: AgChem -->
+        <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 px-4 py-1.5 bg-emerald-500/20 border-b border-l border-emerald-400/40 font-mono text-[10px] uppercase font-bold text-emerald-300 rounded-bl-lg">
+            Hub D &bull; USDA NIFA SBIR 8.2
           </div>
-          <div class="mt-3 flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500">
-            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span> Fig. 01 · Tri-Node Topology</span>
-            <span>USDA-TARS · MTP-Orchestrated</span>
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 mb-6">
+            <i data-lucide="sprout" class="w-6 h-6"></i>
           </div>
-        </div>
-
-        <div class="lg:col-span-5 reveal-right space-y-8">
-          <div class="surgical">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-[9px] font-mono text-haze-500">[01]</span>
-              <h4 class="text-white font-bold text-xs uppercase tracking-widest">Identity-Preserved Supply</h4>
-            </div>
-            <p class="text-sm text-bone-300 leading-relaxed">USDA-Tiara genetics in Dewitt Silt Loam — a single-lane chain of custody from paddy to pharma. No commingling, no shadow inputs.</p>
-          </div>
-          <div class="surgical">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-[9px] font-mono text-haze-500">[02]</span>
-              <h4 class="text-white font-bold text-xs uppercase tracking-widest">In-House Thermal Stabilization</h4>
-            </div>
-            <p class="text-sm text-bone-300 leading-relaxed">Pre-forming high-density Sentinel Cartridges at Node 1 effectively doubles the capacity of the downstream 69 MPa supercritical circuit — no extra vessel footprint.</p>
-          </div>
-          <div class="surgical">
-            <div class="flex items-center gap-3 mb-2">
-              <span class="text-[9px] font-mono text-ember-500">[03]</span>
-              <h4 class="text-white font-bold text-xs uppercase tracking-widest">MTP-Orchestrated Telemetry</h4>
-            </div>
-            <p class="text-sm text-bone-300 leading-relaxed">Every Quant Tote is N₂-shielded and MTP-tracked from Arkansas mill to Holly Springs biorefinery, with lithospheric mineral fingerprints anchoring batch reproducibility.</p>
-          </div>
-
-          <div class="grid grid-cols-3 gap-3 mt-4">
-            <div class="glass rounded-sm p-3 text-center">
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500">Nodes</div>
-              <div class="text-2xl font-black text-white font-mono mt-1">03</div>
-            </div>
-            <div class="glass rounded-sm p-3 text-center">
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500">Custody</div>
-              <div class="text-2xl font-black text-white font-mono mt-1">100<span class="text-haze-500 text-base">%</span></div>
-            </div>
-            <div class="glass rounded-sm p-3 text-center">
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500">Pressure</div>
-              <div class="text-2xl font-black text-white font-mono mt-1">69<span class="text-haze-500 text-base">MPa</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid lg:grid-cols-12 gap-10 items-center reveal">
-        <div class="lg:col-span-5 lg:order-1 order-2 space-y-6">
-          <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500 inline-flex items-center gap-3">
-            <span class="w-6 h-px bg-haze-500"></span> 02b // Feedstock Sovereignty
-          </span>
-          <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none extrude">
-            Dual-Node US<br/><span class="gradient-text-3">Redundancy.</span>
-          </h3>
-          <p class="text-bone-300 leading-relaxed font-light">
-            Arkansas and California carry the spring/summer crop. USDA TARS Puerto Rico runs counter-seasonal seed amplification through the winter. St. Petersburg orchestrates the global ledger. Three jurisdictions, zero foreign exposure.
+          <h3 class="text-2xl font-black text-white uppercase">Agricultural Biosecurity &amp; Crop Protection</h3>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Dual-action foliage elicitor spray driving fungal hyphal suicide (<span class="italic">Magnaporthe</span>, <span class="italic">Phakopsora</span>, <span class="italic">Botrytis</span>) and insect sterol auxotrophy disruption (<span class="italic">Spodoptera</span>, <span class="italic">Aphis</span>, <span class="italic">Diabrotica</span>) without synthetic chemical residues.
           </p>
-          <div class="grid grid-cols-2 gap-3">
-            <div class="glass rounded-sm p-4">
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500 mb-1">Mainland Nodes</div>
-              <div class="text-white text-sm font-bold">Arkansas · California</div>
-            </div>
-            <div class="glass rounded-sm p-4">
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-ember-500 mb-1">Winter Amplifier</div>
-              <div class="text-white text-sm font-bold">USDA-TARS · Puerto Rico</div>
-            </div>
-            <div class="glass rounded-sm p-4">
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500 mb-1">Command</div>
-              <div class="text-white text-sm font-bold">St. Petersburg Global</div>
-            </div>
-            <div class="glass rounded-sm p-4">
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-ember-500 mb-1">Ledger</div>
-              <div class="text-white text-sm font-bold">Immutable MTP Chain</div>
-            </div>
+          <div class="mt-6 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Testing Partners:</span>
+            <span class="text-emerald-400 font-semibold">UF/IFAS GCREC Core &bull; USF ChBME</span>
           </div>
         </div>
-        <div class="lg:col-span-7 lg:order-2 order-1">
-          <div class="image-frame">
-            <span class="image-corner tl"></span>
-            <span class="image-corner tr"></span>
-            <span class="image-corner bl"></span>
-            <span class="image-corner br"></span>
-            <img src="https://i.imgur.com/zrnJtxB.jpeg" alt="Feedstock Sovereignty: 100% Domestic Redundancy supply-chain ledger" loading="lazy" />
+
+        <!-- Hub A: Oncology -->
+        <div id="oncology" class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 px-4 py-1.5 bg-purple-500/20 border-b border-l border-purple-400/40 font-mono text-[10px] uppercase font-bold text-purple-300 rounded-bl-lg">
+            Hub A &bull; NCI SBIR Phase I
           </div>
-          <div class="mt-3 flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500">
-            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-ember-500 pulse-dot"></span> Fig. 02 · Supply Chain Ledger</span>
-            <span>100% Domestic · 0% Foreign Exposure</span>
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-400/30 flex items-center justify-center text-purple-400 mb-6">
+            <i data-lucide="activity" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-black text-white uppercase">Oncology &amp; Venetoclax Resistance</h3>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Sublingual micellar delivery of Cycloartanol targeting the human Bcl-2 back-face allosteric hinge (&alpha;5&ndash;&alpha;8), overcoming G101V and D103Y resistance mutations in acute myeloid leukemia (AML).
+          </p>
+          <div class="mt-6 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Testing Partners:</span>
+            <span class="text-purple-300 font-semibold">Moffitt Cancer Center &bull; USF CPAS</span>
           </div>
         </div>
+
+        <!-- Hub B: Antiviral -->
+        <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 px-4 py-1.5 bg-sky-500/20 border-b border-l border-sky-400/40 font-mono text-[10px] uppercase font-bold text-sky-300 rounded-bl-lg">
+            Hub B &bull; NIH STTR Phase I
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-400/30 flex items-center justify-center text-sky-400 mb-6">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-black text-white uppercase">Broad-Spectrum Toxin &amp; Viral Shield</h3>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Modulation of host cell membrane lipid rafts and sterol transporters (ABCA2, NPC1) to inhibit viral envelope fusion and neutralize pore-forming bacterial toxins (PFTs).
+          </p>
+          <div class="mt-6 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Testing Partners:</span>
+            <span class="text-sky-300 font-semibold">USF Health Infectious Disease</span>
+          </div>
+        </div>
+
+        <!-- Hub C: Biomanufacturing -->
+        <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 px-4 py-1.5 bg-amber-500/20 border-b border-l border-amber-400/40 font-mono text-[10px] uppercase font-bold text-amber-300 rounded-bl-lg">
+            Hub C &bull; NSF STTR Phase I
+          </div>
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-6">
+            <i data-lucide="settings" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-2xl font-black text-white uppercase">Green scCO<sub>2</sub> Biomanufacturing</h3>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Supercritical CO<sub>2</sub> refining at 69&ndash;70 MPa coupled with heterologous yeast feruloyl esterase (FAE) biocatalysis for high-purity, continuous phytosterol production.
+          </p>
+          <div class="mt-6 pt-6 border-t border-white/10 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Testing Partners:</span>
+            <span class="text-amber-300 font-semibold">Supercritical Process Engineering Core</span>
+          </div>
+        </div>
+
       </div>
 
-      <div class="mt-20 reveal">
-        <div class="glass rounded-sm p-6 relative overflow-hidden">
-          <div class="flex items-center justify-between mb-5 pb-4 border-b border-white/5">
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-haze-500 font-bold">Biological Lifecycle Telemetry</span>
-            </div>
-            <span class="text-[8px] font-mono text-bone-500 tracking-widest uppercase">Live Sync · USDA-Tiara 4.29</span>
-          </div>
-          <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
-            <div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.2em] text-bone-500 mb-1">Target</div>
-              <div class="text-xs font-bold text-white font-mono tracking-wide">Foundation Plot 01</div>
-            </div>
-            <div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.2em] text-bone-500 mb-1">Sown</div>
-              <div class="text-xs font-bold text-white font-mono tracking-wide">May 4, 2026</div>
-            </div>
-            <div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.2em] text-bone-500 mb-1">Current State</div>
-              <div class="text-xs font-bold text-haze-500 font-mono tracking-wide">Germination · 22°C Soil</div>
-            </div>
-            <div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.2em] text-bone-500 mb-1">Est. Harvest</div>
-              <div class="text-xs font-bold text-white font-mono tracking-wide">Oct 15, 2026</div>
-            </div>
-            <div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.2em] text-bone-500 mb-1">Lithosphere</div>
-              <div class="text-xs font-bold text-white font-mono tracking-wide">Dewitt Silt Loam</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section id="engine" class="relative overflow-hidden">
-    <div class="cinematic">
-      <img src="https://i.imgur.com/pYXImxq.jpeg" alt="to22s Node 1 Processing Hub" class="cinematic-img" loading="lazy" id="engine-img" />
-      <div class="cinematic-veil"></div>
-
-      <div class="absolute inset-0 z-10 flex items-center">
-        <div class="max-w-7xl mx-auto w-full px-4 lg:px-8 grid lg:grid-cols-12 gap-8">
-          <div class="lg:col-span-7 reveal-left">
-            <span class="inline-flex items-center gap-3 mb-6 text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500">
-              <span class="w-6 h-px bg-haze-500"></span> 03 // NODE 1 · ARKANSAS REVENUE ENGINE
-            </span>
-            <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none extrude mb-6">
-              120 PPM.<br/><span class="gradient-text-2">Zero Feedstock Cost.</span>
-            </h2>
-            <p class="text-bone-300 max-w-xl text-lg font-light leading-relaxed mb-10">
-              The retail-subsidized revenue engine pulls USDA-Tiara rice through a single proprietary mill, stamps it into Sentinel Cartridges, and pushes 90-second retort pouches at 120 pouches/minute — while the API stream branches into the 69 MPa biorefinery.
-            </p>
-
-            <div class="glass rounded-sm p-6 max-w-lg mb-8 refract">
-              <span class="refract-layer r1"></span>
-              <div class="flex items-baseline justify-between mb-3">
-                <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500">// Daily Revenue · Live</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span>
-              </div>
-              <div class="text-5xl md:text-6xl font-black text-white revenue-counter leading-none">
-                $<span id="rev-counter">12,450,000</span>
-              </div>
-              <div class="flex items-center justify-between mt-4 text-[10px] font-mono uppercase tracking-widest">
-                <span class="text-bone-500">Feedstock Cost</span>
-                <span class="text-emerald-400 font-bold">$0.00 · CPG SUBSIDIZED</span>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-3 gap-3 max-w-lg">
-              <div class="glass rounded-sm p-3">
-                <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500">Throughput</div>
-                <div class="text-base font-black text-white font-mono mt-1">120 <span class="text-haze-500 text-xs">PPM</span></div>
-              </div>
-              <div class="glass rounded-sm p-3">
-                <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-ember-500">Cycle</div>
-                <div class="text-base font-black text-white font-mono mt-1">90 <span class="text-ember-500 text-xs">SEC</span></div>
-              </div>
-              <div class="glass rounded-sm p-3">
-                <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500">Stamp</div>
-                <div class="text-base font-black text-white font-mono mt-1"> <span class="text-haze-500 text-xs">UHP</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5 hidden lg:flex flex-col gap-3 justify-center reveal-right">
-            <div class="glass rounded-sm p-4 backdrop-blur-md">
-              <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500 mb-1">Bühler Polishing Lane</div>
-              <div class="text-white text-sm">USDA-Tiara → mirror-polish → Y-junction split (food + API stream)</div>
-            </div>
-            <div class="glass rounded-sm p-4 backdrop-blur-md">
-              <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500 mb-1">Proprietary UHP Cold-Stamp</div>
-              <div class="text-white text-sm">Zero-shear stabilization — the IP gate that prevents molecular shredding.</div>
-            </div>
-            <div class="glass rounded-sm p-4 backdrop-blur-md">
-              <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-ember-500 mb-1">Sentinel Cartridge / Pod</div>
-              <div class="text-white text-sm">Cold-Stamp pucks — pharma-grade density, MTP-tracked.</div>
-            </div>
-            <div class="glass rounded-sm p-4 backdrop-blur-md">
-              <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500 mb-1">ProMach/ZARPAC Retort</div>
-              <div class="text-white text-sm">Long-line 90-sec pouches → Tier-1 Retail revenue engine.</div>
-            </div>
-          </div>
+  <!-- AgChem & USDA Section -->
+  <section id="agchem" class="py-24 relative tech-grid">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-emerald-400 font-mono text-xs uppercase tracking-[0.3em]">// USDA NIFA SBIR Phase I &bull; Topic Area 8.2</span>
+          <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mt-2">
+            Dual-Action Crop Protection:<br /><span class="gradient-agchem">Fungicide + Insecticide.</span>
+          </h2>
+        </div>
+        <div class="font-mono text-xs text-slate-400 text-right">
+          <div class="text-white font-bold">FOA: USDA-NIFA-SBIR-001001</div>
+          <div>Program Area: Plant Production &amp; Protection</div>
         </div>
       </div>
 
-      <div class="absolute bottom-0 left-0 right-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 lg:px-8 pb-8 flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500">
-          <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span> Fig. 03 · to22s Node 1 Processing Hub · Holly Springs Mirror</span>
-          <span>API MINING DENSITY :: 0.6 KG/DM³</span>
+      <!-- Target Mechanics Comparison -->
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Fungal Hyphal Suicide -->
+        <div class="glass-panel p-8 rounded-2xl border-t-4 border-emerald-400">
+          <div class="text-xs font-mono text-emerald-400 font-bold uppercase mb-2">Target 1 &bull; Phytopathogenic Fungi</div>
+          <h3 class="text-2xl font-black text-white uppercase">Metagenomic Hyphal Suicide</h3>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Binds the 1.5-billion-year-old conserved allosteric back-face hinge (&alpha;5&ndash;&alpha;8) and metagenomic BH3 hydrophobic groove in <span class="font-mono text-emerald-300">Fungal_Bcl2</span> homologs. Forces invading hyphae into apoptotic programmed cell death during early tissue colonization.
+          </p>
+          <ul class="mt-6 space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Magnaporthe oryzae (Rice Blast)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Phakopsora pachyrhizi (Soybean Rust)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Botrytis cinerea (Gray Mold)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Fusarium oxysporum (Wilt)</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-white/10 font-mono text-xs text-emerald-400">
+            EC<sub>50</sub> &le; 5.0 &mu;M &bull; &Delta;G<sub>bind</sub> &le; -14.0 kcal/mol
+          </div>
         </div>
+
+        <!-- Insect Auxotrophy & Ecdysis -->
+        <div class="glass-panel p-8 rounded-2xl border-t-4 border-sky-400">
+          <div class="text-xs font-mono text-sky-400 font-bold uppercase mb-2">Target 2 &bull; Pest Insects</div>
+          <h3 class="text-2xl font-black text-white uppercase">Sterol Auxotrophy &amp; Molting Arrest</h3>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Ingested cycloartane sterols competitively bind midgut sterol transporters (<span class="font-mono text-sky-300">SCP-2</span>, <span class="font-mono text-sky-300">NPC1b</span>) and insect apoptotic regulators (<span class="font-mono text-sky-300">Debcl/Buffy</span>), triggering ecdysis failure.
+          </p>
+          <ul class="mt-6 space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> Spodoptera frugiperda (Fall Armyworm)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> Aphis gossypii (Melon Aphid)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> Diabrotica virgifera (Corn Rootworm)</li>
+            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-sky-400"></i> Midgut Epithelial Apoptosis</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-white/10 font-mono text-xs text-sky-400">
+            LC<sub>50</sub> &le; 10 &mu;M &bull; &Delta;G<sub>bind</sub> &le; -14.85 kcal/mol
+          </div>
+        </div>
+
+        <!-- Host Crop Safety -->
+        <div class="glass-panel p-8 rounded-2xl border-t-4 border-amber-400">
+          <div class="text-xs font-mono text-amber-400 font-bold uppercase mb-2">Target 3 &bull; Crop Phytotoxicity</div>
+          <h3 class="text-2xl font-black text-white uppercase">100% Host Crop Safety</h3>
+          <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+            Molecular docking against host plant cycloartenol synthases confirms zero steric engagement, ensuring complete crop seedling and yield safety without foliage burn.
+          </p>
+          <ul class="mt-6 space-y-2 text-xs font-mono text-slate-300">
+            <li class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-amber-400"></i> Zero Steric Engagement</li>
+            <li class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-amber-400"></i> Rice &amp; Soybean Seedling Safety</li>
+            <li class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-amber-400"></i> EPA Biorational MRL Exemption</li>
+            <li class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-amber-400"></i> 100% Biodegradable Carrier</li>
+          </ul>
+          <div class="mt-6 pt-4 border-t border-white/10 font-mono text-xs text-amber-400">
+            Differential Affinity &Delta;&Delta;G &ge; +12.0 kcal/mol
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
-  <section id="stack" class="relative py-32 md:py-40 overflow-hidden">
-    <div class="absolute inset-0 z-0 blueprint-grid opacity-30 blueprint-grid-mask"></div>
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(60% 60% at 70% 30%, rgba(56,189,248,0.10), transparent 70%);"></div>
+  <!-- Formulation & Chemistry Section -->
+  <section id="chemistry" class="py-24 bg-brand-900/60 border-y border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-amber-400 font-mono text-xs uppercase tracking-[0.3em]">// Closed-Loop Formulation Engineering</span>
+          <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight">
+            The [C3G :: Ferulate]<br /><span class="gradient-pharma">&pi;-&pi; Photoprotective Stack.</span>
+          </h2>
+          <p class="text-slate-300 text-base leading-relaxed font-light">
+            Natural &gamma;-oryzanol from domestic rice bran occurs as a ferulic acid ester of cycloartenol. Continuous supercritical CO<sub>2</sub> refining followed by heterologous feruloyl esterase (FAE) biocatalysis cleanly liberates active Cycloartanol alongside free Ferulic Acid.
+          </p>
+          <p class="text-slate-300 text-base leading-relaxed font-light">
+            Rather than discarding the ferulate co-product, our closed-loop process co-formulates it with Cyanidin-3-Glucoside (C3G, purple rice anthocyanin) to form an intermolecular <strong class="text-white font-semibold">&pi;-&pi; stacked photoprotective &amp; plant defense complex</strong>. Free Ferulic Acid serves as a potent endogenous elicitor—activating phenylalanine ammonia-lyase (PAL), reinforcing plant cell wall lignification, and priming Systemic Acquired Resistance (SAR) to synergize with the primary phytosterol active.
+          </p>
 
-    <div class="relative max-w-7xl mx-auto px-4 lg:px-8">
-      <div class="text-center mb-20 reveal">
-        <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500 inline-flex items-center gap-3 mb-6">
-          <span class="w-6 h-px bg-haze-500"></span> 04 // The Closed-Loop Value Stack <span class="w-6 h-px bg-haze-500"></span>
-        </span>
-        <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none extrude mt-6">From Silt Loam<br/><span class="gradient-text">to API.</span></h2>
-        <p class="text-bone-500 max-w-2xl mx-auto font-light leading-relaxed text-lg mt-8">
-          Five engineered layers stack downward into a single sovereign supply chain. Scroll the stack to step through each layer.
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-12 gap-10 items-start">
-        <div class="lg:col-span-7 lg:sticky lg:top-32">
-          <div class="image-frame">
-            <span class="image-corner tl"></span>
-            <span class="image-corner tr"></span>
-            <span class="image-corner bl"></span>
-            <span class="image-corner br"></span>
-            <img src="https://i.imgur.com/t4acolX.jpeg" alt="Vertical Sovereignty: The to22s Closed-Loop Supply Chain — Value Stack" loading="lazy" />
-          </div>
-          <div class="mt-3 flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500">
-            <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span> Fig. 04 · Value Stack</span>
-            <span>EXPLODED VIEW · TOP-DOWN</span>
-          </div>
-        </div>
-
-        <div class="lg:col-span-5 space-y-6" id="stack-layers">
-          <div class="stack-layer glass rounded-sm p-6" data-layer="0">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="stack-marker w-2 h-2 rounded-full bg-haze-500/30 transition-all"></span>
-              <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500">Layer 01 · Apex</span>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
+            <div class="glass-panel p-4 rounded-lg">
+              <div class="text-xs font-mono text-amber-400 font-bold">UV-B Stabilization</div>
+              <div class="text-xs text-slate-300 mt-1">Absorbs 310&ndash;350 nm UV-B, preventing foliage photo-degradation.</div>
             </div>
-            <h4 class="text-white text-xl font-black uppercase tracking-tight">69 MPa Biorefinery</h4>
-            <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-1">Thyssenkrupp Vessel · Holly Springs</div>
-            <p class="text-sm text-bone-300 leading-relaxed mt-3">Supercritical CO₂ at 69 MPa — the API mining floor. 100% identity preservation, surgical extraction selectivity.</p>
-          </div>
-
-          <div class="stack-layer glass rounded-sm p-6" data-layer="1">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="stack-marker w-2 h-2 rounded-full bg-haze-500/30 transition-all"></span>
-              <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500">Layer 02 · Feed</span>
+            <div class="glass-panel p-4 rounded-lg">
+              <div class="text-xs font-mono text-amber-400 font-bold">SAR Defense Elicitor</div>
+              <div class="text-xs text-slate-300 mt-1">Activates PAL enzymes, driving cell wall lignification &amp; SAR priming.</div>
             </div>
-            <h4 class="text-white text-xl font-black uppercase tracking-tight">Sentinel Cartridge</h4>
-            <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-1">Concave-to-Convex · Pharma-Grade Pucks</div>
-            <p class="text-sm text-bone-300 leading-relaxed mt-3">Engineered for precise stacking inside the extraction vessel — doubles API yield per cubic decimeter without expanding hardware.</p>
-          </div>
-
-          <div class="stack-layer glass rounded-sm p-6" data-layer="2">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="stack-marker w-2 h-2 rounded-full bg-haze-500/30 transition-all"></span>
-              <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-haze-500">Layer 03 · IP Gate</span>
-            </div>
-            <h4 class="text-white text-xl font-black uppercase tracking-tight">Proprietary Boutique Mill</h4>
-            <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-1">Node 1 · Arkansas · Single-Lane</div>
-            <p class="text-sm text-bone-300 leading-relaxed mt-3">The IP gate. Zero-shear stabilization keeps lead metabolites in their native state. No generic mill on earth can replicate the molecular fidelity.</p>
-          </div>
-
-          <div class="stack-layer glass rounded-sm p-6" data-layer="3">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="stack-marker w-2 h-2 rounded-full bg-haze-500/30 transition-all"></span>
-              <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-ember-500">Layer 04 · Genetics</span>
-            </div>
-            <h4 class="text-white text-xl font-black uppercase tracking-tight">USDA-Tiara Lineage</h4>
-            <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-1">Docket 4.29 · Active</div>
-            <p class="text-sm text-bone-300 leading-relaxed mt-3">Identity-preserved paddy rice — a sovereign genetic asset under active USDA-ARS docket. The seed itself is collateral.</p>
-          </div>
-
-          <div class="stack-layer glass rounded-sm p-6" data-layer="4">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="stack-marker w-2 h-2 rounded-full bg-haze-500/30 transition-all"></span>
-              <span class="text-[9px] font-mono uppercase tracking-[0.3em] text-ember-500">Layer 05 · Foundation</span>
-            </div>
-            <h4 class="text-white text-xl font-black uppercase tracking-tight">Dewitt Silt Loam</h4>
-            <div class="text-[10px] font-mono uppercase tracking-widest text-bone-500 mt-1">Lithospheric Fingerprint · Arkansas</div>
-            <p class="text-sm text-bone-300 leading-relaxed mt-3">A geologically-isolated mineral matrix anchoring metabolic reproducibility — the literal ground truth of the entire value stack.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="pka" class="relative py-32 border-t border-white/5">
-    <div class="absolute inset-0 z-0 blueprint-grid opacity-30 blueprint-grid-mask"></div>
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(40% 40% at 30% 50%, rgba(167,139,250,0.18), transparent 60%), radial-gradient(40% 40% at 70% 50%, rgba(125,211,252,0.18), transparent 60%);"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4">
-      <div class="text-center mb-24 flex flex-col items-center reveal">
-        <span class="text-haze-500 font-bold uppercase text-[10px] tracking-[0.5em] mb-6">05 // pH-Responsive pKa Logistics</span>
-        <h2 class="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6 leading-none extrude">The C3-Sulfamoylated <span class="gradient-text-2">Moat.</span></h2>
-        <p class="text-bone-500 max-w-2xl mx-auto font-light leading-relaxed text-lg mt-4">
-          Semi-synthetic sterol chemistry: a Bcl-2 9,19-cyclopropane allosteric anchor with an STS-activated cleavage site and thermodynamic sink lock.
-        </p>
-      </div>
-
-      <div class="reveal mb-12 mx-auto max-w-3xl">
-        <div class="glass rounded-sm p-6 flex items-center justify-between gap-4">
-          <div class="flex items-center gap-3 text-left">
-            <div class="w-10 h-10 rounded-full border border-violet-700/60 flex items-center justify-center" style="background: radial-gradient(circle, rgba(167,139,250,0.3), transparent 70%);">
-              <span class="w-3 h-3 rounded-full" style="background:#a78bfa; opacity:0.6;"></span>
-            </div>
-            <div>
-              <div class="text-[9px] font-mono uppercase tracking-widest text-bone-500">EXTRACELLULAR</div>
-              <div class="text-xs font-bold text-white font-mono">pH 6.8 · neutral</div>
-            </div>
-          </div>
-          <div class="flex-1 relative h-px bg-gradient-to-r from-violet-700/60 via-haze-500 to-haze-500/40">
-            <span class="absolute -top-1.5 right-0 w-3 h-3 rotate-45 border-t border-r border-haze-500"></span>
-            <div class="absolute -top-7 left-1/2 -translate-x-1/2 text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500 whitespace-nowrap">pKa shift · ΔpH 0.4</div>
-          </div>
-          <div class="flex items-center gap-3 text-right">
-            <div>
-              <div class="text-[9px] font-mono uppercase tracking-widest text-bone-500">CYTOSOLIC</div>
-              <div class="text-xs font-bold text-white font-mono">pH 7.2 · charged</div>
-            </div>
-            <div class="w-10 h-10 rounded-full border border-haze-500/60 flex items-center justify-center shadow-[0_0_18px_rgba(125,211,252,0.4)]" style="background: radial-gradient(circle, rgba(125,211,252,0.4), transparent 70%);">
-              <span class="w-3 h-3 rounded-full bg-haze-500 shadow-[0_0_8px_rgba(125,211,252,0.9)]"></span>
+            <div class="glass-panel p-4 rounded-lg">
+              <div class="text-xs font-mono text-amber-400 font-bold">Rain-Fast Traversal</div>
+              <div class="text-xs text-slate-300 mt-1">Contact angle &lt;45&deg; for rapid waxy cuticle penetration.</div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="grid md:grid-cols-2 gap-8 text-left items-stretch">
-        <div class="tilt-host reveal" style="perspective: 1400px;">
-          <article class="tilt glass refract rounded-sm p-12 flex flex-col h-full overflow-hidden" style="border-color: rgba(167,139,250,0.25);">
-            <span class="refract-layer r1" style="background: radial-gradient(60% 40% at 30% 0%, rgba(167,139,250,0.18), transparent 60%);"></span>
-            <span class="refract-layer r2"></span>
-            <span class="glare"></span>
-            <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-6 recede">
-              <div class="flex items-center gap-3">
-                <div class="w-2 h-2 rounded-full" style="background:#a78bfa;"></div>
-                <h4 class="text-white font-black uppercase text-2xl">Neutral Ghost</h4>
-              </div>
-              <span class="text-bone-500 text-sm font-mono tracking-widest">pH 6.8</span>
-            </div>
-            <div class="lift-2 mb-8 relative h-32 flex items-center justify-center">
-              <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-12 flex items-center">
-                <div class="w-full">
-                  <div class="h-1 bg-violet-700/40"></div>
-                  <div class="h-2 bg-gradient-to-b from-violet-700/30 to-violet-700/10 my-0.5"></div>
-                  <div class="h-1 bg-violet-700/40"></div>
+        <div class="lg:col-span-6">
+          <div class="glass-panel p-8 rounded-2xl space-y-6">
+            <h3 class="text-xl font-mono uppercase font-bold text-white flex items-center gap-3">
+              <i data-lucide="layers" class="w-5 h-5 text-amber-400"></i>
+              Foliage Micellar Spray Composition
+            </h3>
+
+            <div class="space-y-4 text-xs font-mono">
+              <div class="p-4 rounded-lg bg-brand-950/60 border border-slate-800 flex justify-between items-center">
+                <div>
+                  <div class="text-white font-bold">Active Engine (150 mg)</div>
+                  <div class="text-slate-400">Cycloartanol / Saturated 24-MCA</div>
                 </div>
+                <span class="text-emerald-400 font-bold">Hyphal Suicide + IGR</span>
               </div>
-              <div class="relative z-10 float-y">
-                <div class="w-14 h-14 rounded-full border-2" style="border-color:#a78bfa; background: radial-gradient(circle, rgba(167,139,250,0.25), rgba(167,139,250,0.05) 70%); box-shadow: 0 0 30px rgba(167,139,250,0.4);"></div>
-                <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[8px] font-mono uppercase tracking-widest" style="color:#a78bfa;">passes through</div>
+
+              <div class="p-4 rounded-lg bg-brand-950/60 border border-slate-800 flex justify-between items-center">
+                <div>
+                  <div class="text-white font-bold">Photoprotective &amp; SAR Stack (50 mg)</div>
+                  <div class="text-slate-400">[C3G :: Ferulate] Intermolecular Stack</div>
+                </div>
+                <span class="text-amber-400 font-bold">UV-B Shield + SAR Elicitor</span>
               </div>
-              <svg class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-6 opacity-60" viewBox="0 0 40 20" fill="none">
-                <path d="M2 10 H 32 M28 6 L 34 10 L 28 14" stroke="#a78bfa" stroke-width="1.2"/>
+
+              <div class="p-4 rounded-lg bg-brand-950/60 border border-slate-800 flex justify-between items-center">
+                <div>
+                  <div class="text-white font-bold">Biodegradable Shell (37.5 mg)</div>
+                  <div class="text-slate-400">Rice Wax &amp; Lecithin Micellar Shell</div>
+                </div>
+                <span class="text-sky-400 font-bold">Rain-Fast Cuticle Traversal</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-lg bg-emerald-500/10 border border-emerald-400/30 text-xs text-emerald-300 font-mono">
+              100% Synthetic Residue Free &bull; Organic Farming Compatible &bull; Zero-Waste Biorefinery
+            </div>
+
+            <!-- Inline Technical Diagram SVG: Pi-Pi Stacking -->
+            <div class="p-4 rounded-xl bg-brand-950/80 border border-slate-800 text-center relative overflow-hidden">
+              <div class="text-[10px] font-mono text-slate-400 uppercase tracking-widest mb-2">// Intermolecular &pi;-&pi; Stacking Geometry (310-350 nm UV-B Absorbance)</div>
+              <svg viewBox="0 0 400 90" class="w-full h-20 mx-auto">
+                <polygon points="40,30 65,15 90,30 90,55 65,70 40,55" fill="rgba(167, 139, 250, 0.15)" stroke="#a78bfa" stroke-width="2" />
+                <circle cx="65" cy="42.5" r="12" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3" />
+                <text x="65" y="46" fill="#a78bfa" font-family="JetBrains Mono" font-size="9" text-anchor="middle">C3G</text>
+
+                <line x1="90" y1="42.5" x2="150" y2="42.5" stroke="#f0b67f" stroke-width="2" stroke-dasharray="4,4" />
+                <text x="120" y="35" fill="#f0b67f" font-family="JetBrains Mono" font-size="8" text-anchor="middle">&pi;-&pi; stack (3.4 &Aring;)</text>
+
+                <polygon points="150,30 175,15 200,30 200,55 175,70 150,55" fill="rgba(240, 182, 127, 0.15)" stroke="#f0b67f" stroke-width="2" />
+                <circle cx="175" cy="42.5" r="12" fill="none" stroke="#f0b67f" stroke-width="1.5" opacity="0.8" />
+                <text x="175" y="46" fill="#f0b67f" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FA</text>
+
+                <path d="M 210,42.5 L 270,42.5" stroke="#34d399" stroke-width="2" />
+                <text x="240" y="33" fill="#34d399" font-family="JetBrains Mono" font-size="8" text-anchor="middle">UV-B Shield</text>
+
+                <rect x="280" y="22.5" width="110" height="40" rx="6" fill="rgba(52, 211, 153, 0.1)" stroke="#34d399" stroke-width="1.5" />
+                <text x="335" y="39" fill="#34d399" font-family="JetBrains Mono" font-size="9" font-weight="bold" text-anchor="middle">SAR Elicitation</text>
+                <text x="335" y="51" fill="#94a3b8" font-family="JetBrains Mono" font-size="8" text-anchor="middle">PAL Enzyme Activation</text>
               </svg>
             </div>
-            <p class="text-lg text-bone-300 font-light leading-relaxed flex-grow lift">
-              At the tumor interface the C3-sulfamate Sentinel becomes an un-ionized 'Ghost'. It carries the CAII erythrocyte anchor for extended plasma retention and dissolves directly through the phospholipid bilayer.
-            </p>
-            <div class="mt-8 grid grid-cols-3 gap-px bg-white/5 border border-white/5 text-[10px] font-mono uppercase tracking-widest lift">
-              <div class="bg-ink-900 p-3"><div class="text-bone-500">charge</div><div class="text-white text-base font-black mt-1">0</div></div>
-              <div class="bg-ink-900 p-3"><div class="text-bone-500">log P</div><div class="text-white text-base font-black mt-1">+4.1</div></div>
-              <div class="bg-ink-900 p-3"><div class="text-bone-500">stage</div><div class="text-white text-base font-black mt-1" style="color:#a78bfa;">entry</div></div>
-            </div>
-          </article>
+          </div>
         </div>
 
-        <div class="tilt-host reveal" style="perspective: 1400px; transition-delay:.1s;">
-          <article class="tilt glass refract rounded-sm p-12 flex flex-col h-full overflow-hidden" style="border-color: rgba(125,211,252,0.25);">
-            <span class="refract-layer r1"></span>
-            <span class="refract-layer r2" style="background: radial-gradient(60% 40% at 100% 0%, rgba(125,211,252,0.20), transparent 60%);"></span>
-            <span class="glare"></span>
-            <div class="flex justify-between items-center mb-8 border-b border-white/10 pb-6 recede">
-              <div class="flex items-center gap-3">
-                <div class="w-2 h-2 rounded-full bg-haze-500 shadow-[0_0_10px_rgba(125,211,252,0.8)]"></div>
-                <h4 class="text-white font-black uppercase text-2xl">Charged Anchor</h4>
-              </div>
-              <span class="text-haze-500 text-sm font-mono tracking-widest font-bold">pH 7.2</span>
-            </div>
-            <div class="lift-2 mb-8 relative h-32 flex items-center justify-center">
-              <div class="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-12">
-                <div class="h-1 bg-haze-500/30"></div>
-                <div class="h-2 bg-gradient-to-b from-haze-500/20 to-haze-500/5 my-0.5"></div>
-                <div class="h-1 bg-haze-500/30"></div>
-              </div>
-              <div class="relative z-10">
-                <div class="w-14 h-14 rounded-full border-2 border-haze-500" style="background: radial-gradient(circle, rgba(125,211,252,0.4), rgba(125,211,252,0.05) 70%); box-shadow: 0 0 40px rgba(125,211,252,0.6);"></div>
-                <svg class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-16 h-8" viewBox="0 0 60 30" fill="none">
-                  <path d="M30 0 L 12 24 M30 0 L 48 24" stroke="#7dd3fc" stroke-width="1.2"/>
-                  <circle cx="12" cy="24" r="3" fill="#7dd3fc"/>
-                  <circle cx="48" cy="24" r="3" fill="#7dd3fc"/>
-                </svg>
-                <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[8px] font-mono uppercase tracking-widest text-haze-500 whitespace-nowrap">locked in</div>
-              </div>
-              <div class="absolute right-2 top-2 px-2 py-1 bg-haze-500/10 border border-haze-500/40 rounded-sm text-[8px] font-mono text-haze-500 uppercase tracking-widest">trapped</div>
-            </div>
-            <p class="text-lg text-bone-300 font-light leading-relaxed flex-grow lift">
-              At the tumor-gated STS scissor site the molecule cleaves and re-ionizes — transforming from neutral ghost into a <span class="text-haze-500 font-bold">Charged Anchor</span> at the Bcl-2 9,19-cyclopropane allosteric pocket.
-            </p>
-            <div class="mt-8 grid grid-cols-3 gap-px bg-white/5 border border-white/5 text-[10px] font-mono uppercase tracking-widest lift">
-              <div class="bg-ink-900 p-3"><div class="text-bone-500">charge</div><div class="text-white text-base font-black mt-1">+1</div></div>
-              <div class="bg-ink-900 p-3"><div class="text-bone-500">Kd</div><div class="text-white text-base font-black mt-1">21 nM</div></div>
-              <div class="bg-ink-900 p-3"><div class="text-bone-500">stage</div><div class="text-white text-base font-black mt-1 text-haze-500">trapped</div></div>
-            </div>
-          </article>
-        </div>
       </div>
 
-      <div class="mt-20 grid lg:grid-cols-5 gap-8 items-stretch reveal">
-        <div class="lg:col-span-2 flex flex-col justify-center">
-          <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500 mb-4 flex items-center gap-3">
-            <span class="w-6 h-px bg-haze-500"></span> 3rd Generation STS Inhibitor
-          </span>
-          <h3 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter leading-none mb-4 extrude">
-            Tri-Axial<br/><span class="gradient-text-2">Blockade.</span>
-          </h3>
-          <p class="text-bone-500 leading-relaxed text-base font-light">
-            Four coordinated mechanisms converge on a single molecular event — irreversible covalent binding, allosteric occupancy, downstream transcriptional collapse, and cellular retention.
-          </p>
-          <div class="mt-8 pt-6 border-t border-white/5">
-            <div class="text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500 mb-4">// C3G Core Cascade</div>
-            <div class="grid grid-cols-3 gap-2 text-center">
-              <div class="glass rounded-sm p-3">
-                <div class="text-[8px] font-mono uppercase tracking-widest text-bone-500">p65 / NF-κB</div>
-                <div class="text-base font-black text-white mt-1 font-mono">↓<span class="text-emerald-400 text-xs ml-1">71%</span></div>
-              </div>
-              <div class="glass rounded-sm p-3">
-                <div class="text-[8px] font-mono uppercase tracking-widest text-bone-500">VEGFR-2</div>
-                <div class="text-base font-black text-white mt-1 font-mono">⊣<span class="text-haze-500 text-xs ml-1">block</span></div>
-              </div>
-              <div class="glass rounded-sm p-3">
-                <div class="text-[8px] font-mono uppercase tracking-widest text-bone-500">STAT3</div>
-                <div class="text-base font-black text-white mt-1 font-mono">↓<span class="text-ember-500 text-xs ml-1">−P</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-3 tilt-host" style="perspective: 1400px;">
-          <div class="tilt glass refract rounded-sm p-2 overflow-hidden">
-            <span class="refract-layer r1"></span>
-            <span class="glare"></span>
-            <div class="grid grid-cols-12 px-6 py-4 border-b border-white/10 text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500 recede">
-              <div class="col-span-2">Axis</div>
-              <div class="col-span-6">Mechanism</div>
-              <div class="col-span-4 text-right">Spec</div>
-            </div>
-            <div class="grid grid-cols-12 px-6 py-5 border-b border-white/5 items-center hover:bg-white/[0.02] transition-colors lift">
-              <div class="col-span-2 flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
-                <span class="text-[10px] font-mono uppercase text-emerald-400 tracking-widest">Tap 1</span>
-              </div>
-              <div class="col-span-6 text-sm text-white font-bold uppercase tracking-wide">Covalent STS Lock</div>
-              <div class="col-span-4 text-right">
-                <span class="text-emerald-400 font-mono text-xs uppercase tracking-widest font-bold">Irreversible</span>
-              </div>
-            </div>
-            <div class="grid grid-cols-12 px-6 py-5 border-b border-white/5 items-center hover:bg-white/[0.02] transition-colors lift">
-              <div class="col-span-2 flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-haze-500 shadow-[0_0_8px_rgba(125,211,252,0.8)]"></span>
-                <span class="text-[10px] font-mono uppercase text-haze-500 tracking-widest">Tap 2</span>
-              </div>
-              <div class="col-span-6 text-sm text-white font-bold uppercase tracking-wide">Allosteric Bcl-2 Nudge</div>
-              <div class="col-span-4 text-right">
-                <span class="text-white font-mono text-xs">21 nM <span class="text-bone-500">/ Kd</span></span>
-              </div>
-            </div>
-            <div class="grid grid-cols-12 px-6 py-5 border-b border-white/5 items-start hover:bg-white/[0.02] transition-colors lift relative">
-              <div class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-ember-500/0 via-ember-500/60 to-ember-500/0"></div>
-              <div class="col-span-2 flex items-center gap-2 pt-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-ember-500 shadow-[0_0_8px_rgba(240,182,127,0.8)]"></span>
-                <span class="text-[10px] font-mono uppercase text-ember-500 tracking-widest">Tap 3</span>
-              </div>
-              <div class="col-span-6">
-                <div class="text-sm text-white font-bold uppercase tracking-wide">C3G Core Cascade</div>
-                <div class="mt-2 flex flex-wrap gap-1.5">
-                  <span class="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-sm border border-emerald-400/30 text-emerald-400">p65/NF-κB ↓</span>
-                  <span class="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-sm border border-haze-500/30 text-haze-500">VEGFR-2 ⊣</span>
-                  <span class="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-sm border border-ember-500/30 text-ember-500">STAT3 ↓</span>
-                  <span class="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-sm border border-white/10 text-bone-300">MMP-9 ↓</span>
-                  <span class="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-sm border border-white/10 text-bone-300">HIF-1α ↓</span>
-                </div>
-              </div>
-              <div class="col-span-4 text-right pt-1">
-                <span class="font-mono text-xs uppercase tracking-widest text-ember-500 font-bold">Pleiotropic</span>
-                <div class="text-[9px] font-mono text-bone-500 mt-1">transcription · angiogenesis</div>
-              </div>
-            </div>
-            <div class="grid grid-cols-12 px-6 py-5 items-center hover:bg-white/[0.02] transition-colors lift">
-              <div class="col-span-2 flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full" style="background:#a78bfa; box-shadow:0 0 8px rgba(167,139,250,0.8);"></span>
-                <span class="text-[10px] font-mono uppercase tracking-widest" style="color:#a78bfa;">Hold</span>
-              </div>
-              <div class="col-span-6 text-sm text-white font-bold uppercase tracking-wide">Retention Platform</div>
-              <div class="col-span-4 text-right">
-                <span class="font-mono text-xs uppercase tracking-widest" style="color:#a78bfa;">CAII Erythrocyte Anchor</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-12 reveal">
-        <div class="glass refract rounded-sm overflow-hidden">
-          <div class="px-6 py-4 border-b border-white/10 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <svg class="w-3 h-3 text-haze-500" viewBox="0 0 12 12" fill="none">
-                <path d="M2 10 L 4 6 L 6 8 L 10 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-              <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-haze-500 font-bold">The Vulnerability Leaderboard</span>
-            </div>
-            <span class="text-[9px] font-mono uppercase tracking-widest text-bone-500">Selectivity Index ranking</span>
-          </div>
-          <div class="grid md:grid-cols-3 gap-px bg-white/5">
-            <div class="bg-ink-900 p-6 flex items-center justify-between gap-4">
-              <div class="flex items-center gap-3">
-                <span class="text-[10px] font-mono text-haze-500 font-bold">#01</span>
-                <div>
-                  <div class="text-xs uppercase tracking-widest text-white font-bold">Squamous Cell Lung Carcinoma</div>
-                  <div class="text-[9px] font-mono uppercase tracking-widest text-bone-500 mt-1">Lymphatic Niche</div>
-                </div>
-              </div>
-              <span class="text-haze-500 font-mono font-bold text-xl">398×</span>
-            </div>
-            <div class="bg-ink-900 p-6 flex items-center justify-between gap-4">
-              <div class="flex items-center gap-3">
-                <span class="text-[10px] font-mono font-bold" style="color:#a78bfa;">#02</span>
-                <div>
-                  <div class="text-xs uppercase tracking-widest text-white font-bold">Dementia</div>
-                  <div class="text-[9px] font-mono uppercase tracking-widest text-bone-500 mt-1">TREM2 · Microglia</div>
-                </div>
-              </div>
-              <span class="font-mono font-bold text-xl" style="color:#a78bfa;">276.3×</span>
-            </div>
-            <div class="bg-ink-900 p-6 flex items-center justify-between gap-4">
-              <div class="flex items-center gap-3">
-                <span class="text-[10px] font-mono text-ember-500 font-bold">#03</span>
-                <div>
-                  <div class="text-xs uppercase tracking-widest text-white font-bold">Breast Cancer</div>
-                  <div class="text-[9px] font-mono uppercase tracking-widest text-bone-500 mt-1">STS-Addicted</div>
-                </div>
-              </div>
-              <span class="text-ember-500 font-mono font-bold text-xl">72.6×</span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <section id="topology" class="relative py-32 md:py-40 overflow-hidden border-t border-white/5">
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(50% 60% at 50% 50%, rgba(56,189,248,0.08), transparent 70%);"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 lg:px-8">
-      <div class="text-center mb-16 reveal">
-        <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500 inline-flex items-center gap-3 mb-6">
-          <span class="w-6 h-px bg-haze-500"></span> 06 // HTML-IN-CANVAS SMART TOPOLOGY <span class="w-6 h-px bg-haze-500"></span>
-        </span>
-        <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none extrude mt-6">Live Control<br/><span class="gradient-text-2">Viewport.</span></h2>
-        <p class="text-bone-500 max-w-2xl mx-auto font-light leading-relaxed text-lg mt-8">
-          Harnessing Google's declarative DOM-to-Canvas standards. Select, drag, customize, and execute anti-gravity kinetics over our sovereign refinery flow network in real time.
+  <!-- Active Research Pipeline & Patent Stack Section -->
+  <section id="verticals" class="py-24 border-t border-white/5 bg-brand-950 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-amber-400 font-mono text-xs uppercase tracking-[0.3em]">// Active Research Pipeline &amp; Patent Stack</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mt-3">
+          Active Platform Programs.<br /><span class="gradient-heading">Broad Multi-Target Coverage.</span>
+        </h2>
+        <p class="text-slate-300 mt-4 text-base font-light">
+          to22s Bio-Systems is actively researching and validating our systems pharmacology platform across rare hematologic cancers, oncoviral malignancies, broad agricultural crop protection, and waveform supercritical biomanufacturing. Protected by our proprietary patent portfolio (Patents A01&ndash;A27), our platform is open to field co-development and licensing interest.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch reveal">
-        <div class="lg:col-span-5 glass rounded-sm p-6 md:p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-5">
-            <div class="flex items-center justify-between pb-3 border-b border-white/5">
-              <span class="text-xs font-mono font-bold tracking-widest text-haze-500 uppercase flex items-center gap-2">
-                <i class="fa-solid fa-sliders text-sm"></i> Node Customizer
-              </span>
-              <span id="active-selected-label" class="bg-haze-500/10 text-haze-500 text-[10px] font-mono px-2 py-0.5 rounded border border-haze-500/20">
-                Click a Node in Canvas to Select
-              </span>
+      <!-- Interactive Program Filters -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12 font-mono text-xs">
+        <button onclick="filterPipeline('all')" class="filter-btn active px-4 py-2 rounded-full border border-white/10 bg-brand-900 text-slate-300 hover:text-white">All Programs</button>
+        <button onclick="filterPipeline('oncology')" class="filter-btn px-4 py-2 rounded-full border border-white/10 bg-brand-900 text-slate-300 hover:text-white">Oncology &amp; Rare Malignancies</button>
+        <button onclick="filterPipeline('oncoviral')" class="filter-btn px-4 py-2 rounded-full border border-white/10 bg-brand-900 text-slate-300 hover:text-white">Oncoviral Shields</button>
+        <button onclick="filterPipeline('agchem')" class="filter-btn px-4 py-2 rounded-full border border-white/10 bg-brand-900 text-slate-300 hover:text-white">AgBiosecurity</button>
+        <button onclick="filterPipeline('bioman')" class="filter-btn px-4 py-2 rounded-full border border-white/10 bg-brand-900 text-slate-300 hover:text-white">Biomanufacturing &amp; WDSE</button>
+      </div>
+
+      <!-- 4 Active Pipeline Domain Cards -->
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Domain 1: Rare Cancers & Hematology -->
+        <div data-category="oncology" class="pipeline-card glass-panel p-8 rounded-2xl border-t-2 border-purple-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-mono uppercase text-purple-400 font-bold font-mono">// ONCOLOGY &amp; RARE MALIGNANCIES</span>
+              <span class="px-2.5 py-1 bg-purple-500/20 text-purple-300 rounded font-mono text-[10px]">Patents A01–A06</span>
             </div>
-
-            <div class="space-y-4">
-              <div>
-                <label class="block text-[10px] font-mono uppercase text-bone-500 tracking-wider mb-1">Target Element Label</label>
-                <input id="dom-node-title" type="text" oninput="syncFormToCanvas()" class="w-full bg-ink-950/80 border border-white/10 rounded-sm p-3 text-xs text-slate-200 font-mono focus:outline-none focus:border-haze-500" value="Node 01">
-              </div>
-              <div class="grid grid-cols-2 gap-3">
-                <div>
-                  <label class="block text-[10px] font-mono uppercase text-bone-500 tracking-wider mb-1">Status Class</label>
-                  <select id="dom-node-status" onchange="syncFormToCanvas()" class="w-full bg-ink-950/80 border border-white/10 rounded-sm p-3 text-xs text-slate-200 font-mono focus:outline-none focus:border-haze-500">
-                    <option value="Active">Active (Green)</option>
-                    <option value="Staged">Staged (Amber)</option>
-                    <option value="Hold">Hold (Violet)</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-[10px] font-mono uppercase text-bone-500 tracking-wider mb-1">Primary Value</label>
-                  <input id="dom-node-metric" type="text" oninput="syncFormToCanvas()" class="w-full bg-ink-950/80 border border-white/10 rounded-sm p-3 text-xs text-slate-200 font-mono focus:outline-none focus:border-haze-500" value="10 MT/Day">
-                </div>
-              </div>
-
-              <div class="space-y-1">
-                <label class="block text-[10px] font-mono uppercase text-bone-500 tracking-wider">Declarative DOM Manifestation</label>
-                <div class="bg-black/60 border border-white/5 rounded-sm p-3.5 font-mono text-[10px] leading-relaxed text-haze-500/80 overflow-x-auto select-all">
-                  &lt;<span class="text-pink-400">biorefinery-node</span> <br>
-                  &nbsp;&nbsp;<span class="text-ember-500">id</span>=<span class="text-green-300">"<span id="code-node-id">node1</span>"</span><br>
-                  &nbsp;&nbsp;<span class="text-ember-500">label</span>=<span class="text-green-300">"<span id="code-node-title">Node 01</span>"</span><br>
-                  &nbsp;&nbsp;<span class="text-ember-500">status</span>=<span class="text-green-300">"<span id="code-node-status">Active</span>"</span><br>
-                  &nbsp;&nbsp;<span class="text-ember-500">metric</span>=<span class="text-green-300">"<span id="code-node-metric">10 MT/Day</span>"</span>&gt;<br>
-                  &lt;/<span class="text-pink-400">biorefinery-node</span>&gt;
-                </div>
-              </div>
-            </div>
-
-            <div class="p-4 bg-ink-950/50 border border-haze-500/20 rounded-sm mt-4">
-              <div class="text-[9px] font-mono text-emerald-400 uppercase tracking-widest mb-2 flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 pulse-dot"></span> Biological Lifecycle
-              </div>
-              <div class="text-[10px] text-bone-300 font-mono leading-relaxed space-y-1">
-                <div><span class="text-white font-bold">Target:</span> Foundation Plot 01</div>
-                <div><span class="text-white font-bold">Sown:</span> May 4, 2026</div>
-                <div><span class="text-white font-bold">State:</span> Germination <span class="text-bone-500">(Soil Temp: 22°C)</span></div>
-                <div><span class="text-white font-bold">Anticipated Harvest:</span> Oct 15, 2026</div>
-              </div>
-            </div>
-
-            <div class="space-y-2 pt-2 border-t border-white/5">
-              <span class="block text-[10px] font-mono uppercase text-bone-500 tracking-wider mb-1">Global Containment Fields</span>
-              <div class="grid grid-cols-2 gap-3">
-                <button onclick="toggleContainmentGravity()" id="canvas-physics-gravity" class="w-full bg-ink-900 border border-white/10 hover:border-haze-500 hover:text-white text-bone-300 rounded-sm p-3 text-[10px] font-mono uppercase tracking-widest transition duration-200 flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-earth-americas"></i> Gravity Off
-                </button>
-                <button onclick="disperseRefineryNodes()" class="w-full bg-ink-900 border border-white/10 hover:border-haze-500 hover:text-white text-bone-300 rounded-sm p-3 text-[10px] font-mono uppercase tracking-widest transition duration-200 flex items-center justify-center gap-2">
-                  <i class="fa-solid fa-shuffle"></i> Disperse Nodes
-                </button>
-              </div>
+            <h3 class="text-2xl font-black text-white uppercase">Hematologic Malignancies &amp; Resistance</h3>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Targeting the conserved back-face Bcl-2 allosteric hinge (&alpha;5&ndash;&alpha;8) to overcome G101V and D103Y clinical resistance mutations with infinite Bcl-xL platelet safety.
+            </p>
+            <div class="mt-4 space-y-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-bold text-[11px]">// Active Malignancy Targets:</div>
+              <ul class="grid grid-cols-2 gap-1 text-[11px] text-slate-400">
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> MV4-11 (AML)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> HL-60 (AML)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> MEC-1 (CLL)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> NCI-H69 (SCLC)</li>
+              </ul>
             </div>
           </div>
-
-          <div class="pt-4 border-t border-white/5 text-[9px] font-mono uppercase text-bone-500 tracking-[0.2em] flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span>
-            Drag canvas cards directly to test real-time fluid boundaries.
+          <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-[11px] font-mono">
+            <span class="text-slate-400">Mechanism:</span>
+            <span class="text-purple-300 font-semibold">G101V Allosteric Resiliency</span>
           </div>
         </div>
 
-        <div class="lg:col-span-7 flex flex-col justify-between">
-          <div class="image-frame relative flex-grow overflow-hidden flex items-center justify-center min-h-[420px] bg-gradient-to-b from-ink-950 to-ink-900 rounded-sm border border-white/10">
-            <span class="image-corner tl"></span>
-            <span class="image-corner tr"></span>
-            <span class="image-corner bl"></span>
-            <span class="image-corner br"></span>
-            <canvas id="dom-topology-canvas" class="absolute inset-0 w-full h-full block cursor-grab active:cursor-grabbing"></canvas>
+        <!-- Domain 2: Oncoviral Cancers & Viral Decoys -->
+        <div data-category="oncoviral" class="pipeline-card glass-panel p-8 rounded-2xl border-t-2 border-sky-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-mono uppercase text-sky-400 font-bold font-mono">// ONCOVIRAL CANCERS &amp; DECOYS</span>
+              <span class="px-2.5 py-1 bg-sky-500/20 text-sky-300 rounded font-mono text-[10px]">Patents A19–A24</span>
+            </div>
+            <h3 class="text-2xl font-black text-white uppercase">Viral Oncoprotein &amp; Decoy Neutralization</h3>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Neutralizing viral anti-apoptotic decoys (BHRF1, vBcl-2) while modulating host cell membrane lipid raft entry portals (ABCA2, NPC1) against viral envelope fusion.
+            </p>
+            <div class="mt-4 space-y-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-bold text-[11px]">// Active Oncoviral Targets:</div>
+              <ul class="grid grid-cols-2 gap-1 text-[11px] text-slate-400">
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Raji / Daudi (EBV+ BHRF1)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> C666-1 (EBV+ Carcinoma)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> BC-3 / BCBL-1 (KSHV+ vBcl-2)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-sky-400"></i> Host Lipid Raft Fusion Shield</li>
+              </ul>
+            </div>
           </div>
-          <div class="mt-3 flex items-center justify-between text-[9px] font-mono uppercase tracking-[0.3em] text-bone-500">
-            <span class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span>
-               Fig. 05 · Smart Biorefinery · HTML-in-Canvas Engine active
-            </span>
-            <span>MTP ORCHESTRATION LAYER SYNC</span>
+          <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-[11px] font-mono">
+            <span class="text-slate-400">Mechanism:</span>
+            <span class="text-sky-300 font-semibold">Viral Decoy Neutralization</span>
+          </div>
+        </div>
+
+        <!-- Domain 3: Broad Agricultural Biosecurity -->
+        <div data-category="agchem" class="pipeline-card glass-panel p-8 rounded-2xl border-t-2 border-emerald-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-mono uppercase text-emerald-400 font-bold font-mono">// BROAD AGRICULTURAL BIOSECURITY</span>
+              <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-300 rounded font-mono text-[10px]">Patents A12, F25</span>
+            </div>
+            <h3 class="text-2xl font-black text-white uppercase">Crop Protection &amp; Biorational Elicitation</h3>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Dual-action bio-identical phytosterol foliage elicitor driving fungal hyphal suicide and insect molting arrest across major row crops and specialty fruits.
+            </p>
+            <div class="mt-4 space-y-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-bold text-[11px]">// Active Crop &amp; Pathogen Categories:</div>
+              <ul class="grid grid-cols-2 gap-1 text-[11px] text-slate-400">
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Rice Blast (M. oryzae)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Soybean Rust (P. pachyrhizi)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Gray Mold (B. cinerea)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Fall Armyworm (S. frugiperda)</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-[11px] font-mono">
+            <span class="text-slate-400">Mechanism:</span>
+            <span class="text-emerald-300 font-semibold">Hyphal Suicide + Ecdysis Arrest</span>
+          </div>
+        </div>
+
+        <!-- Domain 4: Biomanufacturing & Waveform scCO2 -->
+        <div data-category="bioman" class="pipeline-card glass-panel p-8 rounded-2xl border-t-2 border-amber-400 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-mono uppercase text-amber-400 font-bold font-mono">// BIOMANUFACTURING &amp; EXTRACTION</span>
+              <span class="px-2.5 py-1 bg-amber-500/20 text-amber-300 rounded font-mono text-[10px]">Patents A27, WDSE</span>
+            </div>
+            <h3 class="text-2xl font-black text-white uppercase">Yeast Fermentation &amp; Waveform scCO<sub>2</sub></h3>
+            <p class="text-slate-300 text-sm mt-3 leading-relaxed">
+              Stabilizes yeast vacuolar membranes (<span class="italic">S. cerevisiae</span>) preventing autolysis during high-density fermentation, and Waveform-Driven Supercritical Electrostatic Extraction.
+            </p>
+            <div class="mt-4 space-y-2 text-xs font-mono text-slate-300">
+              <div class="text-white font-bold text-[11px]">// Active Process Stack:</div>
+              <ul class="grid grid-cols-2 gap-1 text-[11px] text-slate-400">
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> S. cerevisiae Autolysis Shield</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Vacuolar VMP Stabilization</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Waveform scCO2 (WDSE 70 MPa)</li>
+                <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> Electrostatic Deposition</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 flex justify-between items-center text-[11px] font-mono">
+            <span class="text-slate-400">Mechanism:</span>
+            <span class="text-amber-300 font-semibold">WDSE + Autolysis Prevention</span>
           </div>
         </div>
 
       </div>
 
-      <div class="mt-12 grid md:grid-cols-4 gap-px bg-white/5 border border-white/5 rounded-sm overflow-hidden text-[10px] font-mono uppercase tracking-[0.25em] reveal">
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">Pressure Floor</span><div class="text-haze-500 text-base font-black mt-1">68.95 MPa</div></div>
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">API Density</span><div class="text-white text-base font-black mt-1">0.6 kg/dm³</div></div>
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">Capacity</span><div class="text-white text-base font-black mt-1">10 MT / Day</div></div>
-        <div class="bg-ink-900 p-5"><span class="text-bone-500">Ledger</span><div class="text-ember-500 text-base font-black mt-1">MTP Live</div></div>
-      </div>
     </div>
   </section>
 
-  <footer id="cta" class="relative py-32 border-t border-white/10 overflow-hidden">
-    <div class="absolute inset-0 z-0 pointer-events-none" style="background: radial-gradient(60% 60% at 50% 0%, rgba(56,189,248,0.10), transparent 70%);"></div>
-    <div class="absolute inset-0 z-0 blueprint-grid opacity-30 blueprint-grid-mask"></div>
-
-    <div class="relative max-w-7xl mx-auto px-4 lg:px-8">
-      <div class="mb-20 pb-12 border-b border-white/5 reveal flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-        <div class="flex items-center gap-5">
-          <svg class="h-14 w-auto drop-shadow-[0_0_12px_rgba(125,211,252,0.4)]" viewBox="0 0 100 100" fill="none">
-            <circle cx="50" cy="50" r="47" fill="#05060d" stroke="#7dd3fc" stroke-width="1.5"/>
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#7dd3fc" stroke-width="0.4" stroke-dasharray="2 3" opacity="0.6"/>
-            <text x="50" y="64" font-family="Inter" font-weight="900" font-size="30" fill="white" text-anchor="middle">222</text>
-          </svg>
-          <div class="flex flex-col">
-            <span class="text-3xl text-white font-script leading-none">to22s</span>
-            <span class="text-[9px] font-bold text-haze-500 uppercase tracking-[0.4em] mt-1">Bio-Systems</span>
-          </div>
-        </div>
-        <p class="text-base md:text-lg text-bone-300 italic font-light max-w-md">
-          “to22s Bio-Systems: The cancer medicine you want to take.™”
-        </p>
+  <!-- Institutional Research Partners -->
+  <section id="network" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <span class="text-sky-400 font-mono text-xs uppercase tracking-[0.3em]">// Institutional Research &amp; Testing Core</span>
+        <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mt-2">
+          Academic Partnerships &amp; Subaward Infrastructure.
+        </h2>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        <div class="flex flex-col items-start reveal">
-          <span class="text-[10px] font-mono uppercase tracking-[0.5em] text-haze-500 mb-6">07 // INSTITUTIONAL ACCESS · SBA 504 ANCHORED</span>
-          <h2 class="text-4xl lg:text-6xl font-black text-white uppercase tracking-tighter mb-8 leading-tight extrude">The Fortress<br/><span class="gradient-text-2">Architecture.</span></h2>
-          <p class="text-lg text-bone-500 leading-relaxed font-light mb-12">
-            US-Sovereign Infrastructure backed by USDA-ARS active docketing and J.P. Morgan diligence. Four tracks. One vertical.
-          </p>
-          <a href="#" class="group relative px-10 py-5 bg-haze-500 text-ink-950 font-black uppercase tracking-widest text-xs rounded-sm inline-flex items-center gap-3 shadow-[0_20px_40px_-10px_rgba(125,211,252,0.5)] hover:-translate-y-1 transition-all duration-300">
-            Request Data Room
-            <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform" viewBox="0 0 12 12" fill="none"><path d="M2 6 H 9 M 6 3 L 9 6 L 6 9" stroke="currentColor" stroke-width="1.5"/></svg>
-          </a>
-
-          <div class="mt-12 pt-8 border-t border-white/5 grid grid-cols-1 gap-4 w-full text-[10px] font-mono uppercase tracking-widest">
-            <div class="flex items-center justify-between">
-              <span class="text-bone-500">Banking</span>
-              <span class="text-white">J.P. Morgan Diligence</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-bone-500">USDA TARS Node</span>
-              <span class="text-white">Winter Seed Amplification</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-bone-500">USDA Docket</span>
-              <span class="text-haze-500">Tiara Lineage 4.29</span>
-            </div>
-          </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        
+        <div class="glass-panel p-6 rounded-xl">
+          <div class="text-xs font-mono text-sky-400 font-bold">APPLICANT SBC</div>
+          <h4 class="text-xl font-bold text-white mt-1">to22s Bio-Systems, Inc.</h4>
+          <p class="text-xs text-slate-400 mt-2 font-mono">Safety Harbor, FL</p>
+          <p class="text-xs text-slate-300 mt-3">PI management, OpenMM explicit-solvent MD simulations, platform architecture &amp; target validation.</p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 lg:gap-6 reveal">
-          <div class="tilt-host" style="perspective: 1200px;">
-            <div class="tilt glass rounded-sm p-6 flex flex-col h-full border-t-2 relative overflow-hidden" style="border-top-color:#7dd3fc;">
-              <span class="glare"></span>
-              <span class="absolute top-2 left-2 w-3 h-3 border-t border-l border-haze-500/60"></span>
-              <span class="absolute top-2 right-2 w-3 h-3 border-t border-r border-haze-500/60"></span>
-              <span class="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-haze-500/30"></span>
-              <span class="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-haze-500/30"></span>
-              <div class="flex items-start justify-between mb-4 lift">
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-haze-500 pulse-dot"></span>
-                  <h5 class="text-white font-black text-[10px] uppercase tracking-widest">Track 01</h5>
-                </div>
-                <span class="text-[9px] font-mono text-haze-500">2026</span>
-              </div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-haze-500/80 mb-2 lift">// CPG · ACTIVE</div>
-              <div class="text-[11px] uppercase tracking-widest text-bone-300 font-bold leading-relaxed mt-auto lift">Tier-1 Retail · Revenue Engine</div>
-              <div class="mt-3 flex items-center gap-2">
-                <div class="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
-                  <div class="h-full bg-gradient-to-r from-haze-500 to-haze-700 rounded-full shadow-[0_0_8px_rgba(125,211,252,0.6)]" style="width:78%"></div>
-                </div>
-                <span class="text-[8px] font-mono text-haze-500">78%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tilt-host" style="perspective: 1200px;">
-            <div class="tilt glass rounded-sm p-6 flex flex-col h-full border-t-2 relative overflow-hidden" style="border-top-color:#a78bfa;">
-              <span class="glare"></span>
-              <span class="absolute top-2 left-2 w-3 h-3 border-t border-l" style="border-color:rgba(167,139,250,0.6);"></span>
-              <span class="absolute top-2 right-2 w-3 h-3 border-t border-r" style="border-color:rgba(167,139,250,0.6);"></span>
-              <span class="absolute bottom-2 left-2 w-3 h-3 border-b border-l" style="border-color:rgba(167,139,250,0.3);"></span>
-              <span class="absolute bottom-2 right-2 w-3 h-3 border-b border-r" style="border-color:rgba(167,139,250,0.3);"></span>
-              <div class="flex items-start justify-between mb-4 lift">
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full pulse-dot" style="background:#a78bfa;"></span>
-                  <h5 class="text-white font-black text-[10px] uppercase tracking-widest">Track 02</h5>
-                </div>
-                <span class="text-[9px] font-mono" style="color:#a78bfa;">2027</span>
-              </div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] mb-2 lift" style="color:rgba(167,139,250,0.8);">// DSHEA · QUEUED</div>
-              <div class="text-[11px] uppercase tracking-widest text-bone-300 font-bold leading-relaxed mt-auto lift">Sentinel Prophylaxis · DSHEA</div>
-              <div class="mt-3 flex items-center gap-2">
-                <div class="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
-                  <div class="h-full rounded-full" style="width:42%; background: linear-gradient(90deg,#a78bfa,#3b2f6b); box-shadow: 0 0 8px rgba(167,139,250,0.6);"></div>
-                </div>
-                <span class="text-[8px] font-mono" style="color:#a78bfa;">42%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tilt-host" style="perspective: 1200px;">
-            <div class="tilt glass rounded-sm p-6 flex flex-col h-full border-t-2 relative overflow-hidden" style="border-top-color:#f0b67f;">
-              <span class="glare"></span>
-              <span class="absolute top-2 left-2 w-3 h-3 border-t border-l border-ember-500/60"></span>
-              <span class="absolute top-2 right-2 w-3 h-3 border-t border-r border-ember-500/60"></span>
-              <span class="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-ember-500/30"></span>
-              <span class="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-ember-500/30"></span>
-              <div class="flex items-start justify-between mb-4 lift">
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-ember-500 pulse-dot"></span>
-                  <h5 class="text-white font-black text-[10px] uppercase tracking-widest">Track 03</h5>
-                </div>
-                <span class="text-[9px] font-mono text-ember-500">2028</span>
-              </div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-ember-500/80 mb-2 lift">// IND-ENABLING</div>
-              <div class="text-[11px] uppercase tracking-widest text-bone-300 font-bold leading-relaxed mt-auto lift">Sentinel Pharma · V1-Beta API</div>
-              <div class="mt-3 flex items-center gap-2">
-                <div class="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
-                  <div class="h-full rounded-full" style="width:24%; background: linear-gradient(90deg,#f0b67f,#7c4a1f); box-shadow: 0 0 8px rgba(240,182,127,0.6);"></div>
-                </div>
-                <span class="text-[8px] font-mono text-ember-500">24%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tilt-host" style="perspective: 1200px;">
-            <div class="tilt glass rounded-sm p-6 flex flex-col h-full border-t-2 relative overflow-hidden" style="border-top-color:#ffffff;">
-              <span class="glare"></span>
-              <span class="absolute top-2 left-2 w-3 h-3 border-t border-l border-white/40"></span>
-              <span class="absolute top-2 right-2 w-3 h-3 border-t border-r border-white/40"></span>
-              <span class="absolute bottom-2 left-2 w-3 h-3 border-b border-l border-white/20"></span>
-              <span class="absolute bottom-2 right-2 w-3 h-3 border-b border-r border-white/20"></span>
-              <div class="flex items-start justify-between mb-4 lift">
-                <div class="flex items-center gap-2">
-                  <span class="w-1.5 h-1.5 rounded-full bg-white/70"></span>
-                  <h5 class="text-white font-black text-[10px] uppercase tracking-widest">Track 04</h5>
-                </div>
-                <span class="text-[9px] font-mono text-bone-500">2030+</span>
-              </div>
-              <div class="text-[8px] font-mono uppercase tracking-[0.3em] text-bone-500 mb-2 lift">// HORIZON · GLOBAL</div>
-              <div class="text-[11px] uppercase tracking-widest text-bone-300 font-bold leading-relaxed mt-auto lift">10 MT/Day Plant · Sovereign Export</div>
-              <div class="mt-3 flex items-center gap-2">
-                <div class="flex-1 h-1 bg-white/5 rounded-full overflow-hidden">
-                  <div class="h-full rounded-full" style="width:8%; background: linear-gradient(90deg,#ffffff,#94a3b8);"></div>
-                </div>
-                <span class="text-[8px] font-mono text-bone-500">8%</span>
-              </div>
-            </div>
-          </div>
+        <div class="glass-panel p-6 rounded-xl">
+          <div class="text-xs font-mono text-emerald-400 font-bold">FORMULATION CORE</div>
+          <h4 class="text-xl font-bold text-white mt-1">Process Engineering Core</h4>
+          <p class="text-xs text-slate-400 mt-2 font-mono">University Chemical Engineering Core</p>
+          <p class="text-xs text-slate-300 mt-3">Supercritical scCO<sub>2</sub> bioprocess extraction, micellar foliage spray formulation, particle sizing.</p>
         </div>
+
+        <div class="glass-panel p-6 rounded-xl">
+          <div class="text-xs font-mono text-purple-400 font-bold">ANALYTICAL CORE</div>
+          <h4 class="text-xl font-bold text-white mt-1">Mass Spectrometry &amp; NMR Core</h4>
+          <p class="text-xs text-slate-400 mt-2 font-mono">University Analytical Instrumentation Core</p>
+          <p class="text-xs text-slate-300 mt-3">High-resolution Agilent LC-MS QToF, NMR cyclopropane structural verification (&delta; 0.33, 0.55).</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl">
+          <div class="text-xs font-mono text-amber-400 font-bold">AGRICULTURAL TESTING</div>
+          <h4 class="text-xl font-bold text-white mt-1">UF/IFAS GCREC Core</h4>
+          <p class="text-xs text-slate-400 mt-2 font-mono">Plant Pathology &amp; Entomology</p>
+          <p class="text-xs text-slate-300 mt-3">Land-grant testing core executing fungal hyphal suicide panels and insect molting arrest bioassays.</p>
+        </div>
+
       </div>
 
-      <div class="mt-32 pt-16 border-t border-white/5 flex flex-col items-center justify-center gap-4">
-        <svg class="h-10 w-auto opacity-30" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="48" fill="transparent" stroke="#cbd5e1" stroke-width="1.5" />
-          <circle cx="50" cy="50" r="40" fill="none" stroke="#cbd5e1" stroke-width="0.4" stroke-dasharray="2 3" opacity="0.6" />
-          <text x="50" y="64" font-family="Inter" font-weight="900" font-size="30" fill="#cbd5e1" text-anchor="middle">222</text>
-        </svg>
-        <div class="text-[10px] text-white/30 uppercase font-mono tracking-widest text-center leading-loose">
-          © 2026 to22s Bio-Systems, Inc. <span class="mx-2">//</span> 35 U.S.C. 209 Confidential <span class="mx-2">//</span> US-Sovereign Infrastructure <span class="mx-2">//</span> All rights reserved.
-        </div>
+    </div>
+  </section>
+
+  <!-- Diligence Portal & Contact CTA -->
+  <section id="diligence" class="py-24 bg-brand-900 border-t border-white/10 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      
+      <span class="text-sky-400 font-mono text-xs uppercase tracking-[0.3em]">// Partner &amp; Investor Diligence</span>
+      <h2 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight mt-3">
+        Request Executive Proposal Package.
+      </h2>
+      <p class="text-slate-300 text-base mt-4 font-light max-w-2xl mx-auto">
+        Access our clean Executive Summaries, Phase I Specific Aims, Phase II computational binding trajectory datasets, and full patent portfolio claim dossiers across all four target domains.
+      </p>
+
+      <div class="glass-panel p-8 rounded-2xl mt-10 max-w-xl mx-auto text-left">
+        <form class="space-y-4" onsubmit="event.preventDefault(); alert('Request received. Executive dossier will be dispatched to your institutional email.');">
+          <div>
+            <label for="fullName" class="block text-xs font-mono text-slate-400 uppercase mb-1">Full Name &amp; Title</label>
+            <input id="fullName" type="text" placeholder="Executive / Principal Partner" required class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-400 font-mono" />
+          </div>
+          <div>
+            <label for="email" class="block text-xs font-mono text-slate-400 uppercase mb-1">Institutional Email</label>
+            <input id="email" type="email" placeholder="j.doe@institution.edu" required class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-white focus:outline-none focus:border-sky-400 font-mono" />
+          </div>
+          <div>
+            <label for="areaOfInterest" class="block text-xs font-mono text-slate-400 uppercase mb-1">Area of Interest</label>
+            <select id="areaOfInterest" class="w-full bg-brand-950 border border-slate-700 rounded px-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-400 font-mono">
+              <option>USDA SBIR Topic 8.2 AgChem Licensing / Testing</option>
+              <option>NCI SBIR Oncology Licensing / Co-Development</option>
+              <option>NSF STTR Biomanufacturing Partnership</option>
+              <option>Institutional Equity &amp; Grant Subaward Inquiry</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full py-3 bg-sky-400 text-brand-950 font-mono font-bold text-xs uppercase tracking-widest rounded hover:bg-sky-300 transition-colors shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+            Dispatch Institutional Dossier
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-white/5 bg-brand-950 text-slate-400 text-xs font-mono">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        &copy; 2026 to22s Bio-Systems, Inc. &bull; Safety Harbor, FL &bull; All Rights Reserved.
+      </div>
+      <div class="flex space-x-6 text-[11px] uppercase tracking-wider">
+        <a href="#top" class="hover:text-sky-400">Top</a>
+        <a href="#platform" class="hover:text-sky-400">Platform</a>
+        <a href="#agchem" class="hover:text-emerald-400">AgChem</a>
+        <a href="#oncology" class="hover:text-purple-400">Oncology</a>
+        <a href="#diligence" class="hover:text-sky-400">Diligence</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
+    // Lucide Icons initialization
+    if (window.lucide) {
+      lucide.createIcons();
+    }
 
-    // ---- Mobile Nav Toggle ----
-    const navToggle = document.getElementById('navToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    navToggle.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
-    });
-
-    // ---- Tilt effect for elements with .tilt-host ----
-    document.querySelectorAll('.tilt-host').forEach(host => {
-      const tilt = host.querySelector('.tilt');
-      if(!tilt) return;
-      host.addEventListener('mousemove', e => {
-        const rect = host.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const xc = rect.width / 2;
-        const yc = rect.height / 2;
-        const dx = x - xc;
-        const dy = y - yc;
-        tilt.style.setProperty('--rx', `${-dy / 10}deg`);
-        tilt.style.setProperty('--ry', `${dx / 10}deg`);
-        tilt.style.setProperty('--mx', `${x}px`);
-        tilt.style.setProperty('--my', `${y}px`);
+    // Mobile nav toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-      host.addEventListener('mouseleave', () => {
-        tilt.style.setProperty('--rx', `0deg`);
-        tilt.style.setProperty('--ry', `0deg`);
-      });
-    });
+    }
 
-    // ---- Hero Spotlight cursor tracking ----
-    document.addEventListener('mousemove', e => {
-      const hero = document.getElementById('hero');
-      if (!hero) return;
-      const rect = hero.getBoundingClientRect();
-      if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
-        const spotlight = document.getElementById('hero-spotlight');
-        if (spotlight) {
-          spotlight.style.setProperty('--mx', `${e.clientX}px`);
-          spotlight.style.setProperty('--my', `${e.clientY - rect.top}px`);
-        }
-      }
-    });
-
-    // ---- Optimized Scroll Progress & Scroll Spy using RequestAnimationFrame ----
-    const progress = document.getElementById('progress');
-    const sections = document.querySelectorAll('section, footer');
-    const navLinks = document.querySelectorAll('.nav-link');
-    let isScrollTicking = false;
-
-    window.addEventListener('scroll', () => {
-      if (!isScrollTicking) {
-        window.requestAnimationFrame(() => {
-          updateScrollMetrics();
-          isScrollTicking = false;
+    // Scroll Reveal Observer
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
         });
-        isScrollTicking = true;
-      }
-    }, { passive: true });
+      }, { threshold: 0.08 });
 
-    function updateScrollMetrics() {
-      // Progress Bar
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      if (progress) progress.style.width = scrolled + '%';
-
-      // Scroll Spy
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-          current = section.getAttribute('id');
-        }
+      document.querySelectorAll('.glass-panel').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        observer.observe(el);
       });
-
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
-      });
-    }
-
-    // ---- Intersection Observers for Reveals and Stack Layers ----
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-    };
-    
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-      revealObserver.observe(el);
     });
 
-    // Stack layers scroll activation
-    const stackObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.5 });
-    
-    document.querySelectorAll('.stack-layer').forEach(layer => {
-      stackObserver.observe(layer);
-    });
-
-    // ---- Revenue Counter Animation ----
-    const revCounter = document.getElementById('rev-counter');
-    let currentRev = 12450000;
-    setInterval(() => {
-      currentRev += Math.floor(Math.random() * 200) + 50; 
-      if (revCounter) revCounter.innerText = currentRev.toLocaleString('en-US');
-    }, 1500);
-
-    // ==============================================================================
-    // CANVAS TOPOLOGY SIMULATOR
-    // ==============================================================================
-    const canvas = document.getElementById('dom-topology-canvas');
-    const ctx = canvas ? canvas.getContext('2d') : null;
-    
-    let nodes = [];
-    let connections = [];
-    let canvasPhysicsGravity = true;
-    let selectedNode = null;
-    let draggedNode = null;
-    let dragOffsetX = 0;
-    let dragOffsetY = 0;
-
-    const COLORS = {
-      Active: '#34d399', // emerald
-      Staged: '#f59e0b', // amber
-      Hold: '#a78bfa',   // violet
-    };
-
-    class TopologyNode {
-      constructor(id, label, status, metric, x, y) {
-        this.id = id;
-        this.label = label;
-        this.status = status;
-        this.metric = metric;
-        this.radius = window.innerWidth < 768 ? 35 : 45;
-        this.x = x;
-        this.y = y;
-        this.vx = (Math.random() - 0.5) * 2;
-        this.vy = (Math.random() - 0.5) * 2;
-        this.mass = 1;
-      }
-
-      draw() {
-        if (!ctx) return;
-        const color = COLORS[this.status] || COLORS.Active;
-        const isSelected = selectedNode === this;
-
-        // Glow
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius + (isSelected ? 15 : 10), 0, Math.PI * 2);
-        ctx.fillStyle = color + (isSelected ? '40' : '20'); // alpha hex
-        ctx.fill();
-
-        // Base Circle
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = '#0f172a'; // tailwind slate-900
-        ctx.fill();
-        ctx.lineWidth = isSelected ? 3 : 2;
-        ctx.strokeStyle = color;
-        ctx.stroke();
-
-        // Label
-        ctx.fillStyle = '#f8fafc'; // slate-50
-        ctx.font = 'bold 11px "JetBrains Mono"';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        
-        ctx.fillText(this.label, this.x, this.y - 6);
-        
-        ctx.fillStyle = color;
-        ctx.font = '9px "JetBrains Mono"';
-        ctx.fillText(this.metric, this.x, this.y + 8);
-      }
-
-      update() {
-        if (draggedNode === this) return; // Physics paused on drag
-
-        // Center gravity
-        if (canvasPhysicsGravity) {
-          const centerX = canvas.width / 2;
-          const centerY = canvas.height / 2;
-          const dx = centerX - this.x;
-          const dy = centerY - this.y;
-          this.vx += dx * 0.0005;
-          this.vy += dy * 0.0005;
-        }
-
-        // Apply velocity
-        this.x += this.vx;
-        this.y += this.vy;
-
-        // Friction
-        this.vx *= 0.95;
-        this.vy *= 0.95;
-
-        // Wall boundary checks
-        const padding = this.radius;
-        if (this.x < padding) { this.x = padding; this.vx *= -1; }
-        if (this.x > canvas.width - padding) { this.x = canvas.width - padding; this.vx *= -1; }
-        if (this.y < padding) { this.y = padding; this.vy *= -1; }
-        if (this.y > canvas.height - padding) { this.y = canvas.height - padding; this.vy *= -1; }
-      }
-    }
-
-    function initCanvas() {
-      if (!canvas) return;
-      const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.parentElement.getBoundingClientRect();
+    // Pipeline Domain Filtering Logic
+    function filterPipeline(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
       
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
-
-      const w = rect.width;
-      const h = rect.height;
-
-      // Initialize system nodes mapping
-      nodes = [
-        new TopologyNode('node1', 'Node 01', 'Active', '10 MT/Day', w*0.3, h*0.3),
-        new TopologyNode('node2', 'Node 02', 'Staged', '69 MPa', w*0.7, h*0.4),
-        new TopologyNode('node3', 'USDA-TARS', 'Active', 'Puerto Rico', w*0.5, h*0.7),
-        new TopologyNode('node4', 'St. Pete', 'Hold', 'Command', w*0.8, h*0.8),
-      ];
-
-      connections = [
-        [0, 1], [0, 2], [1, 3], [2, 1]
-      ];
-
-      selectNode(nodes[0]);
-    }
-
-    function drawConnections() {
-      if (!ctx) return;
-      ctx.lineWidth = 1.5;
-      connections.forEach(([i, j]) => {
-        const n1 = nodes[i];
-        const n2 = nodes[j];
-        if(!n1 || !n2) return;
-
-        ctx.beginPath();
-        ctx.moveTo(n1.x, n1.y);
-        ctx.lineTo(n2.x, n2.y);
-        
-        // Gradient trace lines
-        const grad = ctx.createLinearGradient(n1.x, n1.y, n2.x, n2.y);
-        grad.addColorStop(0, COLORS[n1.status] || '#cbd5e1');
-        grad.addColorStop(1, COLORS[n2.status] || '#cbd5e1');
-        ctx.strokeStyle = grad;
-        ctx.stroke();
-
-        // Flow particles
-        const time = Date.now() / 1500;
-        const progress = (time + i*0.2 + j*0.1) % 1;
-        const dotX = n1.x + (n2.x - n1.x) * progress;
-        const dotY = n1.y + (n2.y - n1.y) * progress;
-
-        ctx.beginPath();
-        ctx.arc(dotX, dotY, 3, 0, Math.PI*2);
-        ctx.fillStyle = '#ffffff';
-        ctx.fill();
-      });
-    }
-
-    function applyRepulsion() {
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const n1 = nodes[i];
-          const n2 = nodes[j];
-          const dx = n2.x - n1.x;
-          const dy = n2.y - n1.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const minD = n1.radius + n2.radius + 40;
-
-          if (dist < minD && dist > 0) {
-            const force = (minD - dist) * 0.05;
-            const fx = (dx / dist) * force;
-            const fy = (dy / dist) * force;
-
-            if (draggedNode !== n1) { n1.vx -= fx; n1.vy -= fy; }
-            if (draggedNode !== n2) { n2.vx += fx; n2.vy += fy; }
-          }
-        }
+      if (event && event.target) {
+        event.target.classList.add('active');
       }
-    }
 
-    function animateCanvas() {
-      if (!ctx || !canvas) return;
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      applyRepulsion();
-      drawConnections();
-
-      nodes.forEach(node => {
-        node.update();
-        node.draw();
-      });
-
-      requestAnimationFrame(animateCanvas);
-    }
-
-    function getMousePos(evt) {
-      const rect = canvas.getBoundingClientRect();
-      const scaleX = canvas.width / rect.width / (window.devicePixelRatio || 1);
-      const scaleY = canvas.height / rect.height / (window.devicePixelRatio || 1);
-      return {
-        x: (evt.clientX - rect.left) * scaleX,
-        y: (evt.clientY - rect.top) * scaleY
-      };
-    }
-
-    if(canvas) {
-      // Mouse listeners
-      canvas.addEventListener('mousedown', (e) => {
-        const pos = getMousePos(e);
-        for (let i = nodes.length - 1; i >= 0; i--) {
-          const n = nodes[i];
-          const dx = pos.x - n.x;
-          const dy = pos.y - n.y;
-          if (dx * dx + dy * dy <= n.radius * n.radius) {
-            draggedNode = n;
-            dragOffsetX = dx;
-            dragOffsetY = dy;
-            selectNode(n);
-            break;
-          }
+      const cards = document.querySelectorAll('.pipeline-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+          setTimeout(() => card.classList.add('is-visible'), 50);
+        } else {
+          card.style.display = 'none';
         }
       });
-
-      window.addEventListener('mousemove', (e) => {
-        if (draggedNode) {
-          const pos = getMousePos(e);
-          draggedNode.x = pos.x - dragOffsetX;
-          draggedNode.y = pos.y - dragOffsetY;
-          draggedNode.vx = 0;
-          draggedNode.vy = 0;
-        }
-      });
-
-      window.addEventListener('mouseup', () => {
-        draggedNode = null;
-      });
-
-      // --- Advanced Touch Event Support for Canvas Cards ---
-      canvas.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) {
-          const touch = e.touches[0];
-          const mouseEvent = new MouseEvent("mousedown", {
-            clientX: touch.clientX,
-            clientY: touch.clientY
-          });
-          canvas.dispatchEvent(mouseEvent);
-        }
-      }, { passive: false });
-
-      window.addEventListener('touchmove', (e) => {
-        if (draggedNode && e.touches.length === 1) {
-          const touch = e.touches[0];
-          const mouseEvent = new MouseEvent("mousemove", {
-            clientX: touch.clientX,
-            clientY: touch.clientY
-          });
-          window.dispatchEvent(mouseEvent);
-          e.preventDefault(); // Prevent scrolling while adjusting refinery nodes
-        }
-      }, { passive: false });
-
-      window.addEventListener('touchend', () => {
-        const mouseEvent = new MouseEvent("mouseup", {});
-        window.dispatchEvent(mouseEvent);
-      });
-
-      // Resize observer setup to dynamically scale and update
-      window.addEventListener('resize', () => {
-        if(!canvas) return;
-        const rect = canvas.parentElement.getBoundingClientRect();
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
-        ctx.scale(dpr, dpr);
-        canvas.style.width = `${rect.width}px`;
-        canvas.style.height = `${rect.height}px`;
-      });
     }
-
-    // UI Configuration & Sync Functions
-    function selectNode(node) {
-      selectedNode = node;
-      document.getElementById('active-selected-label').innerText = `Selected: ${node.id}`;
-      document.getElementById('dom-node-title').value = node.label;
-      document.getElementById('dom-node-status').value = node.status;
-      document.getElementById('dom-node-metric').value = node.metric;
-      updateCodeSnippet(node);
-    }
-
-    function syncFormToCanvas() {
-      if (!selectedNode) return;
-      selectedNode.label = document.getElementById('dom-node-title').value;
-      selectedNode.status = document.getElementById('dom-node-status').value;
-      selectedNode.metric = document.getElementById('dom-node-metric').value;
-      updateCodeSnippet(selectedNode);
-    }
-
-    function updateCodeSnippet(node) {
-      document.getElementById('code-node-id').innerText = node.id;
-      document.getElementById('code-node-title').innerText = node.label;
-      document.getElementById('code-node-status').innerText = node.status;
-      document.getElementById('code-node-metric').innerText = node.metric;
-    }
-
-    function toggleContainmentGravity() {
-      canvasPhysicsGravity = !canvasPhysicsGravity;
-      const btn = document.getElementById('canvas-physics-gravity');
-      if (canvasPhysicsGravity) {
-        btn.innerHTML = '<i class="fa-solid fa-earth-americas"></i> Gravity Off';
-        btn.classList.remove('text-haze-500', 'border-haze-500');
-      } else {
-        btn.innerHTML = '<i class="fa-solid fa-meteor"></i> Gravity On';
-        btn.classList.add('text-haze-500', 'border-haze-500');
-      }
-    }
-
-    function disperseRefineryNodes() {
-      nodes.forEach(node => {
-        node.vx += (Math.random() - 0.5) * 30;
-        node.vy += (Math.random() - 0.5) * 30;
-      });
-    }
-
-    // Initial setup on window load
-    window.addEventListener('load', () => {
-      initCanvas();
-      animateCanvas();
-    });
-
   </script>
 </body>
 </html>
